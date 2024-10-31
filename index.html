@@ -65,6 +65,7 @@
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        margin-top:10px;
     }
     
     button:hover {
@@ -81,6 +82,20 @@
     .hidden {
     display: none; /* Hide the button by default */
 }
+#download-again {
+    background-color: purple; /* Purple color for the button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px; /*Gap between buttons */
+}
+
+#download-again:hover {
+    background-color: darkviolet; /* Darker purple on hover */
+}
+
 
     </style>
 </head>
@@ -114,74 +129,58 @@
         </form>
         <div id="timetable-output" class="timetable-output"></div>
         <script>
-        //document.getElementById('timetable-form').addEventListener('submit', function(event) {
-          // event.preventDefault(); // Prevent form submission
+        document.getElementById('timetable-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
         
-           // const branch = document.getElementById('branch').value;
-           // const semester = document.getElementById('semester').value;
-            ///const timetableOutput = document.getElementById('timetable-output');
+            const branch = document.getElementById('branch').value;
+            const semester = document.getElementById('semester').value;
+            const timetableOutput = document.getElementById('timetable-output');
+            const generateAgainButton = document.getElementById('generate-again');
+            const downloadAgainButton = document.getElementById('download-again');
         
-            //timetableOutput.innerHTML = `<h2>Timetable for ${branch} - Semester ${semester}</h2>`;
+            timetableOutput.innerHTML = `<h2>Timetable for ${branch} - Semester ${semester}</h2>`;
         
             // Create the grid
-            //const gridContainer = document.createElement('div');
-           // gridContainer.className = 'timetable-grid';
+            const gridContainer = document.createElement('div');
+            gridContainer.className = 'timetable-grid';
             
             // Create an empty grid with 5 columns for a week (adjust rows as needed)
-            //for (let i = 0; i < 5; i++) { // 5 columns for days
-           //     for (let j = 0; j < 6; j++) { // 6 rows for slots
-           //         const cell = document.createElement('div');
-           //         cell.className = 'timetable-cell';
-           //         cell.innerText = ''; // Leave the cell empty
-            //        gridContainer.appendChild(cell);
-           //     }
-          //  }
+            for (let i = 0; i < 5; i++) { // 5 columns for days
+                for (let j = 0; j < 6; j++) { // 6 rows for slots
+                    const cell = document.createElement('div');
+                    cell.className = 'timetable-cell';
+                    cell.innerText = ''; // Leave the cell empty
+                    gridContainer.appendChild(cell);
+                }
+            }
         
-          //  timetableOutput.appendChild(gridContainer);
-          //  timetableOutput.style.display = 'block'; // Show the output
-      //  });
-      document.getElementById('timetable-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-
-    const branch = document.getElementById('branch').value;
-    const semester = document.getElementById('semester').value;
-    const timetableOutput = document.getElementById('timetable-output');
-    const generateAgainButton = document.getElementById('generate-again');
-
-    timetableOutput.innerHTML = `<h2>Timetable for ${branch} - Semester ${semester}</h2>`;
-
-    // Create the grid
-    const gridContainer = document.createElement('div');
-    gridContainer.className = 'timetable-grid';
-    
-    // Create an empty grid with 5 columns for a week (adjust rows as needed)
-    for (let i = 0; i < 5; i++) { // 5 columns for days
-        for (let j = 0; j < 6; j++) { // 6 rows for slots
-            const cell = document.createElement('div');
-            cell.className = 'timetable-cell';
-            cell.innerText = ''; // Leave the cell empty
-            gridContainer.appendChild(cell);
-        }
-    }
-
-    timetableOutput.appendChild(gridContainer);
-    timetableOutput.style.display = 'block'; // Show the output
-
-    // Show the Generate Again button
-    generateAgainButton.classList.remove('hidden');
-});
-
-// Add event listener for the Generate Again button
-document.getElementById('generate-again').addEventListener('click', function() {
-    // Clear the output and hide the button
-    const timetableOutput = document.getElementById('timetable-output');
-    timetableOutput.innerHTML = '';
-    this.classList.add('hidden'); // Hide the button
-});
-
-        </script>
+            timetableOutput.appendChild(gridContainer);
+            timetableOutput.style.display = 'block'; // Show the output
+        
+            // Show the Generate Again and Download Again buttons
+            generateAgainButton.classList.remove('hidden');
+            downloadAgainButton.classList.remove('hidden');
+        });
+        
+        // Add event listener for the Generate Again button
+        document.getElementById('generate-again').addEventListener('click', function() {
+            // Clear the output and hide the buttons
+            const timetableOutput = document.getElementById('timetable-output');
+            timetableOutput.innerHTML = '';
+            this.classList.add('hidden'); // Hide the Generate Again button
+            document.getElementById('download-again').classList.add('hidden'); // Hide the Download Again button
+        });
+        
+        // Add event listener for the Download Again button
+        document.getElementById('download-again').addEventListener('click', function() {
+            // Here, you could implement the download functionality
+            alert('Download functionality to be implemented!');
+        });
+    </script>        
        <div id="timetable-output" class="timetable-output"></div>
         <button id="generate-again" class="hidden">Generate Again</button>
+<button id="download-again" class="hidden">Download Again</button>
+
         
     </div>
 </body>
