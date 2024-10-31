@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .login-container {
+        max-width: 400px;
+        margin: 100px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    h1,h2 {
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+    }
+    
+    .user-type {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .login-btn {
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #f0f0f0;
+        transition: background-color 0.3s;
+        flex: 1;
+        margin: 0 5px; /* Add some margin for spacing */
+    }
+    
+    /* #university-btn {
+        /* background-color: #007bff; /* Different color for University button */
+        /*color: white; */
+        
+    
+    
+    .login-btn.active {
+        background-color: #28a745;
+        color: white;
+    }
+    
+    .login-btn:hover:not(.active) {
+        background-color: #e0e0e0;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    input {
+        width: 100%;
+     padding: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        
+
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+    
+    </style>
+</head>
+<body>
+    <h1 class="heading">University of Visvesvaraya College of Engineering</h1>
+    <!-- <h2 class="heading">(First State Autonomous Public University on IIT Model) </h2>-->
+    <h2> K R Circle, Bengaluru - 560001</h2>
+    <div class="login-container">
+        <h1>Login</h1>
+        <div class="user-type">
+            <button class="login-btn active" id="admin-btn">Admin</button>
+            <button class="login-btn" id="university-btn">University</button>
+            <button class="login-btn" id="student-btn">Student</button>
+        </div>
+        <form id="login-form" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+    </div>
+
+    <script>
+   function handleLogin(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    const username = document.getElementById('username').value;
+    const userType = document.querySelector('.login-btn.active')?.textContent || 'University';
+
+    // Implement login logic here
+    alert(`Logging in as ${userType}: ${username}`);
+}
+
+// Event listeners for user type buttons
+document.getElementById('admin-btn').addEventListener('click', function() {
+    setActiveUserType('admin');
+});
+document.getElementById('student-btn').addEventListener('click', function() {
+    setActiveUserType('student');
+});
+document.getElementById('university-btn').addEventListener('click', function() {
+    setActiveUserType('university');
+});
+
+function setActiveUserType(type) {
+    const buttons = document.querySelectorAll('.login-btn');
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.getElementById(`${type}-btn`).classList.add('active');
+}
+
+    </script>
+</body>
+</html>
