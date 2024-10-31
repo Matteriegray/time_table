@@ -3,66 +3,93 @@ import random
 # Subjects
 four_hour_subjects = ["Maths", "POE", "PPS", "Chemistry", "Mechanical"]
 one_hour_subjects = ["DTI", "Workshop Theory"]
-labs = ["l1", "l2", "l3"]
 
-# Define timetable structure (no predefined slots)
-timetable_structure = [
-    ["Monday", "", "", "", ""],
-    ["Tuesday", "", "", "", ""],
-    ["Wednesday", "", "", "", ""],
-    ["Thursday", "", "", "", ""],
-    ["Friday", "", "", "", ""]
-]
-
-# Function to generate timetable with random slots
-def generate_timetable(timetable, four_hour_subjects, one_hour_subjects, labs):
-    # Flatten timetable structure for easy assignment
-    slots = [(day, time) for day in range(len(timetable)) for time in range(1, len(timetable[0]))]
-    random.shuffle(slots)  # Shuffle all slots for random placement
-
-    # Assign each four-hour subject exactly twice
-    subject_slots = []
-    for subject in four_hour_subjects:
-        for _ in range(2):
-            subject_slots.append(subject)
+# Initialize empty timetables for each class
+timetables = {
+    "AIML": [["Monday", "", "", "", "l1"],
+             ["Tuesday", "", "", "l2", ""],
+             ["Wednesday", "", "", "l3", ""],
+             ["Thursday", "", "", "", ""],
+             ["Friday", "", "", "", ""]],
     
-    # Assign each one-hour subject exactly once
-    for subject in one_hour_subjects:
-        subject_slots.append(subject)
+    "ISE": [["Monday", "", "", "", ""],
+            ["Tuesday", "", "", "", ""],
+            ["Wednesday", "", "", "", ""],
+            ["Thursday", "", "", "", ""],
+            ["Friday", "", "", "", ""]],
     
-    for subject in labs:
-        subject_slots.append(subject)
-
-    # Shuffle the subject slots for random placement
-    random.shuffle(subject_slots)
+    "CSE A": [["Monday", "", "", "", ""],
+              ["Tuesday", "", "", "", ""],
+              ["Wednesday", "", "", "", ""],
+              ["Thursday", "", "", "", ""],
+              ["Friday", "", "", "", ""]],
     
-    # Fill timetable with subjects in randomized slots
-    for slot, subject in zip(slots, subject_slots):
-        day, time = slot
-        timetable[day][time] = subject
+    "CSE B": [["Monday", "", "", "", ""],
+              ["Tuesday", "", "", "", ""],
+              ["Wednesday", "", "", "", ""],
+              ["Thursday", "", "", "", ""],
+              ["Friday", "", "", "", ""]]
+}
 
-    # All remaining slots will automatically stay as "Empty"
-    return timetable
+# Generate a list of all possible time slots
+days = range(5)  # Monday to Friday represented as 0-4
+slots = range(1, 5)  # 8:00 - 10:30, 11:00 - 12:40, etc.
+time_slots = [(day, slot) for day in days for slot in slots]
+
+# Function to assign subjects without overlap between classes
+def assign_subjects_to_all_classes():
+    print("Assigning subjects to all classes...")
+    for class_name, timetable in timetables.items():
+        used_slots = set()
+        
+        # Place each four-hour subject exactly twice per class timetable
+        for subject in four_hour_subjects:
+            count = 0
+            while count < 2:
+                day, slot = random.choice(time_slots)
+                attempts = 0
+                while (day, slot) in used_slots and attempts < 10:
+                    day, slot = random.choice(time_slots)
+                    attempts += 1
+                
+                if attempts < 10:
+                    timetable[day][slot] = subject
+                    used_slots.add((day, slot))
+                    count += 1
+                else:
+                    print(f"Could not assign {subject} after 10 attempts.")
+
+        # Place each one-hour subject exactly once per class timetable
+        for subject in one_hour_subjects:
+            count = 0
+            while count < 1:  # One time per subject
+                day, slot = random.choice(time_slots)
+                attempts = 0
+                while (day, slot) in used_slots and attempts < 10:
+                    day, slot = random.choice(time_slots)
+                    attempts += 1
+                
+                if attempts < 10:
+                    timetable[day][slot] = subject
+                    used_slots.add((day, slot))
+                    count += 1
+                else:
+                    print(f"Could not assign {subject} after 10 attempts.")
+
+# Assign subjects to each class timetable
+assign_subjects_to_all_classes()
 
 # Function to print the timetable
-def print_timetable(timetable):
-    header = ["Day", "8:00 - 10:30", "11:00 - 12:40", "12.40 - 2.20", "2:45 - 5:15"]
+def print_timetable(timetable, class_name):
+    header = ["Day", "8:00 - 10:30", "11:00 - 12:40", "12:40 - 2:20", "2:45 - 5:15"]
+    print(f"\n{class_name} Timetable")
+    print("{:<10} {:<24} {:<24} {:<24} {:<30}".format(*header))
+    print("-" * 120)
     
-    # Print the header
-    print("{:<10} {:<24} {:<24} {:<24} {:<24}".format(*header))
-    print("-" * 100)
-    
-    # Print each row of the timetable, marking empty slots explicitly
-    for row in timetable:
-        print("{:<10} {:<24} {:<24} {:<24} {:<24}".format(
-            row[0],
-            row[1] if row[1] else "Empty",
-            row[2] if row[2] else "Empty",
-            row[3] if row[3] else "Empty",
-            row[4] if row[4] else "Empty"
-        ))
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    for i, row in enumerate(timetable):
+        print("{:<10} {:<24} {:<24} {:<24} {:<30}".format(days[i], *[slot if slot else "Empty" for slot in row[1:]]))
 
-# Generate and print the timetable for aiml
-print("For aiml")
-timetable_structure = generate_timetable(timetable_structure, four_hour_subjects, one_hour_subjects,labs)
-print_timetable(timetable_structure)
+# Print timetables for each class
+for class_name, timetable in timetables.items():
+    print_timetable(timetable, class_name)
