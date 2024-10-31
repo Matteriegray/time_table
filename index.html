@@ -40,6 +40,22 @@
         border-radius: 4px;
         border: 1px solid #ccc;
     }
+    .timetable-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns for a week */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.timetable-cell {
+    background-color: #e9ecef;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
     
     button {
         width: 100%;
@@ -93,6 +109,34 @@
             <button type="submit">Generate Timetable</button>
         </form>
         <div id="timetable-output" class="timetable-output"></div>
+        <script>
+        document.getElementById('timetable-form').addEventListener('submit', function(event) {
+           event.preventDefault(); // Prevent form submission
+        
+            const branch = document.getElementById('branch').value;
+            const semester = document.getElementById('semester').value;
+            const timetableOutput = document.getElementById('timetable-output');
+        
+            timetableOutput.innerHTML = `<h2>Timetable for ${branch} - Semester ${semester}</h2>`;
+        
+            // Create the grid
+            const gridContainer = document.createElement('div');
+            gridContainer.className = 'timetable-grid';
+            
+            // Create an empty grid with 5 columns for a week (adjust rows as needed)
+            for (let i = 0; i < 5; i++) { // 5 columns for days
+                for (let j = 0; j < 6; j++) { // 6 rows for slots
+                    const cell = document.createElement('div');
+                    cell.className = 'timetable-cell';
+                    cell.innerText = ''; // Leave the cell empty
+                    gridContainer.appendChild(cell);
+                }
+            }
+        
+            timetableOutput.appendChild(gridContainer);
+            timetableOutput.style.display = 'block'; // Show the output
+        });
+        </script>
     </div>
 </body>
 </html>
