@@ -78,6 +78,10 @@
         border-radius: 4px;
         display: none; /* Hidden by default */
     }
+    .hidden {
+    display: none; /* Hide the button by default */
+}
+
     </style>
 </head>
 <body>
@@ -110,33 +114,75 @@
         </form>
         <div id="timetable-output" class="timetable-output"></div>
         <script>
-        document.getElementById('timetable-form').addEventListener('submit', function(event) {
-           event.preventDefault(); // Prevent form submission
+        //document.getElementById('timetable-form').addEventListener('submit', function(event) {
+          // event.preventDefault(); // Prevent form submission
         
-            const branch = document.getElementById('branch').value;
-            const semester = document.getElementById('semester').value;
-            const timetableOutput = document.getElementById('timetable-output');
+           // const branch = document.getElementById('branch').value;
+           // const semester = document.getElementById('semester').value;
+            ///const timetableOutput = document.getElementById('timetable-output');
         
-            timetableOutput.innerHTML = `<h2>Timetable for ${branch} - Semester ${semester}</h2>`;
+            //timetableOutput.innerHTML = `<h2>Timetable for ${branch} - Semester ${semester}</h2>`;
         
             // Create the grid
-            const gridContainer = document.createElement('div');
-            gridContainer.className = 'timetable-grid';
+            //const gridContainer = document.createElement('div');
+           // gridContainer.className = 'timetable-grid';
             
             // Create an empty grid with 5 columns for a week (adjust rows as needed)
-            for (let i = 0; i < 5; i++) { // 5 columns for days
-                for (let j = 0; j < 6; j++) { // 6 rows for slots
-                    const cell = document.createElement('div');
-                    cell.className = 'timetable-cell';
-                    cell.innerText = ''; // Leave the cell empty
-                    gridContainer.appendChild(cell);
-                }
-            }
+            //for (let i = 0; i < 5; i++) { // 5 columns for days
+           //     for (let j = 0; j < 6; j++) { // 6 rows for slots
+           //         const cell = document.createElement('div');
+           //         cell.className = 'timetable-cell';
+           //         cell.innerText = ''; // Leave the cell empty
+            //        gridContainer.appendChild(cell);
+           //     }
+          //  }
         
-            timetableOutput.appendChild(gridContainer);
-            timetableOutput.style.display = 'block'; // Show the output
-        });
+          //  timetableOutput.appendChild(gridContainer);
+          //  timetableOutput.style.display = 'block'; // Show the output
+      //  });
+      document.getElementById('timetable-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const branch = document.getElementById('branch').value;
+    const semester = document.getElementById('semester').value;
+    const timetableOutput = document.getElementById('timetable-output');
+    const generateAgainButton = document.getElementById('generate-again');
+
+    timetableOutput.innerHTML = `<h2>Timetable for ${branch} - Semester ${semester}</h2>`;
+
+    // Create the grid
+    const gridContainer = document.createElement('div');
+    gridContainer.className = 'timetable-grid';
+    
+    // Create an empty grid with 5 columns for a week (adjust rows as needed)
+    for (let i = 0; i < 5; i++) { // 5 columns for days
+        for (let j = 0; j < 6; j++) { // 6 rows for slots
+            const cell = document.createElement('div');
+            cell.className = 'timetable-cell';
+            cell.innerText = ''; // Leave the cell empty
+            gridContainer.appendChild(cell);
+        }
+    }
+
+    timetableOutput.appendChild(gridContainer);
+    timetableOutput.style.display = 'block'; // Show the output
+
+    // Show the Generate Again button
+    generateAgainButton.classList.remove('hidden');
+});
+
+// Add event listener for the Generate Again button
+document.getElementById('generate-again').addEventListener('click', function() {
+    // Clear the output and hide the button
+    const timetableOutput = document.getElementById('timetable-output');
+    timetableOutput.innerHTML = '';
+    this.classList.add('hidden'); // Hide the button
+});
+
         </script>
+       <div id="timetable-output" class="timetable-output"></div>
+        <button id="generate-again" class="hidden">Generate Again</button>
+        
     </div>
 </body>
 </html>
