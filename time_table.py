@@ -1,5 +1,6 @@
 import random
 
+#We wanna change the course of thinking!!
 # Subjects
 four_hour_subjects = ["Maths", "POE", "PPS", "Chemistry", "Mechanical"]
 one_hour_subjects = ["DTI", "Workshop Theory"]
