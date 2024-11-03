@@ -9,7 +9,7 @@ const NavBar = () => {
     { id: 1, name: 'HOME', path: '/' },
     { id: 2, name: 'SYLLABUS', path: '/syllabus' },
     { id: 3, name: 'PYQ PAPERS', path: '/pyqpapers' },
-    { id: 4, name: 'CALLENDAR OF EVENTS', path: '/coe' },
+    { id: 4, name: 'CALENDAR OF EVENTS', path: '/coe' },
   ];
 
 
