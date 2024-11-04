@@ -8,8 +8,6 @@ import ece from '../public/ece.jpg'
 import eee from '../public/eee.jpg'
 import mech from '../public/mech.jpg'
 import civil from '../public/civil.jpg'
-
-
 const DispBranch = ({params}) => {
 
   const branches = [
