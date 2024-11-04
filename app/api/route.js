@@ -16,6 +16,11 @@ export async function POST(req){
                 { cseccycle:chemistry }, 
                 { new: true, upsert: true } 
             );
+            await cse.findOneAndUpdate(
+                { name:"CSE" }, 
+                { csepcycle:"" }, 
+                { new: true, upsert: true } 
+            );
             return NextResponse.json({success:true});
         }
        else if(sem==2){
@@ -25,6 +30,11 @@ export async function POST(req){
             { csepcycle:physics }, 
             { new: true, upsert: true } 
         );
+        await cse.findOneAndUpdate(
+            { name:"CSE" }, 
+            { cseccycle:"" }, 
+            { new: true, upsert: true } 
+        );
         return NextResponse.json({success:true});
        }
        else if(sem==3){
@@ -32,6 +42,11 @@ export async function POST(req){
         await cse.findOneAndUpdate(
             { name:"CSE" }, 
             { cse3rdsem:third }, 
+            { new: true, upsert: true } 
+        );
+        await cse.findOneAndUpdate(
+            { name:"CSE" }, 
+            { cse4thsem:"" }, 
             { new: true, upsert: true } 
         );
         return NextResponse.json({success:true});
