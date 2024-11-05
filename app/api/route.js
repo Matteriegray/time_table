@@ -58,6 +58,11 @@ export async function POST(req){
             { cse4thsem:forth }, 
             { new: true, upsert: true } 
         );
+        await cse.findOneAndUpdate(
+            { name:"CSE" }, 
+            { cse3rdsem:""}, 
+            { new: true, upsert: true } 
+        );
         return NextResponse.json({success:true});
        }
     }
