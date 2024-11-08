@@ -6,13 +6,9 @@ import { thirdsem } from "./csedepartment/3rd_sem";
 import { fourthsem } from "./csedepartment/4th_sem";
 import { cse } from "./list";
 export async function POST(req){
-<<<<<<< HEAD
-    const {department,sem,data} = await req.json();
-	await mongoose.connect(process.env.DB_URL)
-=======
+
     const {department,sem} = await req.json();
 	await mongoose.connect('mongodb+srv://Toconnect:deekshi@cluster0.xpni6pr.mongodb.net/timetable?retryWrites=true&w=majority&appName=Cluster0')
->>>>>>> c81b5ef8f86c17b0f1091bd0dad68717d192d669
     if(department=="CSE"){
         if(sem==1){
             const chemistry=chemistrycycle(data.fourHourSubject,data.oneHourSubject)
