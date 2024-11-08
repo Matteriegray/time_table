@@ -12,7 +12,7 @@ import { cse } from "./list";
 import { sixthSem } from "./csedepartment/6th_sem";
 export async function POST(req){
 
-    const {department,sem} = await req.json();
+    const {department,sem,data} = await req.json();
 	await mongoose.connect('mongodb+srv://Toconnect:deekshi@cluster0.xpni6pr.mongodb.net/timetable?retryWrites=true&w=majority&appName=Cluster0')
     if(department=="CSE"){
         if(sem==1){
