@@ -40,7 +40,7 @@ const DispBranch = () => {
 
   return (
     <div className='flex flex-col items-center justify-center h-full w-full pt-[5%] max-md:pt-[10%] pb-5 absolute top-0 left-0'>
-      <h1 className='font-medium text-[#ffffff] text-[25px]'>Please select the department:</h1>
+      <h1 className='font-medium text-[#ffffff] text-[25px]'>Please select the branch:</h1>
       <div className='flex flex-wrap gap-7 w-[60%] max-md:w-[80%] justify-center overflow-x-hidden max-md:overflow-y-scroll brnchhldr py-2'>
         {branches.map((item) => (
           <Link key={item.id} href={item.path} passHref>
