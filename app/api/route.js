@@ -4,7 +4,12 @@ import { chemistrycycle } from "./csedepartment/c_cycle";
 import { physicscycle } from "./csedepartment/p_physics";
 import { thirdsem } from "./csedepartment/3rd_sem";
 import { fourthsem } from "./csedepartment/4th_sem";
+import { fifthSem } from "./csedepartment/5th_sem";
+import { sixthSem } from "./csedepartment/6th_sem";
+import { seventhSem } from "./csedepartment/7th_sem";
+import { eighthSem } from "./csedepartment/8th_sem";
 import { cse } from "./list";
+import { sixthSem } from "./csedepartment/6th_sem";
 export async function POST(req){
 
     const {department,sem} = await req.json();
@@ -67,50 +72,50 @@ export async function POST(req){
         return NextResponse.json({success:true});
        }
        else if(sem==5){
-        const forth=fourthsem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
+        const fifth=fifthSem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
         await cse.findOneAndUpdate(
             { name:"CSE" }, 
-            { cse4thsem:forth }, 
+            { cse5thsem:fifth }, 
             { new: true, upsert: true } 
         );
         await cse.findOneAndUpdate(
             { name:"CSE" }, 
-            { cse3rdsem:""}, 
+            { cse6thsem:""}, 
             { new: true, upsert: true } 
         );
         return NextResponse.json({success:true});
     }
     else if(sem==6){
-        const forth=fourthsem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
+        const sixth=sixthSem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
         await cse.findOneAndUpdate(
             { name:"CSE" }, 
-            { cse4thsem:forth }, 
+            { cse6thsem:sixth}, 
             { new: true, upsert: true } 
         );
         await cse.findOneAndUpdate(
             { name:"CSE" }, 
-            { cse3rdsem:""}, 
+            { cse5thsem:""}, 
             { new: true, upsert: true } 
         );
         return NextResponse.json({success:true});
         
         }
         else if(sem==7){
-            const forth=fourthsem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
+            const forth=seventhSem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
             await cse.findOneAndUpdate(
                 { name:"CSE" }, 
-                { cse4thsem:forth }, 
+                { cse7thsem:forth }, 
                 { new: true, upsert: true } 
             );
             await cse.findOneAndUpdate(
                 { name:"CSE" }, 
-                { cse3rdsem:""}, 
+                { cse8thsem:""}, 
                 { new: true, upsert: true } 
             );
             return NextResponse.json({success:true});
         }
         else if(sem==8){
-            const forth=fourthsem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
+            const forth=eighthSem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
             await cse.findOneAndUpdate(
                 { name:"CSE" }, 
                 { cse4thsem:forth }, 

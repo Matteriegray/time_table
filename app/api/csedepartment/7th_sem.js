@@ -1,4 +1,4 @@
-function seventhSem(aimlfour,aimlone,iseone,isefour,cseone,csefour) {
+export const seventhSem=(aimlfour,aimlone,iseone,isefour,cseone,csefour)=> {
 // Shuffle function to randomize subjects
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {

@@ -1,4 +1,4 @@
-function fifthSem(aimlfour,aimlone,iseone,isefour,cseone,csefour) {
+export const  fifthSem=(aimlfour,aimlone,iseone,isefour,cseone,csefour)=> {
     
     // Timetable structure for AIML
     let timetableStructure = [
