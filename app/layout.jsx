@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
       >
         <div className=''>
           <Image className='w-[100%] h-[100vh] object-cover relative -z-50 ' src={bgimg} alt="" />
-          <div className='bg-[#000000aa] absolute top-0 left-0 w-[100%] h-[100vh] -z-30 '></div>
+          <div className='bg-[#00000077] absolute top-0 left-0 w-[100%] h-[100vh] -z-30 '></div>
         </div>
         <NavBar />
         {children}
