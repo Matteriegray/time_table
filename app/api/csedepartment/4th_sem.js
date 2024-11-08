@@ -1,11 +1,5 @@
-export const fourthsem= () => {
-// Subjects
-const fourHourSubjectsOfAIML = ["M-4", "DA", "AI", "OS"];
-const oneHourSubjectsOfAIML = ["CONSITUTION", "BIO", "UHV-2"];
-const fourHourSubjects = ["M-4", "DA", "MAM", "OS"];
-const oneHourSubjects = ["CONSITUTION", "BIO", "UHV-2"];
+export const fourthsem= (aimlfour,aimlone,iseone,isefour,cseone,csefour) => {
 
-// Timetable structure for AIML
 let timetableStructure = [
     ["Monday(LH2)", "", "", "", "Lab"],
     ["Tuesday(LH2)", "", "", "", "Lab"],
@@ -23,21 +17,21 @@ function shuffle(array) {
     return array;
 }
 
-shuffle(fourHourSubjects);
-shuffle(oneHourSubjects);
+shuffle(aimlfour);
+shuffle(aimlone);
 
 // Assign subjects to timetable
-timetableStructure[0][1] = fourHourSubjectsOfAIML[0];
-timetableStructure[0][2] = fourHourSubjectsOfAIML[1];
-timetableStructure[1][1] = oneHourSubjectsOfAIML[0];
-timetableStructure[0][3] = fourHourSubjectsOfAIML[2];
-timetableStructure[1][2] = fourHourSubjectsOfAIML[3];
-timetableStructure[1][3] = oneHourSubjectsOfAIML[1];
-timetableStructure[2][1] = fourHourSubjectsOfAIML[1];
-timetableStructure[2][4] = fourHourSubjectsOfAIML[0];
-timetableStructure[3][1] = fourHourSubjectsOfAIML[2];
-timetableStructure[4][2] = fourHourSubjectsOfAIML[3];
-timetableStructure[3][4] = oneHourSubjectsOfAIML[2];
+timetableStructure[0][1] = aimlfour[0];
+timetableStructure[0][2] = aimlfour[1];
+timetableStructure[1][1] = aimlone[0];
+timetableStructure[0][3] = aimlfour[2];
+timetableStructure[1][2] = aimlfour[3];
+timetableStructure[1][3] = aimlone[1];
+timetableStructure[2][1] = aimlfour[1];
+timetableStructure[2][4] = aimlfour[0];
+timetableStructure[3][1] = aimlfour[2];
+timetableStructure[4][2] = aimlfour[3];
+timetableStructure[3][4] = aimlone[2];
 
 
 // For ISE
@@ -50,21 +44,21 @@ let timetableStructureOfISE = [
 ];
 
 // Shuffle subjects randomly
-shuffle(fourHourSubjects);
-shuffle(oneHourSubjects);
+shuffle(isefour);
+shuffle(iseone);
 
 // Assign subjects to timetable
-timetableStructureOfISE[0][2] = fourHourSubjects[0];
-timetableStructureOfISE[0][3] = fourHourSubjects[1];
-timetableStructureOfISE[1][2] = fourHourSubjects[2];
-timetableStructureOfISE[1][3] = fourHourSubjects[3];
-timetableStructureOfISE[2][2] = fourHourSubjects[1];
-timetableStructureOfISE[2][3] = fourHourSubjects[0];
-timetableStructureOfISE[3][3] = fourHourSubjects[2];
-timetableStructureOfISE[3][2] = oneHourSubjects[0];
-timetableStructureOfISE[4][3] = fourHourSubjects[3];
-timetableStructureOfISE[4][2] = oneHourSubjects[2];
-timetableStructureOfISE[3][4] = oneHourSubjects[1];
+timetableStructureOfISE[0][2] = isefour[0];
+timetableStructureOfISE[0][3] = isefour[1];
+timetableStructureOfISE[1][2] = isefour[2];
+timetableStructureOfISE[1][3] = isefour[3];
+timetableStructureOfISE[2][2] = isefour[1];
+timetableStructureOfISE[2][3] = isefour[0];
+timetableStructureOfISE[3][3] = isefour[2];
+timetableStructureOfISE[3][2] = iseone[0];
+timetableStructureOfISE[4][3] = isefour[3];
+timetableStructureOfISE[4][2] = iseone[2];
+timetableStructureOfISE[3][4] = iseone[1];
 
 // For CSE A
 let timetableStructureOfCSEA = [
@@ -76,21 +70,21 @@ let timetableStructureOfCSEA = [
 ];
 
 // Shuffle subjects randomly
-shuffle(fourHourSubjects);
-shuffle(oneHourSubjects);
+shuffle(csefour);
+shuffle(cseone);
 
 // Assign subjects to timetable
-timetableStructureOfCSEA[0][1] = fourHourSubjects[0];
-timetableStructureOfCSEA[0][4] = fourHourSubjects[1];
-timetableStructureOfCSEA[1][1] = oneHourSubjects[2];
-timetableStructureOfCSEA[1][4] = fourHourSubjects[2];
-timetableStructureOfCSEA[2][2] = fourHourSubjects[3];
-timetableStructureOfCSEA[2][3] = fourHourSubjects[0];
-timetableStructureOfCSEA[3][1] = fourHourSubjects[1];
-timetableStructureOfCSEA[4][2] = fourHourSubjects[2];
-timetableStructureOfCSEA[3][2] = fourHourSubjects[3];
-timetableStructureOfCSEA[3][3] = oneHourSubjects[0];
-timetableStructureOfCSEA[4][3] = oneHourSubjects[1];
+timetableStructureOfCSEA[0][1] = csefour[0];
+timetableStructureOfCSEA[0][4] = csefour[1];
+timetableStructureOfCSEA[1][1] = cseone[2];
+timetableStructureOfCSEA[1][4] = csefour[2];
+timetableStructureOfCSEA[2][2] = csefour[3];
+timetableStructureOfCSEA[2][3] = csefour[0];
+timetableStructureOfCSEA[3][1] = csefour[1];
+timetableStructureOfCSEA[4][2] = csefour[2];
+timetableStructureOfCSEA[3][2] = csefour[3];
+timetableStructureOfCSEA[3][3] = cseone[0];
+timetableStructureOfCSEA[4][3] = cseone[1];
 
 // For CSE B
 let timetableStructureOfCSEB = [
@@ -102,21 +96,21 @@ let timetableStructureOfCSEB = [
 ];
 
 // Shuffle subjects randomly
-shuffle(fourHourSubjects);
-shuffle(oneHourSubjects);
+shuffle(csefour);
+shuffle(cseone);
 
 // Assign subjects to timetable
-timetableStructureOfCSEB[0][1] = fourHourSubjects[0];
-timetableStructureOfCSEB[0][2] = fourHourSubjects[1];
-timetableStructureOfCSEB[0][3] = oneHourSubjects[2];
-timetableStructureOfCSEB[1][1] = fourHourSubjects[2];
-timetableStructureOfCSEB[1][3] = fourHourSubjects[3];
-timetableStructureOfCSEB[1][2] = fourHourSubjects[0];
-timetableStructureOfCSEB[2][1] = fourHourSubjects[1];
-timetableStructureOfCSEB[2][2] = fourHourSubjects[2];
-timetableStructureOfCSEB[2][3] = fourHourSubjects[3];
-timetableStructureOfCSEB[3][3] = oneHourSubjects[0];
-timetableStructureOfCSEB[3][2] = oneHourSubjects[1];
+timetableStructureOfCSEB[0][1] = csefour[0];
+timetableStructureOfCSEB[0][2] = csefour[1];
+timetableStructureOfCSEB[0][3] = cseone[2];
+timetableStructureOfCSEB[1][1] = csefour[2];
+timetableStructureOfCSEB[1][3] = csefour[3];
+timetableStructureOfCSEB[1][2] = csefour[0];
+timetableStructureOfCSEB[2][1] = csefour[1];
+timetableStructureOfCSEB[2][2] = csefour[2];
+timetableStructureOfCSEB[2][3] = csefour[3];
+timetableStructureOfCSEB[3][3] = cseone[0];
+timetableStructureOfCSEB[3][2] = cseone[1];
 
 let totalcsedepartmentfourthsem=[];
 totalcsedepartmentfourthsem.push(timetableStructure)

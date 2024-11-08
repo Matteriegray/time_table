@@ -6,11 +6,11 @@ import { thirdsem } from "./csedepartment/3rd_sem";
 import { fourthsem } from "./csedepartment/4th_sem";
 import { cse } from "./list";
 export async function POST(req){
-    const {department,sem} = await req.json();
+    const {department,sem,data} = await req.json();
 	await mongoose.connect(process.env.DB_URL)
     if(department=="CSE"){
         if(sem==1){
-            const chemistry=chemistrycycle()
+            const chemistry=chemistrycycle(data.fourHourSubject,data.oneHourSubject)
             await cse.findOneAndUpdate(
                 { name:"CSE" }, 
                 { cseccycle:chemistry }, 
@@ -24,7 +24,7 @@ export async function POST(req){
             return NextResponse.json({success:true});
         }
        else if(sem==2){
-        const physics=physicscycle()
+        const physics=physicscycle(data.fourHourSubject,data.oneHourSubject)
         await cse.findOneAndUpdate(
             { name:"CSE" }, 
             { csepcycle:physics }, 
@@ -38,7 +38,7 @@ export async function POST(req){
         return NextResponse.json({success:true});
        }
        else if(sem==3){
-        const third=thirdsem()
+        const third=thirdsem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
         await cse.findOneAndUpdate(
             { name:"CSE" }, 
             { cse3rdsem:third }, 
@@ -52,7 +52,7 @@ export async function POST(req){
         return NextResponse.json({success:true});
        }
        else if(sem==4){
-        const forth=fourthsem()
+        const forth=fourthsem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
         await cse.findOneAndUpdate(
             { name:"CSE" }, 
             { cse4thsem:forth }, 
@@ -65,5 +65,62 @@ export async function POST(req){
         );
         return NextResponse.json({success:true});
        }
+       else if(sem==5){
+        const forth=fourthsem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
+        await cse.findOneAndUpdate(
+            { name:"CSE" }, 
+            { cse4thsem:forth }, 
+            { new: true, upsert: true } 
+        );
+        await cse.findOneAndUpdate(
+            { name:"CSE" }, 
+            { cse3rdsem:""}, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+    }
+    else if(sem==6){
+        const forth=fourthsem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
+        await cse.findOneAndUpdate(
+            { name:"CSE" }, 
+            { cse4thsem:forth }, 
+            { new: true, upsert: true } 
+        );
+        await cse.findOneAndUpdate(
+            { name:"CSE" }, 
+            { cse3rdsem:""}, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+        
+        }
+        else if(sem==7){
+            const forth=fourthsem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
+            await cse.findOneAndUpdate(
+                { name:"CSE" }, 
+                { cse4thsem:forth }, 
+                { new: true, upsert: true } 
+            );
+            await cse.findOneAndUpdate(
+                { name:"CSE" }, 
+                { cse3rdsem:""}, 
+                { new: true, upsert: true } 
+            );
+            return NextResponse.json({success:true});
+        }
+        else if(sem==8){
+            const forth=fourthsem(data.aimlfour,data.aimlone,data.iseone,data.isefour,data.cseone,data.csefour)
+            await cse.findOneAndUpdate(
+                { name:"CSE" }, 
+                { cse4thsem:forth }, 
+                { new: true, upsert: true } 
+            );
+            await cse.findOneAndUpdate(
+                { name:"CSE" }, 
+                { cse3rdsem:""}, 
+                { new: true, upsert: true } 
+            );
+            return NextResponse.json({success:true});
+        }
     }
 }
