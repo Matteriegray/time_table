@@ -1,8 +1,8 @@
-export const physicscycle= () => {
+export const physicscycle= (fourHourSubject,oneHourSubject) => {
 
 // Subjects
-const fourHourSubjects = ["Maths", "Electrical", "Graphics", "Physics", "Mechanics"];
-const oneHourSubjects = ["Media Presentation", "English"];
+const fourHourSubjects = fourHourSubject;
+const oneHourSubjects = oneHourSubject;
 
 // Timetable structure for AIML
 let timetableStructure = [

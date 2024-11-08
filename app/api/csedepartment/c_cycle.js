@@ -1,7 +1,7 @@
-export const chemistrycycle= () => {
+export const chemistrycycle= (fourHourSubject,oneHourSubject) => {
 // Subjects
-const fourHourSubjects = ["Maths", "POE", "PPS", "Chemistry", "Mechanical"];
-const oneHourSubjects = ["DTI", "Workshop Theory"];
+const fourHourSubjects = fourHourSubject;
+const oneHourSubjects = oneHourSubject;
 
 // Timetable structure for AIML
 let timetableStructure = [

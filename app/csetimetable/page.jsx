@@ -24,14 +24,7 @@ const App = () => {
   }, []);
 
   const handleSemesterSelection = (sem) => {
-    setSelectedSemesters((prev) => {
-      if (prev.includes(sem)) {
-        return prev.filter((s) => s !== sem); // Deselect if already selected
-      } else if (prev.length < 4) {
-        return [...prev, sem]; // Select if less than 4
-      }
-      return prev; // Don't allow more than 4 selections
-    });
+    setSelectedSemesters([sem])
   };
 
   return (
@@ -44,8 +37,8 @@ const App = () => {
             key={sem}
             onClick={() => handleSemesterSelection(sem)}
             style={{
-              backgroundColor: selectedSemesters.includes(sem) ? '#3b82f6e0' : 'white',
-              color: selectedSemesters.includes(sem) ? 'white' : 'black',
+              backgroundColor: selectedSemesters==sem ? '#3b82f6e0' : 'white',
+              color: selectedSemesters==sem  ? 'white' : 'black',
               margin: '5px',
               padding: '10px',
               cursor: 'pointer',
