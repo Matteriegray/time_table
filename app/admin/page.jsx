@@ -123,7 +123,7 @@ const Page = () => {
     <div className="flex flex-col items-center w-full text-white pt-[5%] justify-center pb-5 absolute top-0 left-0 gap-4">
       <h1 className="text-3xl font-bold ">Welcome Admin</h1>
       <div className='flex flex-col items-center w-full '>
-        <h1 className="font-semibold">Select Department</h1>
+        <h1 className="font-semibold text-2xl">Select Department</h1>
         <div className='flex gap-2 mt-5'>
           {["CSE", "ECE", "MECH", "CIVIL", "EEE"].map((button) => (
             <button
@@ -137,28 +137,24 @@ const Page = () => {
 
         </div>
         {selectedButton && (
-          <div style={{ marginTop: "20px" }}>
-            <h2 className="font-semibold">Select Sem</h2>
+          <div className=' flex flex-col justify-center items-center mt-10 gap-2'>
+
+        <h1 className="font-semibold text-2xl ">Select Semester</h1>
+          <div  className='flex gap-2 '>
             {[1, 2, 3, 4, 5, 6, 7, 8].map((box) => (
               <button
-                key={box}
-                onClick={() => handleBoxClick(box)}
-                style={{
-                  backgroundColor: selectedBox === box ? "#3b82f6e0" : "white",
-                  color: selectedBox === box ? "white" : "black",
-                  border: "1px solid black",
-                  margin: "3px",
-                  padding: "10px 20px",
-                  cursor: "pointer",
-                }}
+              key={box}
+              onClick={() => handleBoxClick(box)}
+              className={`h-[100px] w-[100px] bg-[#ffffffac] text-[#000] flex items-center justify-center rounded-full cursor-pointer smooth crdshdw hover:invert`}
               >
                 {box}
               </button>
             ))}
           </div>
+            </div>
         )}
         <div className='flex'>
-        <form onSubmit={handleSubmit(onSubmityear1)} action="">
+        <form onSubmit={handleSubmit(onSubmityear1)} action="" className='flex items-center'>
           {["Whole CSE branch"].map((subbranch) => (
             <div key={selectedBox}>
               {showinput && (selectedBox == 1 || selectedBox == 2) && (
@@ -224,18 +220,18 @@ const Page = () => {
           ))}{showinput && (selectedBox == 1 || selectedBox == 2) && selectedBox && (
             !submit ? (
               <div className='flex gap-5'>
-              <button onClick={handlesubmit} className="bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+              <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                 Generate Timetable
               </button>
               
               </div>
             ) : (
-              <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold" disabled>
+              <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
                 Processing
               </button>
             )
           )}</form>
-          <form onSubmit={handleSubmit(onSubmitsem3)} action="">
+          <form onSubmit={handleSubmit(onSubmitsem3)} action="" className='flex items-center'>
             {
 
               ["CSE", "ISE", "AIML"].map((subbranch) => (
@@ -308,19 +304,19 @@ const Page = () => {
             {showinput && selectedBox == 3&& (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button onClick={handlesubmit} className="bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                  <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                     Generate Timetable
                   </button>
 
                 </div>
               ) : (
-                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold" disabled>
+                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
                   Processing
                 </button>
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem4)} action="">
+          <form onSubmit={handleSubmit(onSubmitsem4)} action="" className='flex items-center'>
             {["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -389,19 +385,19 @@ const Page = () => {
             {showinput && selectedBox == 4  && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button onClick={handlesubmit} className="bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                  <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                     Generate Timetable
                   </button>
 
                 </div>
               ) : (
-                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold" disabled>
+                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
                   Processing
                 </button>
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem5)} action="">
+          <form onSubmit={handleSubmit(onSubmitsem5)} action="" className='flex items-center'>
             {["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -488,19 +484,19 @@ const Page = () => {
             {showinput && selectedBox == 5 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button onClick={handlesubmit} className="bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                  <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                     Generate Timetable
                   </button>
 
                 </div>
               ) : (
-                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold" disabled>
+                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
                   Processing
                 </button>
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem6)} action="">
+          <form onSubmit={handleSubmit(onSubmitsem6)} action="" className='flex items-center'>
             {["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -570,19 +566,19 @@ const Page = () => {
             {showinput && selectedBox == 6 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button onClick={handlesubmit} className="bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                  <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                     Generate Timetable
                   </button>
 
                 </div>
               ) : (
-                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold" disabled>
+                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
                   Processing
                 </button>
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem7)} action="">
+          <form onSubmit={handleSubmit(onSubmitsem7)} action="" className='flex items-center'>
             {["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -631,19 +627,19 @@ const Page = () => {
             ))}{showinput && selectedBox == 7 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button onClick={handlesubmit} className="bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                  <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                     Generate Timetable
                   </button>
 
                 </div>
               ) : (
-                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold" disabled>
+                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
                   Processing
                 </button>
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem8)} action="">
+          <form onSubmit={handleSubmit(onSubmitsem8)} action="" className='flex items-center'>
             {["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -692,13 +688,13 @@ const Page = () => {
             ))}{showinput && selectedBox == 8  && (
               !submit ? (
                 <div className='flex gap-5'>
-                <button onClick={handlesubmit} className="bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                   Generate Timetable
                 </button>
                 
                 </div>
               ) : (
-                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold" disabled>
+                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
                   Processing
                 </button>
               )
@@ -711,7 +707,7 @@ const Page = () => {
         {view && (
           <button
             onClick={handledisplay}
-            className="bg-yellow-500 text-center w-40 ml-4 h-10 rounded-md text-sm font-semibold"
+            className="bg-yellow-500 text-center w-40 ml-4 h-10 rounded-md text-sm font-semibold m-5"
           >
             View Timetable
           </button>
