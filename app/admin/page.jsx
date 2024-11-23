@@ -235,7 +235,7 @@ const Page = () => {
               </button>
             )
           )}</form>
-          <form onSubmit={handleSubmit(onSubmitsem3)} action="">
+          <form onSubmit={handleSubmit(onSubmitsem3)} action="" >
             {
 
               ["CSE", "ISE", "AIML"].map((subbranch) => (

@@ -9,7 +9,6 @@ import { sixthSem } from "./csedepartment/6th_sem";
 import { seventhSem } from "./csedepartment/7th_sem";
 import { eighthSem } from "./csedepartment/8th_sem";
 import { cse } from "./list";
-import { sixthSem } from "./csedepartment/6th_sem";
 export async function POST(req){
 
     const {department,sem,data} = await req.json();
