@@ -1,9 +1,6 @@
 "use client";
 import React, { useState } from 'react';
 import { useForm, useFormState } from 'react-hook-form';
-
-
-
 const Page = () => {
 
   const {
@@ -11,38 +8,33 @@ const Page = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
   const [selectedButton, setSelectedButton] = useState(null);
   const [selectedBox, setSelectedBox] = useState(null); // Use a single state for one selected box
   const [submit, setSubmit] = useState(false);
   const [view, setView] = useState(false);
-  const [aimlfour, setAimlfour] = useState([])
-  const [aimlone, setAimlone] = useState([])
-  const [isefour, setisefour] = useState([])
-  const [csefour, setcsefour] = useState([])
-  const [iseone, setiseone] = useState([])
-  const [cseone, setcseone] = useState([])
-  const [data, setdata] = useState({})
-  const [fourHourSubject, setfourHourSubject] = useState([])
-  const [oneHourSubject, setoneHourSubject] = useState([])
   const [showinput, setShowinput] = useState(false)
+  const [colur, setcolur] = useState("green")
 
 
   const handledisplay = () => {
     window.location.replace("/csetimetable");
   };
 
-  const handlesubmit = async () => {
+  const handlesubmit = async (updateddata) => {
     setSubmit(true);
+    setcolur("red")
     if (!selectedBox) return; // Prevent submission if no box is selected
-    await fetch("/api", {
+    let result=await fetch("/api", {
       method: "post",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ department: selectedButton, sem: selectedBox, data }),
+      body: JSON.stringify({ department: selectedButton, sem: selectedBox, data:updateddata }),
     });
+    if(result.ok){
+      setcolur("green")
+    }
     setSubmit(false);
     setView(true);
   };
@@ -58,65 +50,75 @@ const Page = () => {
     setShowinput(true)
   };
 
-  const onSubmityear1 = (data) => {
-    setfourHourSubject(data.csedept3credsubs.split(','))
-    setoneHourSubject(data.csedept1credsubs.split(','))
-    setdata({ fourHourSubject, oneHourSubject })
+  const onSubmityear1 = (data1) => {
+    
+    let fourHour=(data1.csedept3credsubs.split(','))
+    let oneHour=(data1.csedept1credsubs.split(','))
+    let updateddata = { fourHourSubject:fourHour, oneHourSubject:oneHour };
+    handlesubmit(updateddata);
+
   }
 
   const onSubmitsem3 = (data) => {
-    setAimlfour(data.AIML3sem3credtheory.split(','))
-    setisefour(data.ISE3sem3credtheory.split(','))
-    setcsefour(data.CSE3sem3credtheory.split(','))
-    setAimlone(data.AIML3sem1credtheory.split(','))
-    setiseone(data.ISE3sem1credtheory.split(','))
-    setcseone(data.CSE3sem1credtheory.split(','))
-    setdata({ aimlfour, isefour, csefour, aimlone, iseone, cseone })
+    let aimlfour=data.AIML3sem3credtheory.split(',')
+    let isefour=data.ISE3sem3credtheory.split(',')
+    let csefour=data.CSE3sem3credtheory.split(',')
+    let aimlone=data.AIML3sem1credtheory.split(',')
+    let iseone=data.ISE3sem1credtheory.split(',')
+    let cseone=data.CSE3sem1credtheory.split(',')
+    let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
+    handlesubmit(updateddata);
   }
 
   const onSubmitsem4 = (data) => {
-    setAimlfour(data.AIML4sem3credtheory.split(','))
-    setisefour(data.ISE4sem3credtheory.split(','))
-    setcsefour(data.CSE4sem3credtheory.split(','))
-    setAimlone(data.AIML4sem1credtheory.split(','))
-    setiseone(data.ISE4sem1credtheory.split(','))
-    setcseone(data.CSE4sem1credtheory.split(','))
-    setdata({ aimlfour, isefour, csefour, aimlone, iseone, cseone })
+    let aimlfour =(data.AIML4sem3credtheory.split(','))
+    let isefour=(data.ISE4sem3credtheory.split(','))
+    let csefour=(data.CSE4sem3credtheory.split(','))
+    let aimlone=(data.AIML4sem1credtheory.split(','))
+    let iseone=(data.ISE4sem1credtheory.split(','))
+    let cseone=(data.CSE4sem1credtheory.split(','))
+    let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
+    handlesubmit(updateddata);
   }
 
   const onSubmitsem5 = (data) => {
-    setAimlfour(data.AIML5sem3credtheory.split(','))
-    setisefour(data.ISE5sem3credtheory.split(','))
-    setcsefour(data.CSE5sem3credtheory.split(','))
-    setAimlone(data.AIML5sem1credtheory.split(','))
-    setiseone(data.ISE5sem1credtheory.split(','))
-    setcseone(data.CSE5sem1credtheory.split(','))
-    setdata({ aimlfour, isefour, csefour, aimlone, iseone, cseone })
+    let aimlfour=(data.AIML5sem3credtheory.split(','))
+    let isefour=(data.ISE5sem3credtheory.split(','))
+    let csefour=(data.CSE5sem3credtheory.split(','))
+    let aimlone=(data.AIML5sem1credtheory.split(','))
+    let iseone=(data.ISE5sem1credtheory.split(','))
+    let cseone=(data.CSE5sem1credtheory.split(','))
+    let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
+    handlesubmit(updateddata);
   }
 
   const onSubmitsem6 = (data) => {
-    setAimlfour(data.AIML6sem3credtheory.split(','))
-    setisefour(data.ISE6sem3credtheory.split(','))
-    setcsefour(data.CSE6sem3credtheory.split(','))
-    setAimlone(data.AIML6sem1credtheory.split(','))
-    setiseone(data.ISE6sem1credtheory.split(','))
-    setcseone(data.CSE6sem1credtheory.split(','))
-    setdata({ aimlfour, isefour, csefour, aimlone, iseone, cseone })
+    let aimlfour=(data.AIML6sem3credtheory.split(','))
+    let isefour=(data.ISE6sem3credtheory.split(','))
+    let csefour=(data.CSE6sem3credtheory.split(','))
+    let aimlone=(data.AIML6sem1credtheory.split(','))
+    let iseone=(data.ISE6sem1credtheory.split(','))
+    let cseone=(data.CSE6sem1credtheory.split(','))
+    let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
+    handlesubmit(updateddata);
   }
 
   const onSubmitsem7 = (data) => {
-    setAimlfour(data.AIML7sem3credtheory.split(','))
-    setisefour(data.ISE7em3credtheory.split(','))
-    setcsefour(data.CSE7em3credtheory.split(','))
-    setdata({ aimlfour, isefour, csefour })
+    let aimlfour=(data.AIML7sem3credtheory.split(','))
+    let isefour=(data.ISE7em3credtheory.split(','))
+    let csefour=(data.CSE7em3credtheory.split(','))
+    let updateddata={ aimlfour, isefour, csefour}
+    handlesubmit(updateddata);
 
   }
 
   const onSubmitsem8 = (data) => {
-    setAimlfour(data.AIML8sem10credtheory.split(','))
-    setisefour(data.ISE8em10credtheory.split(','))
-    setcsefour(data.CSE8em10credtheory.split(','))
-    setdata({ aimlfour, isefour, csefour })
+
+    let aimlfour=(data.AIML8sem10credtheory.split(','))
+    let isefour=(data.ISE8em10credtheory.split(','))
+    let csefour=(data.CSE8em10credtheory.split(','))
+    let updateddata={ aimlfour, isefour, csefour}
+    handlesubmit(updateddata);
   }
 
   return (
@@ -154,10 +156,11 @@ const Page = () => {
             </div>
         )}
         <div className='flex'>
-        <form onSubmit={handleSubmit(onSubmityear1)} action="" className='flex items-center'>
+        
           {["Whole CSE branch"].map((subbranch) => (
             <div key={selectedBox}>
               {showinput && (selectedBox == 1 || selectedBox == 2) && (
+                <form onSubmit={handleSubmit(onSubmityear1)} action="" className='flex items-center'>
                 <div className='flex flex-col mt-5 ml-4' >
                   <div className="text-lg font-medium text-[#ffffff] w-full">
                     Select the 3 credit subjects for {subbranch}:
@@ -166,71 +169,34 @@ const Page = () => {
                     <input {...register("csedept3credsubs")}
                       type="text"
                       id="input"
-                      // value={inputValue}
-                      // onChange={handleChange}
                       placeholder={`Enter the subjects for ${subbranch}`}
                       className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
-
-                </div>
-              )}
-              {showinput && (selectedBox == 1 || selectedBox == 2) && (
-                
-                  <div className='flex flex-col mt-5 ml-4'>
-                    <div className="text-lg font-medium text-[#ffffff] w-full">
+                  <div className="text-lg font-medium text-[#ffffff] w-full">
                       Select the 1 credit subjects for {subbranch}:
                     </div>
                     <div className='flex gap-2 '>
                       <input {...register("csedept1credsubs")}
                         type="text"
                         id="input"
-                        // value={inputValue}
-                        // onChange={handleChange}                    placeholder={`Enter the subjects for ${subbranch}`}
                         placeholder={`Enter the subjects for ${subbranch}`}
                         className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
 
-                  </div>
-                
-              )}
-              {/* {showinput && (selectedBox == 1 || selectedBox == 2) && (
-                <div className='flex flex-col mt-5 ml-4'>
-                  <div className="text-lg font-medium text-[#ffffff] w-full">
-                    Select the labs {subbranch}:
-                  </div>
-                  <div className='flex gap-2 '>
-                    <input {...register("csedeptlabs")}
-                      type="text"
-                      id="input"
-                      // value={inputValue}
-                      // onChange={handleChange}
-                      placeholder={`Enter the subjects for ${subbranch}`}
-                      className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                    <button className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition duration-300">
-                      Next
-                    </button>
-                  </div>
-
                 </div>
-              )} */}
-            </div>
-          ))}{showinput && (selectedBox == 1 || selectedBox == 2) && selectedBox && (
-            !submit ? (
-              <div className='flex gap-5'>
-              <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                
+                <div className='flex gap-5'>
+              <button type='submit' className={` ml-5 bg-${colur}-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold`}>
                 Generate Timetable
               </button>
-              
+               
               </div>
-            ) : (
-              <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
-                Processing
-              </button>
-            )
-          )}</form>
+                </form>
+              )}
+         </div>
+          ))}
           <form onSubmit={handleSubmit(onSubmitsem3)} action="" className='flex items-center'>
             {
 
@@ -247,8 +213,6 @@ const Page = () => {
                         <input {...register(`${subbranch}3sem3credtheory`)}
                           type="text"
                           id="input"
-                          // value={inputValue}
-                          // onChange={handleChange}
                           placeholder={`Enter the subjects for ${subbranch}`}
                           className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         />
@@ -266,8 +230,6 @@ const Page = () => {
                         <input {...register(`${subbranch}3sem1credtheory`)}
                           type="text"
                           id="input"
-                          // value={inputValue}
-                          // onChange={handleChange}                    placeholder={`Enter the subjects for ${subbranch}`}
                           placeholder={`Enter the subjects for ${subbranch}`}
                           className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         />
@@ -275,28 +237,6 @@ const Page = () => {
 
                     </div>
                   )}
-                  {/* {showinput && selectedBox == 3 && (
-                <div className='flex flex-col mt-5 ml-4'>
-                  <div className="text-lg font-medium text-[#ffffff] w-full">
-                    Select the 1 credit labs for {subbranch}:
-                  </div>
-                  <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}3semlabs`)}
-          
-                      type="text"
-                      id="input"
-                      // value={inputValue}
-                      // onChange={handleChange}
-                      placeholder={`Enter the subjects for ${subbranch}`}
-                      className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                    <button className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition duration-300">
-                      Next
-                    </button>
-                  </div>
-
-                </div>
-              )} */}
 
                 </div>
 
@@ -304,7 +244,7 @@ const Page = () => {
             {showinput && selectedBox == 3&& (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                     Generate Timetable
                   </button>
 
@@ -330,8 +270,6 @@ const Page = () => {
                       <input {...register(`${subbranch}4sem3credtheory`)}
                         type="text"
                         id="input"
-                        // value={inputValue}
-                        // onChange={handleChange}
                         placeholder={`Enter the subjects for ${subbranch}`}
                         className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
@@ -348,8 +286,6 @@ const Page = () => {
                       <input {...register(`${subbranch}4sem1credtheory`)}
                         type="text"
                         id="input"
-                        // value={inputValue}
-                        // onChange={handleChange}
                         placeholder={`Enter the subjects for ${subbranch}`}
                         className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
@@ -357,27 +293,6 @@ const Page = () => {
 
                   </div>
                 )}
-                {/* {showinput && selectedBox == 4 && (
-                <div className='flex flex-col mt-5 ml-4'>
-                  <div className="text-lg font-medium text-[#ffffff] w-full">
-                    Select the 1 credit labs for {subbranch}:
-                  </div>
-                  <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}4sem1credlabs`)}
-                      type="text"
-                      id="input"
-                      // value={inputValue}
-                      // onChange={handleChange}
-                      placeholder={`Enter the subjects for ${subbranch}`}
-                      className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                    <button className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition duration-300">
-                      Next
-                    </button>
-                  </div>
-
-                </div>
-              )} */}
 
               </div>
 
@@ -385,7 +300,7 @@ const Page = () => {
             {showinput && selectedBox == 4  && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                     Generate Timetable
                   </button>
 
@@ -411,8 +326,6 @@ const Page = () => {
                       <input {...register(`${subbranch}5sem3credtheory`)}
                         type="text"
                         id="input"
-                        // value={inputValue}
-                        // onChange={handleChange}
                         placeholder={`Enter the subjects for ${subbranch}`}
                         className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
@@ -429,8 +342,6 @@ const Page = () => {
                       <input {...register(`${subbranch}5sem1credtheory`)}
                         type="text"
                         id="input"
-                        // value={inputValue}
-                        // onChange={handleChange}                    placeholder={`Enter the subjects for ${subbranch}`}
                         placeholder={`Enter the subjects for ${subbranch}`}
                         className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
@@ -438,53 +349,13 @@ const Page = () => {
 
                   </div>
                 )}
-                {/* {showinput && selectedBox == 5 && (
-                  <div className='flex flex-col mt-5 ml-4'>
-                    <div className="text-lg font-medium text-[#ffffff] w-full">
-                      Select the 2 credit lab subjects for {subbranch}:
-                    </div>
-                    <div className='flex gap-2 '>
-                    <input {...register(`${subbranch}3sem2credtheory`)}
-                        type="text"
-                        id="input"
-                        // value={inputValue}
-                        // onChange={handleChange}
-                        placeholder={`Enter the subjects for ${subbranch}`}
-                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                    </div>
-
-                  </div>
-                )} */}
-                {/* {showinput && selectedBox == 5 && (
-                <div className='flex flex-col mt-5 ml-4'>
-                  <div className="text-lg font-medium text-[#ffffff] w-full">
-                    Select the 1 credit labs for {subbranch}:
-                  </div>
-                  <div className='flex gap-2 '>                      
-                  <input {...register(`${subbranch}3sem3credtheory`)}
-                      type="text"
-                      id="input"
-                      // value={inputValue}
-                      // onChange={handleChange}
-                      placeholder={`Enter the subjects for ${subbranch}`}
-                      className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                    <button className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition duration-300">
-                      Next
-                    </button>
-                  </div>
-
-                </div>
-              )} */}
-
               </div>
 
             ))}
             {showinput && selectedBox == 5 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                     Generate Timetable
                   </button>
 
@@ -510,8 +381,7 @@ const Page = () => {
                       <input {...register(`${subbranch}6sem3credtheory`)}
                         type="text"
                         id="input"
-                        // value={inputValue}
-                        // onChange={handleChange}
+                        
                         placeholder={`Enter the subjects for ${subbranch}`}
                         className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
@@ -528,8 +398,7 @@ const Page = () => {
                       <input {...register(`${subbranch}6sem1credtheory`)}
                         type="text"
                         id="input"
-                        // value={inputValue}
-                        // onChange={handleChange}                    placeholder={`Enter the subjects for ${subbranch}`}
+                       
                         placeholder={`Enter the subjects for ${subbranch}`}
                         className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
@@ -537,28 +406,7 @@ const Page = () => {
 
                   </div>
                 )}
-                {/* {showinput && selectedBox == 6 && (
-                <div className='flex flex-col mt-5 ml-4'>
-                  <div className="text-lg font-medium text-[#ffffff] w-full">
-                    Select the 2 credit lab subjects for {subbranch}:
-                  </div>
-                  <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}3sem3credtheory`)}
-                  
-                      type="text"
-                      id="input"
-                      // value={inputValue}
-                      // onChange={handleChange}
-                      placeholder={`Enter the subjects for ${subbranch}`}
-                      className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                    <button className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition duration-300">
-                      Next
-                    </button>
-                  </div>
-
-                </div>
-              )} */}
+               
 
               </div>
 
@@ -566,7 +414,7 @@ const Page = () => {
             {showinput && selectedBox == 6 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                     Generate Timetable
                   </button>
 
@@ -627,7 +475,7 @@ const Page = () => {
             ))}{showinput && selectedBox == 7 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                     Generate Timetable
                   </button>
 
@@ -654,8 +502,6 @@ const Page = () => {
 
                         type="text"
                         id="input"
-                        // value={inputValue}
-                        // onChange={handleChange}                    placeholder={`Enter the subjects for ${subbranch}`}
                         placeholder={`Enter the subjects for ${subbranch}`}
                         className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
@@ -672,8 +518,6 @@ const Page = () => {
                       <input {...register(`${subbranch}8sem1credtheory`)}
                         type="text"
                         id="input"
-                        // value={inputValue}
-                        // onChange={handleChange}
                         placeholder={`Enter the subjects for ${subbranch}`}
                         className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
@@ -688,7 +532,7 @@ const Page = () => {
             ))}{showinput && selectedBox == 8  && (
               !submit ? (
                 <div className='flex gap-5'>
-                <button onClick={handlesubmit} className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
                   Generate Timetable
                 </button>
                 
@@ -700,10 +544,6 @@ const Page = () => {
               )
             )}</form>
         </div>
-
-
-
-
         {view && (
           <button
             onClick={handledisplay}
@@ -718,4 +558,3 @@ const Page = () => {
 };
 
 export default Page;
-
