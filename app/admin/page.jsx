@@ -51,15 +51,20 @@ const Page = () => {
   };
 
   const onSubmityear1 = (data1) => {
-    
-    let fourHour=(data1.csedept3credsubs.split(','))
+    if ((data1.csedept3credsubs.split(',')).length==5 && data1.csedept1credsubs.split(',').length==2 ) {
+      let fourHour=(data1.csedept3credsubs.split(','))
     let oneHour=(data1.csedept1credsubs.split(','))
     let updateddata = { fourHourSubject:fourHour, oneHourSubject:oneHour };
     handlesubmit(updateddata);
+    }
+    else{
+      alert("You did't entered required subjects or You had entered more number of subjects :)")
+    }
 
   }
 
   const onSubmitsem3 = (data) => {
+    if (data.AIML3sem3credtheory.split(',')==4 && data.ISE3sem3credtheory.split(',')==4 && data.CSE3sem3credtheory.split(',')==4 && data.AIML3sem1credtheory.split(',')==3 && data.ISE3sem1credtheory.split(',')==3 && data.CSE3sem1credtheory.split(',')==3  ) {
     let aimlfour=data.AIML3sem3credtheory.split(',')
     let isefour=data.ISE3sem3credtheory.split(',')
     let csefour=data.CSE3sem3credtheory.split(',')
@@ -68,9 +73,14 @@ const Page = () => {
     let cseone=data.CSE3sem1credtheory.split(',')
     let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
     handlesubmit(updateddata);
+    }
+    else{
+      alert("You did't entered required subjects or You had entered more number of subjects :)")
+    }
   }
 
   const onSubmitsem4 = (data) => {
+    if (data.AIML4sem3credtheory.split(',')==4 && data.ISE4sem3credtheory.split(',')==4 && data.CSE4sem3credtheory.split(',')==4 && data.AIML4sem1credtheory.split(',')==3 && data.ISE4sem1credtheory.split(',')==3 && data.CSE4sem1credtheory.split(',')==3  ) {
     let aimlfour =(data.AIML4sem3credtheory.split(','))
     let isefour=(data.ISE4sem3credtheory.split(','))
     let csefour=(data.CSE4sem3credtheory.split(','))
@@ -79,9 +89,14 @@ const Page = () => {
     let cseone=(data.CSE4sem1credtheory.split(','))
     let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
     handlesubmit(updateddata);
+      }
+      else{
+        alert("You did't entered required subjects or You had entered more number of subjects :)")
+      }
   }
 
   const onSubmitsem5 = (data) => {
+    if (data.AIML5sem3credtheory.split(',')==4 && data.ISE5sem3credtheory.split(',')==4 && data.CSE5sem3credtheory.split(',')==4 && data.AIML5sem1credtheory.split(',')==1 && data.ISE5sem1credtheory.split(',')==1 && data.CSE5sem1credtheory.split(',')==1  ) {
     let aimlfour=(data.AIML5sem3credtheory.split(','))
     let isefour=(data.ISE5sem3credtheory.split(','))
     let csefour=(data.CSE5sem3credtheory.split(','))
@@ -90,36 +105,39 @@ const Page = () => {
     let cseone=(data.CSE5sem1credtheory.split(','))
     let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
     handlesubmit(updateddata);
+        }
+        else{
+          alert("You did't entered required subjects or You had entered more number of subjects :)")
+        }
   }
 
   const onSubmitsem6 = (data) => {
-    let aimlfour=(data.AIML6sem3credtheory.split(','))
-    let isefour=(data.ISE6sem3credtheory.split(','))
-    let csefour=(data.CSE6sem3credtheory.split(','))
-    let aimlone=(data.AIML6sem1credtheory.split(','))
-    let iseone=(data.ISE6sem1credtheory.split(','))
-    let cseone=(data.CSE6sem1credtheory.split(','))
-    let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
-    handlesubmit(updateddata);
+    if (data.AIML6sem3credtheory.split(',').length==5 && (data.ISE6sem3credtheory.split(','))==5 && (data.CSE6sem3credtheory.split(','))==5 ) {
+      let aimlfour=(data.AIML6sem3credtheory.split(','))
+      let isefour=(data.ISE6sem3credtheory.split(','))
+      let csefour=(data.CSE6sem3credtheory.split(','))
+      let updateddata={ aimlfour, isefour, csefour}
+      handlesubmit(updateddata);
+    }
+  
+    else{
+      alert("You did't entered required subjects or You had entered more number of subjects :)")
+    }
   }
 
   const onSubmitsem7 = (data) => {
+    if (data.AIML7sem3credtheory.split(',').length==5 && (data.ISE7sem3credtheory.split(','))==5 && (data.CSE7sem3credtheory.split(','))==5 ) {
     let aimlfour=(data.AIML7sem3credtheory.split(','))
     let isefour=(data.ISE7em3credtheory.split(','))
     let csefour=(data.CSE7em3credtheory.split(','))
     let updateddata={ aimlfour, isefour, csefour}
     handlesubmit(updateddata);
-
+  }
+else{
+      alert("You did't entered required subjects or You had entered more number of subjects :)")
+    }
   }
 
-  const onSubmitsem8 = (data) => {
-
-    let aimlfour=(data.AIML8sem10credtheory.split(','))
-    let isefour=(data.ISE8em10credtheory.split(','))
-    let csefour=(data.CSE8em10credtheory.split(','))
-    let updateddata={ aimlfour, isefour, csefour}
-    handlesubmit(updateddata);
-  }
 
   return (
     <div className="flex flex-col items-center w-full text-white pt-[5%] justify-center pb-5 absolute top-0 left-0 gap-4">
@@ -143,7 +161,7 @@ const Page = () => {
 
         <h1 className="font-semibold text-2xl ">Select Semester</h1>
           <div  className='flex gap-2 '>
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((box) => (
+            {[1, 2, 3, 4, 5, 6, 7].map((box) => (
               <button
               key={box}
               onClick={() => handleBoxClick(box)}
@@ -389,25 +407,6 @@ const Page = () => {
 
                   </div>
                 )}
-                {showinput && selectedBox == 6 && (
-                  <div className='flex flex-col mt-5 ml-4'>
-                    <div className="text-lg font-medium text-[#ffffff] w-full">
-                      Select the 1 credit theory subjects for {subbranch}:
-                    </div>
-                    <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}6sem1credtheory`)}
-                        type="text"
-                        id="input"
-                       
-                        placeholder={`Enter the subjects for ${subbranch}`}
-                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                    </div>
-
-                  </div>
-                )}
-               
-
               </div>
 
             ))}
@@ -449,26 +448,6 @@ const Page = () => {
 
                   </div>
                 )}
-                {showinput && selectedBox == 7 && (
-                  <div className='flex flex-col mt-5 ml-4'>
-                    <div className="text-lg font-medium text-[#ffffff] w-full">
-                      Select the 2 credit theory subjects for {subbranch}:
-                    </div>
-                    <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}7sem2credtheory`)}
-
-                        type="text"
-                        id="input"
-                        // value={inputValue}
-                        // onChange={handleChange}                    placeholder={`Enter the subjects for ${subbranch}`}
-                        placeholder={`Enter the subjects for ${subbranch}`}
-                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                    </div>
-
-                  </div>
-                )}
-
 
               </div>
 
@@ -487,62 +466,6 @@ const Page = () => {
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem8)} action="" className='flex items-center'>
-            {["CSE", "ISE", "AIML"].map((subbranch) => (
-
-              <div key={subbranch}>
-
-                {showinput && selectedBox == 8 && (
-                  <div className='flex flex-col mt-5 ml-4'>
-                    <div className="text-lg font-medium text-[#ffffff] w-full">
-                      Select the 10 credit subjects for {subbranch}:
-                    </div>
-                    <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}8sem10credtheory`)}
-
-                        type="text"
-                        id="input"
-                        placeholder={`Enter the subjects for ${subbranch}`}
-                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                    </div>
-
-                  </div>
-                )}
-                {showinput && selectedBox == 8 && (
-                  <div className='flex flex-col mt-5 ml-4'>
-                    <div className="text-lg font-medium text-[#ffffff] w-full">
-                      Select the 1 credit subject for {subbranch}:
-                    </div>
-                    <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}8sem1credtheory`)}
-                        type="text"
-                        id="input"
-                        placeholder={`Enter the subjects for ${subbranch}`}
-                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                    </div>
-
-                  </div>
-                )}
-
-
-              </div>
-
-            ))}{showinput && selectedBox == 8  && (
-              !submit ? (
-                <div className='flex gap-5'>
-                <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
-                  Generate Timetable
-                </button>
-                
-                </div>
-              ) : (
-                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
-                  Processing
-                </button>
-              )
-            )}</form>
         </div>
         {view && (
           <button

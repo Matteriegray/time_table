@@ -25,10 +25,12 @@ export const sixthSem=(aimlfour,aimlone,iseone,isefour,cseone,csefour)=> {
     timetable_structure[0][3] = aimlfour[1];
     timetable_structure[1][2] = aimlfour[2];
     timetable_structure[1][3] = aimlfour[3];
-    timetable_structure[2][2] = aimlfour[0];
+    timetable_structure[2][2] = aimlfour[4];
     timetable_structure[2][3] = aimlfour[1];
     timetable_structure[3][2] = aimlfour[2];
     timetable_structure[3][3] = aimlfour[3];
+    timetable_structure[4][2] = aimlfour[4];
+    timetable_structure[4][3] = aimlfour[0];
 
     // For ISE
     const timetable_structure_of_ise = [
@@ -47,8 +49,10 @@ export const sixthSem=(aimlfour,aimlone,iseone,isefour,cseone,csefour)=> {
     timetable_structure_of_ise[0][2] = isefour[1];
     timetable_structure_of_ise[0][3] = isefour[2];
     timetable_structure_of_ise[1][4] = isefour[3];
+    timetable_structure_of_ise[1][2] = isefour[4];
     timetable_structure_of_ise[3][4] = isefour[0];
     timetable_structure_of_ise[2][4] = isefour[1];
+    timetable_structure_of_ise[4][1] = isefour[4];
     timetable_structure_of_ise[3][2] = isefour[2];
     timetable_structure_of_ise[0][4] = isefour[3];
 
@@ -68,8 +72,10 @@ export const sixthSem=(aimlfour,aimlone,iseone,isefour,cseone,csefour)=> {
     timetable_structure_of_csea[0][1] = csefour[0];
     timetable_structure_of_csea[4][1] = csefour[1];
     timetable_structure_of_csea[1][1] = csefour[2];
+    timetable_structure_of_csea[1][4] = csefour[4];
     timetable_structure_of_csea[4][2] = csefour[3];
     timetable_structure_of_csea[2][1] = csefour[0];
+    timetable_structure_of_csea[2][4] = csefour[4];
     timetable_structure_of_csea[4][3] = csefour[1];
     timetable_structure_of_csea[3][1] = csefour[2];
     timetable_structure_of_csea[4][4] = csefour[3];
@@ -91,10 +97,12 @@ export const sixthSem=(aimlfour,aimlone,iseone,isefour,cseone,csefour)=> {
     timetable_structure_of_cseb[4][3] = csefour[1];
     timetable_structure_of_cseb[4][4] = csefour[2];
     timetable_structure_of_cseb[4][1] = csefour[3];
-    timetable_structure_of_cseb[1][2] = csefour[0];
+    timetable_structure_of_cseb[1][2] = csefour[4];
     timetable_structure_of_cseb[2][2] = csefour[1];
     timetable_structure_of_cseb[1][3] = csefour[2];
     timetable_structure_of_cseb[2][3] = csefour[3];
+    timetable_structure_of_cseb[3][3] = csefour[4];
+    timetable_structure_of_cseb[3][2] = csefour[0];
 
     
 let totalcsedepartmentsixthsem=[];
