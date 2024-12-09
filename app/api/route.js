@@ -20,6 +20,22 @@ import { cse } from "./list1";
 import { eee } from "./list2";
 import { ece } from "./list4";
 import { mech } from "./list3";
+import { chemistrycycleece } from "./ecedepartment/c_cycle";
+import { physicscycleece } from "./ecedepartment/p_physics";
+import { thirdsemece } from "./ecedepartment/3rd_sem";
+import { fourthsemece } from "./ecedepartment/4th_sem";
+import { fifthsemece } from "./ecedepartment/5th_sem";
+import { sixthSemece } from "./ecedepartment/6th_sem";
+import { seventhSemece } from "./ecedepartment/7th_sem";
+import { eigthSemece } from "./ecedepartment/8th_sem";
+import { chemistrycyclemech } from "./mechdepartment/c_cycle";
+import { physicscyclemech } from "./mechdepartment/p_physics";
+import { thirdsemmech } from "./mechdepartment/3rd_sem";
+import { fourthsemmech } from "./mechdepartment/4th_sem";
+import { fifthsemmech } from "./mechdepartment/5th_sem";
+import { sixthSemmech } from "./mechdepartment/6th_sem";
+import { seventhSemmech } from "./mechdepartment/7th_sem";
+import { eigthSemmech } from "./mechdepartment/8th_sem";
 export async function POST(req){
 
     const {department,sem,data} = await req.json();
