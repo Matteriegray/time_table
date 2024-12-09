@@ -18,10 +18,244 @@ import { physicscycleeee } from "./eeedepartment/p_physics";
 import { chemistrycycleeee } from "./eeedepartment/c_cycle";
 import { cse } from "./list1";
 import { eee } from "./list2";
+import { ece } from "./list4";
+import { mech } from "./list3";
 export async function POST(req){
 
     const {department,sem,data} = await req.json();
 	await mongoose.connect('mongodb+srv://Toconnect:deekshi@cluster0.xpni6pr.mongodb.net/timetable?retryWrites=true&w=majority&appName=Cluster0')
+    if(department=="ECE"){
+        if(sem==1){
+            const physics=physicscycleece(data.fourHourSubject,data.oneHourSubject)
+            await ece.findOneAndUpdate(
+                { name:"ECE" }, 
+                { ecepcycle:physics }, 
+                { new: true, upsert: true } 
+            );
+            await ece.findOneAndUpdate(
+                { name:"ECE" }, 
+                { ececcycle:"" }, 
+                { new: true, upsert: true } 
+            );
+            return NextResponse.json({success:true});
+        }
+       else if(sem==2){
+        const chemistry=chemistrycycleece(data.fourHourSubject,data.oneHourSubject)
+        
+        await ece.findOneAndUpdate(
+            { name:"ECE" }, 
+            { ececcycle:chemistry }, 
+            { new: true, upsert: true } 
+        );
+        await ece.findOneAndUpdate(
+            { name:"ECE" }, 
+            { ecepcycle:"" }, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+       }
+       else if(sem==3){
+        const third=thirdsemece(data.ecefour,data.eceone,data.ecefour,data.eceone)
+        await ece.findOneAndUpdate(
+            { name:"ECE" }, 
+            { ece3rdsem:third }, 
+            { new: true, upsert: true } 
+        );
+        await ece.findOneAndUpdate(
+            { name:"ECE" }, 
+            { ece4thsem:"" }, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+       }
+       else if(sem==4){
+        const forth=fourthsemece(data.ecefour,data.eceone,data.ecefour,data.eceone)
+        await ece.findOneAndUpdate(
+            { name:"ECE" }, 
+            { ece4thsem:forth }, 
+            { new: true, upsert: true } 
+        );
+        await ece.findOneAndUpdate(
+            { name:"ECE" }, 
+            { ece3rdsem:""}, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+       }
+       else if(sem==5){
+        const fifth=fifthsemece(data.ecefour,data.eceone,data.ecefour,data.eceone)
+        await ece.findOneAndUpdate(
+            { name:"ECE" }, 
+            { ece5thsem:fifth }, 
+            { new: true, upsert: true } 
+        );
+        await ece.findOneAndUpdate(
+            { name:"ECE" }, 
+            { ece6thsem:""}, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+    }
+    else if(sem==6){
+        const sixth=sixthSemece(data.ecefour,data.ecefour)
+        await ece.findOneAndUpdate(
+            { name:"ECE" }, 
+            { ece6thsem:sixth}, 
+            { new: true, upsert: true } 
+        );
+        await ece.findOneAndUpdate(
+            { name:"ECE" }, 
+            { ece5thsem:""}, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+        
+        }
+        else if(sem==7){
+            const forth=seventhSemece(data.ecefour,data.ecefour)
+            await ece.findOneAndUpdate(
+                { name:"ECE" }, 
+                { ece7thsem:forth }, 
+                { new: true, upsert: true } 
+            );
+            await ece.findOneAndUpdate(
+                { name:"ECE" }, 
+                { ece8thsem:""}, 
+                { new: true, upsert: true } 
+            );
+            return NextResponse.json({success:true});
+        }
+        else if(sem==8){
+            const forth=eigthSemece(data.ecefour,data.ecefour)
+            await ece.findOneAndUpdate(
+                { name:"ECE" }, 
+                { eee8thsem:forth }, 
+                { new: true, upsert: true } 
+            );
+            await ece.findOneAndUpdate(
+                { name:"ECE" }, 
+                { ece7rdsem:""}, 
+                { new: true, upsert: true } 
+            );
+            return NextResponse.json({success:true});
+        }
+    }
+    if(department=="MECH"){
+        if(sem==1){
+            const physics=physicscyclemech(data.fourHourSubject,data.oneHourSubject)
+            await mech.findOneAndUpdate(
+                { name:"MECH" }, 
+                { mechpcycle:physics }, 
+                { new: true, upsert: true } 
+            );
+            await mech.findOneAndUpdate(
+                { name:"MECH" }, 
+                { mechccycle:"" }, 
+                { new: true, upsert: true } 
+            );
+            return NextResponse.json({success:true});
+        }
+       else if(sem==2){
+        const chemistry=chemistrycyclemech(data.fourHourSubject,data.oneHourSubject)
+        
+        await mech.findOneAndUpdate(
+            { name:"MECH" }, 
+            { mechccycle:chemistry }, 
+            { new: true, upsert: true } 
+        );
+        await mech.findOneAndUpdate(
+            { name:"MECH" }, 
+            { mechpcycle:"" }, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+       }
+       else if(sem==3){
+        const third=thirdsemmech(data.mechfour,data.mechone,data.mechfour,data.mechone)
+        await mech.findOneAndUpdate(
+            { name:"MECH" }, 
+            { mech3rdsem:third }, 
+            { new: true, upsert: true } 
+        );
+        await mech.findOneAndUpdate(
+            { name:"MECH" }, 
+            { mech4thsem:"" }, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+       }
+       else if(sem==4){
+        const forth=fourthsemmech(data.mechfour,data.mechone,data.mechfour,data.mechone)
+        await mech.findOneAndUpdate(
+            { name:"MECH" }, 
+            { mech4thsem:forth }, 
+            { new: true, upsert: true } 
+        );
+        await mech.findOneAndUpdate(
+            { name:"MECH" }, 
+            { mech3rdsem:""}, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+       }
+       else if(sem==5){
+        const fifth=fifthsemmech(data.eeefour,data.eeeone,data.eeefour,data.eeeone)
+        await mech.findOneAndUpdate(
+            { name:"MECH" }, 
+            { mech5thsem:fifth }, 
+            { new: true, upsert: true } 
+        );
+        await mech.findOneAndUpdate(
+            { name:"MECH" }, 
+            { mech6thsem:""}, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+    }
+    else if(sem==6){
+        const sixth=sixthSemmech(data.eeefour,data.eeefour)
+        await mech.findOneAndUpdate(
+            { name:"MECH" }, 
+            { mech6thsem:sixth}, 
+            { new: true, upsert: true } 
+        );
+        await mech.findOneAndUpdate(
+            { name:"MECH" }, 
+            { mech5thsem:""}, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+        
+        }
+        else if(sem==7){
+            const forth=seventhSemmech(data.eeefour,data.eeefour)
+            await mech.findOneAndUpdate(
+                { name:"MECH" }, 
+                { mech7thsem:forth }, 
+                { new: true, upsert: true } 
+            );
+            await mech.findOneAndUpdate(
+                { name:"MECH" }, 
+                { mech8thsem:""}, 
+                { new: true, upsert: true } 
+            );
+            return NextResponse.json({success:true});
+        }
+        else if(sem==8){
+            const forth=eigthSemmech(data.eeefour,data.eeefour)
+            await mech.findOneAndUpdate(
+                { name:"MECH" }, 
+                { mech8thsem:forth }, 
+                { new: true, upsert: true } 
+            );
+            await mech.findOneAndUpdate(
+                { name:"MECH" }, 
+                { mech7rdsem:""}, 
+                { new: true, upsert: true } 
+            );
+            return NextResponse.json({success:true});
+        }
+    }
     if(department=="EEE"){
         if(sem==1){
             const physics=physicscycleeee(data.fourHourSubject,data.oneHourSubject)
@@ -126,12 +360,12 @@ export async function POST(req){
         else if(sem==8){
             const forth=eigthSemeee(data.eeefour,data.eeefour)
             await eee.findOneAndUpdate(
-                { name:"CSE" }, 
+                { name:"EEE" }, 
                 { eee8thsem:forth }, 
                 { new: true, upsert: true } 
             );
             await eee.findOneAndUpdate(
-                { name:"CSE" }, 
+                { name:"EEE" }, 
                 { eee7rdsem:""}, 
                 { new: true, upsert: true } 
             );
