@@ -1,11 +1,11 @@
-export const physicscycleeee= (fourHourSubject,oneHourSubject) => {
+export const physicscycleece= (fourHourSubject,oneHourSubject) => {
 
     // Subjects
     const fourHourSubjects = fourHourSubject;
     const oneHourSubjects = oneHourSubject;
     
-    // Timetable structure for eeeA
-    let timetableStructureOfeeeA = [
+    // Timetable structure for eceA
+    let timetableStructureOfeceA = [
         ["Monday(101)", "", "", "", "Lab"],
         ["Tuesday(101)", "", "", "", "Lab"],
         ["Wednesday(101)", "", "Lab", "Lab", ""],
@@ -26,20 +26,20 @@ export const physicscycleeee= (fourHourSubject,oneHourSubject) => {
     shuffle(oneHourSubjects);
     
     // Assign subjects to timetable
-    timetableStructureOfeeeA[0][1] = fourHourSubjects[0];
-    timetableStructureOfeeeA[0][2] = fourHourSubjects[1];
-    timetableStructureOfeeeA[1][1] = fourHourSubjects[2];
-    timetableStructureOfeeeA[1][2] = fourHourSubjects[3];
-    timetableStructureOfeeeA[2][1] = fourHourSubjects[4];
-    timetableStructureOfeeeA[2][4] = fourHourSubjects[0];
-    timetableStructureOfeeeA[3][2] = fourHourSubjects[1];
-    timetableStructureOfeeeA[3][3] = fourHourSubjects[2];
-    timetableStructureOfeeeA[0][3] = oneHourSubjects[0];
-    timetableStructureOfeeeA[4][2] = fourHourSubjects[3];
-    timetableStructureOfeeeA[4][3] = fourHourSubjects[4];
-    timetableStructureOfeeeA[1][3] = oneHourSubjects[1];
-    // For eeeB
-    let timetableStructureOfeeeB = [
+    timetableStructureOfeceA[0][1] = fourHourSubjects[0];
+    timetableStructureOfeceA[0][2] = fourHourSubjects[1];
+    timetableStructureOfeceA[1][1] = fourHourSubjects[2];
+    timetableStructureOfeceA[1][2] = fourHourSubjects[3];
+    timetableStructureOfeceA[2][1] = fourHourSubjects[4];
+    timetableStructureOfeceA[2][4] = fourHourSubjects[0];
+    timetableStructureOfeceA[3][2] = fourHourSubjects[1];
+    timetableStructureOfeceA[3][3] = fourHourSubjects[2];
+    timetableStructureOfeceA[0][3] = oneHourSubjects[0];
+    timetableStructureOfeceA[4][2] = fourHourSubjects[3];
+    timetableStructureOfeceA[4][3] = fourHourSubjects[4];
+    timetableStructureOfeceA[1][3] = oneHourSubjects[1];
+    // For eceB
+    let timetableStructureOfeceB = [
         ["Monday(201)", "Lab", "", "", "Free"],
         ["Tuesday(201)", "Lab", "", "", "Free"],
         ["Wednesday(101)", "Lab", "", "", "Free"],
@@ -47,28 +47,28 @@ export const physicscycleeee= (fourHourSubject,oneHourSubject) => {
         ["Friday(201)", "", "", "", "Free"]
     ];
     
-    // Shuffle subjects for eeeB
+    // Shuffle subjects for eceB
     shuffle(fourHourSubjects);
     shuffle(oneHourSubjects);
     
-    // Assign subjects to eeeB timetable
-    timetableStructureOfeeeB[0][2] = fourHourSubjects[0];
-    timetableStructureOfeeeB[0][3] = fourHourSubjects[1];
-    timetableStructureOfeeeB[1][2] = fourHourSubjects[2];
-    timetableStructureOfeeeB[1][3] = fourHourSubjects[3];
-    timetableStructureOfeeeB[2][2] = fourHourSubjects[4];
-    timetableStructureOfeeeB[2][3] = fourHourSubjects[0];
-    timetableStructureOfeeeB[3][3] = fourHourSubjects[1];
-    timetableStructureOfeeeB[3][2] = fourHourSubjects[2];
-    timetableStructureOfeeeB[3][1] = oneHourSubjects[0];
-    timetableStructureOfeeeB[4][3] = fourHourSubjects[3];
-    timetableStructureOfeeeB[4][2] = fourHourSubjects[4];
-    timetableStructureOfeeeB[4][1] = oneHourSubjects[1];
+    // Assign subjects to eceB timetable
+    timetableStructureOfeceB[0][2] = fourHourSubjects[0];
+    timetableStructureOfeceB[0][3] = fourHourSubjects[1];
+    timetableStructureOfeceB[1][2] = fourHourSubjects[2];
+    timetableStructureOfeceB[1][3] = fourHourSubjects[3];
+    timetableStructureOfeceB[2][2] = fourHourSubjects[4];
+    timetableStructureOfeceB[2][3] = fourHourSubjects[0];
+    timetableStructureOfeceB[3][3] = fourHourSubjects[1];
+    timetableStructureOfeceB[3][2] = fourHourSubjects[2];
+    timetableStructureOfeceB[3][1] = oneHourSubjects[0];
+    timetableStructureOfeceB[4][3] = fourHourSubjects[3];
+    timetableStructureOfeceB[4][2] = fourHourSubjects[4];
+    timetableStructureOfeceB[4][1] = oneHourSubjects[1];
     
     
     let totaleeedepartmentpcycle=[];
-    totaleeedepartmentpcycle.push(timetableStructureOfeeeA)
-    totaleeedepartmentpcycle.push(timetableStructureOfeeeB)
+    totaleeedepartmentpcycle.push(timetableStructureOfeceA)
+    totaleeedepartmentpcycle.push(timetableStructureOfeceB)
     return totaleeedepartmentpcycle;
     
     };

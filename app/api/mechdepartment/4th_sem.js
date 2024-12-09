@@ -1,6 +1,6 @@
-export const fourthsemeee= (eeeafour,eeeaone,eeebfour,eeebone) => {
+export const fourthsemmech= (mechafour,mechaone,mechbfour,mechbone,mechcfour,mechcone) => {
 
-    // Timetable structure for EEEA
+    // Timetable structure for MECHA
     let timetableStructure = [
         ["Monday(LH2)", "", "", "", "Lab"],
         ["Tuesday(LH2)", "", "", "", "Lab"],
@@ -18,26 +18,26 @@ export const fourthsemeee= (eeeafour,eeeaone,eeebfour,eeebone) => {
         return array;
     }
     
-    shuffle(eeeafour);
-    shuffle(eeeaone);
+    shuffle(mechafour);
+    shuffle(mechaone);
     
     // Assign subjects to timetable
-    timetableStructure[0][1] = eeeafour[0];
-    timetableStructure[0][2] = eeeafour[1];
-    timetableStructure[1][1] = eeeafour[2];
-    timetableStructure[1][2] = eeeafour[3];
-    timetableStructure[2][1] = eeeafour[4];
-    timetableStructure[2][4] = eeeafour[0];
-    timetableStructure[3][2] = eeeafour[1];
-    timetableStructure[3][3] = eeeafour[2];
-    timetableStructure[0][3] = eeeaone[0];
-    timetableStructure[4][2] = eeeafour[3];
-    timetableStructure[4][3] = eeeafour[4];
-    timetableStructure[1][3] = eeeaone[1];
+    timetableStructure[0][1] = mechafour[0];
+    timetableStructure[0][2] = mechafour[1];
+    timetableStructure[1][1] = mechafour[2];
+    timetableStructure[1][2] = mechafour[3];
+    timetableStructure[2][1] = mechafour[4];
+    timetableStructure[2][4] = mechafour[0];
+    timetableStructure[3][2] = mechafour[1];
+    timetableStructure[3][3] = mechafour[2];
+    timetableStructure[0][3] = mechaone[0];
+    timetableStructure[4][2] = mechafour[3];
+    timetableStructure[4][3] = mechafour[4];
+    timetableStructure[1][3] = mechaone[1];
     
     
-    // For EEEB
-    let timetableStructureOfeeeb = [
+    // For MECHB
+    let timetableStructureOfmechb = [
         ["Monday(LH1)", "Lab", "", "", "Free"],
         ["Tuesday(LH1)", "Lab", "", "", "Free"],
         ["Wednesday(LH2)", "Lab", "", "", "Free"],
@@ -46,27 +46,55 @@ export const fourthsemeee= (eeeafour,eeeaone,eeebfour,eeebone) => {
     ];
     
     // Shuffle subjects randomly
-    shuffle(eeebfour);
-    shuffle(eeebone);
+    shuffle(mechbfour);
+    shuffle(mechbone);
     
     // Assign subjects to timetable
-    timetableStructureOfeeeb[0][2] = eeebfour[0];
-    timetableStructureOfeeeb[0][3] = eeebfour[1];
-    timetableStructureOfeeeb[1][2] = eeebfour[2];
-    timetableStructureOfeeeb[1][3] = eeebfour[3];
-    timetableStructureOfeeeb[2][2] = eeebfour[4];
-    timetableStructureOfeeeb[2][3] = eeebfour[0];
-    timetableStructureOfeeeb[3][3] = eeebfour[1];
-    timetableStructureOfeeeb[3][2] = eeebfour[2];
-    timetableStructureOfeeeb[3][1] = eeebone[0];
-    timetableStructureOfeeeb[4][3] = eeebfour[3];
-    timetableStructureOfeeeb[4][2] = eeebfour[4];
-    timetableStructureOfeeeb[3][4] = eeebone[1];
+    timetableStructureOfmechb[0][2] = mechbfour[0];
+    timetableStructureOfmechb[0][3] = mechbfour[1];
+    timetableStructureOfmechb[1][2] = mechbfour[2];
+    timetableStructureOfmechb[1][3] = mechbfour[3];
+    timetableStructureOfmechb[2][2] = mechbfour[4];
+    timetableStructureOfmechb[2][3] = mechbfour[0];
+    timetableStructureOfmechb[3][3] = mechbfour[1];
+    timetableStructureOfmechb[3][2] = mechbfour[2];
+    timetableStructureOfmechb[3][1] = mechbone[0];
+    timetableStructureOfmechb[4][3] = mechbfour[3];
+    timetableStructureOfmechb[4][2] = mechbfour[4];
+    timetableStructureOfmechb[3][4] = mechbone[1];
+
+    // For MECHC
+    let timetableStructureOfmechc = [
+        ["Monday(LH1)", "Lab", "", "", "Free"],
+        ["Tuesday(LH1)", "Lab", "", "", "Free"],
+        ["Wednesday(LH2)", "Lab", "", "", "Free"],
+        ["Thursday (LH1)", "", "", "", ""],
+        ["Friday(LH1)", "Brige maths", "", "", "B kannada"]
+    ];
+    
+    // Shuffle subjects randomly
+    shuffle(mechcfour);
+    shuffle(mechcone);
+    
+    // Assign subjects to timetable
+    timetableStructureOfmechc[0][2] = mechcour[0];
+    timetableStructureOfmechc[0][3] = mechcfour[1];
+    timetableStructureOfmechc[1][2] = mechcfour[2];
+    timetableStructureOfmechc[1][3] = mechcfour[3];
+    timetableStructureOfmechc[2][2] = mechcfour[4];
+    timetableStructureOfmechc[2][3] = mechcfour[0];
+    timetableStructureOfmechc[3][3] = mechcfour[1];
+    timetableStructureOfmechc[3][2] = mechcfour[2];
+    timetableStructureOfmechc[3][1] = mechcone[0];
+    timetableStructureOfmechc[4][3] = mechcfour[3];
+    timetableStructureOfmechc[4][2] = mechcfour[4];
+    timetableStructureOfmechc[3][4] = mechcone[1];
     
     
-    let totaleeedepartmentfourthsem=[];
-    totaleeedepartmentfourthsem.push(timetableStructure)
-    totaleeedepartmentfourthsem.push(timetableStructureOfeeeb)
-    return totaleeedepartmentfourthsem;
+    let totalmechdepartmentfourthsem=[];
+    totalmechdepartmentfourthsem.push(timetableStructure)
+    totalmechdepartmentfourthsem.push(timetableStructureOfmechb)
+    totalmechdepartmentfourthsem.push(timetableStructureOfmechc)
+    return totalmechdepartmentfourthsem;
     
     }

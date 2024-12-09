@@ -1,6 +1,6 @@
-export const sixthSemeee=(eeeafour,eeebfour)=> {
+export const sixthSemece=(eceafour,ecebfour)=> {
     
-    // Timetable structure for EEEA
+    // Timetable structure for ECEA
     const timetable_structure = [
         ["Monday(LH6)", "", "", "", "Lab"],
         ["Tuesday(LH6)", "", "", "", "Lab"],
@@ -17,23 +17,23 @@ export const sixthSemeee=(eeeafour,eeebfour)=> {
         return array;
     }
 
-    // Shuffle EEEA subjects
-    shuffle(eeeafour);
+    // Shuffle ECEA subjects
+    shuffle(eceafour);
 
-    // Assign subjects to EEEA timetable
-    timetable_structure[0][2] = eeeafour[0];
-    timetable_structure[0][3] = eeeafour[1];
-    timetable_structure[1][2] = eeeafour[2];
-    timetable_structure[1][3] = eeeafour[3];
-    timetable_structure[2][2] = eeeafour[4];
-    timetable_structure[2][3] = eeeafour[1];
-    timetable_structure[3][2] = eeeafour[2];
-    timetable_structure[3][3] = eeeafour[3];
-    timetable_structure[4][2] = eeeafour[4];
-    timetable_structure[4][3] = eeeafour[0];
+    // Assign subjects to ECEA timetable
+    timetable_structure[0][2] = eceafour[0];
+    timetable_structure[0][3] = eceafour[1];
+    timetable_structure[1][2] = eceafour[2];
+    timetable_structure[1][3] = eceafour[3];
+    timetable_structure[2][2] = eceafour[4];
+    timetable_structure[2][3] = eceafour[1];
+    timetable_structure[3][2] = eceafour[2];
+    timetable_structure[3][3] = eceafour[3];
+    timetable_structure[4][2] = eceafour[4];
+    timetable_structure[4][3] = eceafour[0];
 
-    // For EEEB
-    const timetable_structure_of_eeeb = [
+    // For ECEB
+    const timetable_structure_of_eceb = [
         ["Monday(LH4)", "", "", "", ""],
         ["Tuesday(LH6)", "", "", "Lab", ""],
         ["Wednesday(LH6)", "", "", "Lab", ""],
@@ -41,25 +41,25 @@ export const sixthSemeee=(eeeafour,eeebfour)=> {
         ["Friday(LH6)", "", "", "Lab", ""]
     ];
 
-    // Shuffle EEEB subjects
-    shuffle(eeebfour);
+    // Shuffle ECEB subjects
+    shuffle(ecebfour);
 
-    // Assign subjects to EEEB timetable
-    timetable_structure_of_eeeb[0][1] = eeebfour[0];
-    timetable_structure_of_eeeb[0][2] = eeebfour[1];
-    timetable_structure_of_eeeb[0][3] = eeebfour[2];
-    timetable_structure_of_eeeb[1][4] = eeebfour[3];
-    timetable_structure_of_eeeb[1][2] = eeebfour[4];
-    timetable_structure_of_eeeb[3][4] = eeebfour[0];
-    timetable_structure_of_eeeb[2][4] = eeebfour[1];
-    timetable_structure_of_eeeb[4][1] = eeebfour[4];
-    timetable_structure_of_eeeb[3][2] = eeebfour[2];
-    timetable_structure_of_eeeb[0][4] = eeebfour[3];
+    // Assign subjects to ECEB timetable
+    timetable_structure_of_eceb[0][1] = ecebfour[0];
+    timetable_structure_of_eceb[0][2] = ecebfour[1];
+    timetable_structure_of_eceb[0][3] = ecebfour[2];
+    timetable_structure_of_eceb[1][4] = ecebfour[3];
+    timetable_structure_of_eceb[1][2] = ecebfour[4];
+    timetable_structure_of_eceb[3][4] = ecebfour[0];
+    timetable_structure_of_eceb[2][4] = ecebfour[1];
+    timetable_structure_of_eceb[4][1] = ecebfour[4];
+    timetable_structure_of_eceb[3][2] = ecebfour[2];
+    timetable_structure_of_eceb[0][4] = ecebfour[3];
 
 
     
-let totaleeedepartmentsixthsem=[];
-totaleeedepartmentsixthsem.push(timetable_structure)
-totaleeedepartmentsixthsem.push(timetable_structure_of_eeeb)
-return totaleeedepartmentsixthsem;
+let totalecedepartmentsixthsem=[];
+totalecedepartmentsixthsem.push(timetable_structure)
+totalecedepartmentsixthsem.push(timetable_structure_of_eceb)
+return totalecedepartmentsixthsem;
 }

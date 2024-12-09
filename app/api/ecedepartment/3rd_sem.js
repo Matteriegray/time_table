@@ -1,6 +1,6 @@
-export const thirdsemeee= (eeeafour,eeeaone,eeebfour,eeebone) => {
+export const thirdsemece= (eceafour,eceaone,ecebfour,ecebone) => {
 
-    // Timetable structure for EEEA
+    // Timetable structure for ECEA
     let timetableStructure = [
         ["Monday(LH2)", "", "", "", "Lab"],
         ["Tuesday(LH2)", "", "", "", "Lab"],
@@ -18,26 +18,26 @@ export const thirdsemeee= (eeeafour,eeeaone,eeebfour,eeebone) => {
         return array;
     }
     
-    shuffle(eeeafour);
-    shuffle(eeeaone);
+    shuffle(eceafour);
+    shuffle(eceaone);
     
     // Assign subjects to timetable
-    timetableStructure[0][1] = eeeafour[0];
-    timetableStructure[0][2] = eeeafour[1];
-    timetableStructure[1][1] = eeeafour[2];
-    timetableStructure[1][2] = eeeafour[3];
-    timetableStructure[2][1] = eeeafour[4];
-    timetableStructure[2][4] = eeeafour[0];
-    timetableStructure[3][2] = eeeafour[1];
-    timetableStructure[3][3] = eeeafour[2];
-    timetableStructure[0][3] = eeeaone[0];
-    timetableStructure[4][2] = eeeafour[3];
-    timetableStructure[4][3] = eeeafour[4];
-    timetableStructure[1][3] = eeeaone[1];
+    timetableStructure[0][1] = eceafour[0];
+    timetableStructure[0][2] = eceafour[1];
+    timetableStructure[1][1] = eceafour[2];
+    timetableStructure[1][2] = eceafour[3];
+    timetableStructure[2][1] = eceafour[4];
+    timetableStructure[2][4] = eceafour[0];
+    timetableStructure[3][2] = eceafour[1];
+    timetableStructure[3][3] = eceafour[2];
+    timetableStructure[0][3] = eceaone[0];
+    timetableStructure[4][2] = eceafour[3];
+    timetableStructure[4][3] = eceafour[4];
+    timetableStructure[1][3] = eceaone[1];
     
     
-    // For EEEB
-    let timetableStructureOfeeeb = [
+    // For ECEB
+    let timetableStructureOfeceb = [
         ["Monday(LH1)", "Lab", "", "", "Free"],
         ["Tuesday(LH1)", "Lab", "", "", "Free"],
         ["Wednesday(LH2)", "Lab", "", "", "Free"],
@@ -46,27 +46,27 @@ export const thirdsemeee= (eeeafour,eeeaone,eeebfour,eeebone) => {
     ];
     
     // Shuffle subjects randomly
-    shuffle(eeebfour);
-    shuffle(eeebone);
+    shuffle(ecebfour);
+    shuffle(ecebone);
     
     // Assign subjects to timetable
-    timetableStructureOfeeeb[0][2] = eeebfour[0];
-    timetableStructureOfeeeb[0][3] = eeebfour[1];
-    timetableStructureOfeeeb[1][2] = eeebfour[2];
-    timetableStructureOfeeeb[1][3] = eeebfour[3];
-    timetableStructureOfeeeb[2][2] = eeebfour[4];
-    timetableStructureOfeeeb[2][3] = eeebfour[0];
-    timetableStructureOfeeeb[3][3] = eeebfour[1];
-    timetableStructureOfeeeb[3][2] = eeebfour[2];
-    timetableStructureOfeeeb[3][1] = eeebone[0];
-    timetableStructureOfeeeb[4][3] = eeebfour[3];
-    timetableStructureOfeeeb[4][2] = eeebfour[4];
-    timetableStructureOfeeeb[3][4] = eeebone[1];
+    timetableStructureOfeceb[0][2] = ecebfour[0];
+    timetableStructureOfeceb[0][3] = ecebfour[1];
+    timetableStructureOfeceb[1][2] = ecebfour[2];
+    timetableStructureOfeceb[1][3] = ecebfour[3];
+    timetableStructureOfeceb[2][2] = ecebfour[4];
+    timetableStructureOfeceb[2][3] = ecebfour[0];
+    timetableStructureOfeceb[3][3] = ecebfour[1];
+    timetableStructureOfeceb[3][2] = ecebfour[2];
+    timetableStructureOfeceb[3][1] = ecebone[0];
+    timetableStructureOfeceb[4][3] = ecebfour[3];
+    timetableStructureOfeceb[4][2] = ecebfour[4];
+    timetableStructureOfeceb[3][4] = ecebone[1];
     
     
-    let totaleeedepartmentthirdsem=[];
-    totaleeedepartmentthirdsem.push(timetableStructure)
-    totaleeedepartmentthirdsem.push(timetableStructureOfeeeb)
-    return totaleeedepartmentthirdsem;
+    let totalecedepartmentthirdsem=[];
+    totalecedepartmentthirdsem.push(timetableStructure)
+    totalecedepartmentthirdsem.push(timetableStructureOfeceb)
+    return totalecedepartmentthirdsem;
     
     }
