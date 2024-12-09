@@ -64,7 +64,7 @@ const Page = () => {
   }
 
   const onSubmitsem3 = (data) => {
-    if (data.AIML3sem3credtheory.split(',')==4 && data.ISE3sem3credtheory.split(',')==4 && data.CSE3sem3credtheory.split(',')==4 && data.AIML3sem1credtheory.split(',')==3 && data.ISE3sem1credtheory.split(',')==3 && data.CSE3sem1credtheory.split(',')==3  ) {
+    if (data.AIML3sem3credtheory.split(',').length==4 && data.ISE3sem3credtheory.split(',').length==4 && data.CSE3sem3credtheory.split(',').length==4 && data.AIML3sem1credtheory.split(',').length==3 && data.ISE3sem1credtheory.split(',').length==3 && data.CSE3sem1credtheory.split(',').length==3  ) {
     let aimlfour=data.AIML3sem3credtheory.split(',')
     let isefour=data.ISE3sem3credtheory.split(',')
     let csefour=data.CSE3sem3credtheory.split(',')
@@ -80,7 +80,7 @@ const Page = () => {
   }
 
   const onSubmitsem4 = (data) => {
-    if (data.AIML4sem3credtheory.split(',')==4 && data.ISE4sem3credtheory.split(',')==4 && data.CSE4sem3credtheory.split(',')==4 && data.AIML4sem1credtheory.split(',')==3 && data.ISE4sem1credtheory.split(',')==3 && data.CSE4sem1credtheory.split(',')==3  ) {
+    if (data.AIML4sem3credtheory.split(',').length==4 && data.ISE4sem3credtheory.split(',').length==4 && data.CSE4sem3credtheory.split(',').length==4 && data.AIML4sem1credtheory.split(',').length==3 && data.ISE4sem1credtheory.split(',').length==3 && data.CSE4sem1credtheory.split(',').length==3  ) {
     let aimlfour =(data.AIML4sem3credtheory.split(','))
     let isefour=(data.ISE4sem3credtheory.split(','))
     let csefour=(data.CSE4sem3credtheory.split(','))
@@ -96,7 +96,7 @@ const Page = () => {
   }
 
   const onSubmitsem5 = (data) => {
-    if (data.AIML5sem3credtheory.split(',')==4 && data.ISE5sem3credtheory.split(',')==4 && data.CSE5sem3credtheory.split(',')==4 && data.AIML5sem1credtheory.split(',')==1 && data.ISE5sem1credtheory.split(',')==1 && data.CSE5sem1credtheory.split(',')==1  ) {
+    if (data.AIML5sem3credtheory.split(',').length==4 && data.ISE5sem3credtheory.split(',').length==4 && data.CSE5sem3credtheory.split(',').length==4 && data.AIML5sem1credtheory.split(',').length==2 && data.ISE5sem1credtheory.split(',').length==2 && data.CSE5sem1credtheory.split(',').length==2  ) {
     let aimlfour=(data.AIML5sem3credtheory.split(','))
     let isefour=(data.ISE5sem3credtheory.split(','))
     let csefour=(data.CSE5sem3credtheory.split(','))
@@ -112,7 +112,7 @@ const Page = () => {
   }
 
   const onSubmitsem6 = (data) => {
-    if (data.AIML6sem3credtheory.split(',').length==5 && (data.ISE6sem3credtheory.split(','))==5 && (data.CSE6sem3credtheory.split(','))==5 ) {
+    if (data.AIML6sem3credtheory.split(',').length==5 && (data.ISE6sem3credtheory.split(',')).length==5 && (data.CSE6sem3credtheory.split(',')).length==5 ) {
       let aimlfour=(data.AIML6sem3credtheory.split(','))
       let isefour=(data.ISE6sem3credtheory.split(','))
       let csefour=(data.CSE6sem3credtheory.split(','))
@@ -126,10 +126,10 @@ const Page = () => {
   }
 
   const onSubmitsem7 = (data) => {
-    if (data.AIML7sem3credtheory.split(',').length==5 && (data.ISE7sem3credtheory.split(','))==5 && (data.CSE7sem3credtheory.split(','))==5 ) {
+    if (data.AIML7sem3credtheory.split(',').length==5 && (data.ISE7sem3credtheory.split(',')).length==5 && (data.CSE7sem3credtheory.split(',')).length==5 ) {
     let aimlfour=(data.AIML7sem3credtheory.split(','))
-    let isefour=(data.ISE7em3credtheory.split(','))
-    let csefour=(data.CSE7em3credtheory.split(','))
+    let isefour=(data.ISE7sem3credtheory.split(','))
+    let csefour=(data.CSE7sem3credtheory.split(','))
     let updateddata={ aimlfour, isefour, csefour}
     handlesubmit(updateddata);
   }

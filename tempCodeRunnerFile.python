@@ -1,2 +1,59 @@
-i=[0,1,4,0,3,None,"_","_"]
-print(i)
+import requests
+from bs4 import BeautifulSoup
+
+# IMDb Top Movies URL
+url = "https://www.imdb.com/chart/top"
+
+# Headers to mimic a real browser
+headers = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 "
+        "Safari/537.3"
+    )
+}
+
+# Fetch the IMDb Top 250 page
+response = requests.get(url, headers=headers)
+if not response.ok:
+    print("Failed to fetch IMDb page.")
+    exit()
+
+# Parse the main page
+soup = BeautifulSoup(response.content, "html.parser")
+movies = soup.select(".titleColumn a")  # Select movie links
+
+# Loop through the first 10 movies
+for movie in movies[:10]:
+    link = "https://www.imdb.com" + movie.get("href")  # Construct movie URL
+    movie_response = requests.get(link, headers=headers)
+    if not movie_response.ok:
+        print(f"Failed to fetch details for {movie.text.strip()}")
+        continue
+
+    # Parse individual movie page
+    movie_soup = BeautifulSoup(movie_response.content, "html.parser")
+
+    # Extract movie name
+    try:
+        movie_name = movie_soup.select_one('h1[data-testid="hero-title-block__title"]').text.strip()
+    except AttributeError:
+        movie_name = "N/A"
+
+    # Extract movie year
+    try:
+        movie_year = movie_soup.select_one('span[data-testid="hero-title-block__metadata-year"]').text.strip()
+    except AttributeError:
+        movie_year = "N/A"
+
+    # Extract movie summary
+    try:
+        movie_summary = movie_soup.select_one('span[data-testid="plot-xl"]').text.strip()
+    except AttributeError:
+        movie_summary = "N/A"
+
+    # Print movie details
+    print(f"Name: {movie_name}")
+    print(f"Year: {movie_year}")
+    print(f"Summary: {movie_summary}")
+    print("--------------------")

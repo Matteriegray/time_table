@@ -8,11 +8,136 @@ import { fifthSem } from "./csedepartment/5th_sem";
 import { sixthSem } from "./csedepartment/6th_sem";
 import { seventhSem } from "./csedepartment/7th_sem";
 import { eighthSem } from "./csedepartment/8th_sem";
-import { cse } from "./list";
+import { thirdsemeee } from "./eeedepartment/3rd_sem";
+import { fourthsemeee } from "./eeedepartment/4th_sem";
+import { fifthsemeee } from "./eeedepartment/5th_sem";
+import { sixthSemeee } from "./eeedepartment/6th_sem";
+import { seventhSemeee } from "./eeedepartment/7th_sem";
+import { eigthSemeee } from "./eeedepartment/8th_sem";
+import { physicscycleeee } from "./eeedepartment/p_physics";
+import { chemistrycycleeee } from "./eeedepartment/c_cycle";
+import { cse } from "./list1";
+import { eee } from "./list2";
 export async function POST(req){
 
     const {department,sem,data} = await req.json();
 	await mongoose.connect('mongodb+srv://Toconnect:deekshi@cluster0.xpni6pr.mongodb.net/timetable?retryWrites=true&w=majority&appName=Cluster0')
+    if(department=="EEE"){
+        if(sem==1){
+            const physics=physicscycleeee(data.fourHourSubject,data.oneHourSubject)
+            await eee.findOneAndUpdate(
+                { name:"EEE" }, 
+                { eeepcycle:physics }, 
+                { new: true, upsert: true } 
+            );
+            await eee.findOneAndUpdate(
+                { name:"EEE" }, 
+                { eeeccycle:"" }, 
+                { new: true, upsert: true } 
+            );
+            return NextResponse.json({success:true});
+        }
+       else if(sem==2){
+        const chemistry=chemistrycycleeee(data.fourHourSubject,data.oneHourSubject)
+        
+        await eee.findOneAndUpdate(
+            { name:"EEE" }, 
+            { eeeccycle:chemistry }, 
+            { new: true, upsert: true } 
+        );
+        await eee.findOneAndUpdate(
+            { name:"EEE" }, 
+            { eeepcycle:"" }, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+       }
+       else if(sem==3){
+        const third=thirdsemeee(data.eeefour,data.eeeone,data.eeefour,data.eeeone)
+        await eee.findOneAndUpdate(
+            { name:"EEE" }, 
+            { eee3rdsem:third }, 
+            { new: true, upsert: true } 
+        );
+        await eee.findOneAndUpdate(
+            { name:"EEE" }, 
+            { eee4thsem:"" }, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+       }
+       else if(sem==4){
+        const forth=fourthsemeee(data.eeefour,data.eeeone,data.eeefour,data.eeeone)
+        await eee.findOneAndUpdate(
+            { name:"EEE" }, 
+            { eee4thsem:forth }, 
+            { new: true, upsert: true } 
+        );
+        await eee.findOneAndUpdate(
+            { name:"CSE" }, 
+            { eee3rdsem:""}, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+       }
+       else if(sem==5){
+        const fifth=fifthsemeee(data.eeefour,data.eeeone,data.eeefour,data.eeeone)
+        await eee.findOneAndUpdate(
+            { name:"EEE" }, 
+            { eee5thsem:fifth }, 
+            { new: true, upsert: true } 
+        );
+        await eee.findOneAndUpdate(
+            { name:"EEE" }, 
+            { eee6thsem:""}, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+    }
+    else if(sem==6){
+        const sixth=sixthSemeee(data.eeefour,data.eeefour)
+        await eee.findOneAndUpdate(
+            { name:"EEE" }, 
+            { eee6thsem:sixth}, 
+            { new: true, upsert: true } 
+        );
+        await eee.findOneAndUpdate(
+            { name:"EEE" }, 
+            { eee5thsem:""}, 
+            { new: true, upsert: true } 
+        );
+        return NextResponse.json({success:true});
+        
+        }
+        else if(sem==7){
+            const forth=seventhSemeee(data.eeefour,data.eeefour)
+            await eee.findOneAndUpdate(
+                { name:"EEE" }, 
+                { eee7thsem:forth }, 
+                { new: true, upsert: true } 
+            );
+            await eee.findOneAndUpdate(
+                { name:"EEE" }, 
+                { eee8thsem:""}, 
+                { new: true, upsert: true } 
+            );
+            return NextResponse.json({success:true});
+        }
+        else if(sem==8){
+            const forth=eigthSemeee(data.eeefour,data.eeefour)
+            await eee.findOneAndUpdate(
+                { name:"CSE" }, 
+                { eee8thsem:forth }, 
+                { new: true, upsert: true } 
+            );
+            await eee.findOneAndUpdate(
+                { name:"CSE" }, 
+                { eee7rdsem:""}, 
+                { new: true, upsert: true } 
+            );
+            return NextResponse.json({success:true});
+        }
+    }
     if(department=="CSE"){
         if(sem==1){
             const chemistry=chemistrycycle(data.fourHourSubject,data.oneHourSubject)
