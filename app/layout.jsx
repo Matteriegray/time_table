@@ -30,8 +30,8 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${montserrat.className} antialiased`}
       >
         <div className=''>
-          <Image className='w-[100%] h-[130vh] object-cover relative -z-50 ' src={bgimg} alt="" />
-          <div className='bg-[#00000077] absolute top-0 left-0 w-[100%] h-[100vh] -z-30 '></div>
+          <Image className='w-[100vw] h-[100vh] object-cover relative' src={bgimg} alt="" />
+          <div className='bg-[#00000077] absolute top-0 left-0 w-[100%] h-[100%] '></div>
         </div>
         <NavBar />
         {children}
