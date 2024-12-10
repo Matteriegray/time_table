@@ -9,7 +9,7 @@ const page = () => {
     const [Name, setName] = useState("")
     const [password, setpassword] = useState("")
     const handlesubmit=()=>{
-        if(Name=="devloper" && password=="devloper@uvce"){
+        if((Name=="Deekshith" || Name=="Gagan" || Name=="Vaishnav" || Name=="Anagha" ) && password=="wefour"){
             window.location.replace("/admin")
         }
         else{
