@@ -393,12 +393,12 @@ const Page = () => {
       <h1 className="text-3xl font-bold ">Welcome Admin</h1>
       <div className='flex flex-col items-center w-full '>
         <h1 className="font-semibold text-2xl">Select Department</h1>
-        <div className='flex gap-5 mt-5'>
+        <div className='flex gap-5 mt-2'>
           {["CSE", "EEE", "ECE", "MECH"].map((button) => (
             <button
               key={button}
               onClick={() => handleButtonClick(button)}
-              className={`px-10 py-4 bg-[#ffffffd5] font-medium text-[#000] flex items-center justify-center rounded-md cursor-pointer smooth crdshdw hover:invert
+              className={`px-10 py-3 bg-[#ffffffd5] font-medium text-[#000] flex items-center justify-center rounded-md cursor-pointer smooth crdshdw hover:invert
                     focus:border-2 focus:border-[#ffffff] focus:bg-[#000000] focus:text-[#ffffff] focus:invert-0 focus:shadow-none border-2 border-[#00000000]`}
                             >
               {button}
@@ -407,7 +407,7 @@ const Page = () => {
 
         </div>
         {selectedButton && (
-          <div className=' flex flex-col justify-center items-center mt-10 gap-2 pb-10'>
+          <div className=' flex flex-col justify-center items-center mt-4 gap-2 pb-10'>
 
             <h1 className="font-semibold text-2xl ">Select Semester</h1>
             <div className='flex gap-5 '>
@@ -430,7 +430,7 @@ const Page = () => {
             <div key={selectedBox} className=''>
               {showinput && (selectedBox == 1 || selectedBox == 2) && (
                 <form onSubmit={handleSubmit(onSubmityear1)} action="" className=''>
-                  <div className='flex flex-col mt-5' >
+                  <div className='flex flex-col ' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credit subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -473,7 +473,7 @@ const Page = () => {
                 <div key={subbranch}>
 
                   {showinput && selectedBox == 3 && (
-                    <div className='flex flex-col mt-5 ml-4' >
+                    <div className='flex flex-col  ml-4' >
                       <div className="text-lg font-medium text-[#ffffff] w-full">
                         Enter the 3 credit subjects for {subbranch.toUpperCase()}:
                       </div>
@@ -490,7 +490,7 @@ const Page = () => {
                   )}
 
                   {showinput && selectedBox == 3 && (
-                    <div className='flex flex-col mt-5 ml-4'>
+                    <div className='flex flex-col  ml-4'>
                       <div className="text-lg font-medium text-[#ffffff] w-full">
                         Enter the 1 credit theory subjects for {subbranch.toUpperCase()}:
                       </div>
@@ -533,7 +533,7 @@ const Page = () => {
                 <div key={subbranch}>
 
                   {showinput && selectedBox == 4 && (
-                    <div className='flex flex-col mt-5 ml-4' >
+                    <div className='flex flex-col  ml-4' >
                       <div className="text-lg font-medium text-[#ffffff] w-full">
                         Enter the 3 credit subjects for {subbranch.toUpperCase()}:
                       </div>
@@ -549,7 +549,7 @@ const Page = () => {
                     </div>
                   )}
                   {showinput && selectedBox == 4 && (
-                    <div className='flex flex-col mt-5 ml-4'>
+                    <div className='flex flex-col  ml-4'>
                       <div className="text-lg font-medium text-[#ffffff] w-full">
                         Enter the 1 credits theory subjects for {subbranch.toUpperCase()}:
                       </div>
@@ -591,7 +591,7 @@ const Page = () => {
                 <div key={subbranch}>
 
                   {showinput && selectedBox == 5 && (
-                    <div className='flex flex-col mt-5 ml-4' >
+                    <div className='flex flex-col  ml-4' >
                       <div className="text-lg font-medium text-[#ffffff] w-full">
                         Enter the 3 credits subjects for {subbranch.toUpperCase()}:
                       </div>
@@ -607,7 +607,7 @@ const Page = () => {
                     </div>
                   )}
                   {showinput && selectedBox == 5 && (
-                    <div className='flex flex-col mt-5 ml-4'>
+                    <div className='flex flex-col  ml-4'>
                       <div className="text-lg font-medium text-[#ffffff] w-full">
                         Enter the 1 credit theory subjects for {subbranch.toUpperCase()}:
                       </div>
@@ -648,7 +648,7 @@ const Page = () => {
                 <div key={subbranch}>
 
                   {showinput && selectedBox == 6 && (
-                    <div className='flex flex-col mt-5 ml-4' >
+                    <div className='flex flex-col  ml-4' >
                       <div className="text-lg font-medium text-[#ffffff] w-full">
                         Enter the 3 credits subjects for {subbranch.toUpperCase()}:
                       </div>
@@ -690,7 +690,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 7 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credits subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -730,7 +730,7 @@ const Page = () => {
             <div key={selectedBox}>
               {showinput && (selectedBox == 1 || selectedBox == 2) && (
                 <form onSubmit={handleSubmit(onSubmityear1eee)} action="" className=''>
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credit subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -772,7 +772,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 3 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credit subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -789,7 +789,7 @@ const Page = () => {
                 )}
 
                 {showinput && selectedBox == 3 && (
-                  <div className='flex flex-col mt-5 ml-4'>
+                  <div className='flex flex-col  ml-4'>
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 1 credit theory subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -829,7 +829,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 4 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credit subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -845,7 +845,7 @@ const Page = () => {
                   </div>
                 )}
                 {showinput && selectedBox == 4 && (
-                  <div className='flex flex-col mt-5 ml-4'>
+                  <div className='flex flex-col  ml-4'>
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 1 credits theory subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -885,7 +885,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 5 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credits subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -901,7 +901,7 @@ const Page = () => {
                   </div>
                 )}
                 {showinput && selectedBox == 5 && (
-                  <div className='flex flex-col mt-5 ml-4'>
+                  <div className='flex flex-col  ml-4'>
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 1 credit theory subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -940,7 +940,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 6 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credits subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -980,7 +980,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 7 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credits subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -1019,7 +1019,7 @@ const Page = () => {
             <div key={selectedBox}>
               {showinput && (selectedBox == 1 || selectedBox == 2) && (
                 <form onSubmit={handleSubmit(onSubmityear1ece)} action="" className=''>
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credit subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -1061,7 +1061,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 3 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credit subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -1078,7 +1078,7 @@ const Page = () => {
                 )}
 
                 {showinput && selectedBox == 3 && (
-                  <div className='flex flex-col mt-5 ml-4'>
+                  <div className='flex flex-col  ml-4'>
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 1 credit theory subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -1118,7 +1118,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 4 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credit subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -1134,7 +1134,7 @@ const Page = () => {
                   </div>
                 )}
                 {showinput && selectedBox == 4 && (
-                  <div className='flex flex-col mt-5 ml-4'>
+                  <div className='flex flex-col  ml-4'>
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 1 credits theory subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -1174,7 +1174,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 5 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credits subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -1190,7 +1190,7 @@ const Page = () => {
                   </div>
                 )}
                 {showinput && selectedBox == 5 && (
-                  <div className='flex flex-col mt-5 ml-4'>
+                  <div className='flex flex-col  ml-4'>
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 1 credit theory subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -1229,7 +1229,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 6 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credits subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -1269,7 +1269,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 7 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credits subjects for {subbranch.toUpperCase()}:
                     </div>
@@ -1308,7 +1308,7 @@ const Page = () => {
             <div key={selectedBox}>
               {showinput && (selectedBox == 1 || selectedBox == 2) && (
                 <form onSubmit={handleSubmit(onSubmityear1mech)} action="" className=''>
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credit subjects for {subbranch.toUpperCase()}ANICAL:
                     </div>
@@ -1350,7 +1350,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 3 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credit subjects for {subbranch.toUpperCase()}ANICAL:
                     </div>
@@ -1367,7 +1367,7 @@ const Page = () => {
                 )}
 
                 {showinput && selectedBox == 3 && (
-                  <div className='flex flex-col mt-5 ml-4'>
+                  <div className='flex flex-col  ml-4'>
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 1 credit theory subjects for {subbranch.toUpperCase()}ANICAL:
                     </div>
@@ -1407,7 +1407,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 4 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credit subjects for {subbranch.toUpperCase()}ANICAL:
                     </div>
@@ -1423,7 +1423,7 @@ const Page = () => {
                   </div>
                 )}
                 {showinput && selectedBox == 4 && (
-                  <div className='flex flex-col mt-5 ml-4'>
+                  <div className='flex flex-col  ml-4'>
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 1 credits theory subjects for {subbranch.toUpperCase()}ANICAL:
                     </div>
@@ -1463,7 +1463,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 5 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credits subjects for {subbranch.toUpperCase()}ANICAL:
                     </div>
@@ -1479,7 +1479,7 @@ const Page = () => {
                   </div>
                 )}
                 {showinput && selectedBox == 5 && (
-                  <div className='flex flex-col mt-5 ml-4'>
+                  <div className='flex flex-col  ml-4'>
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 1 credit theory subjects for {subbranch.toUpperCase()}ANICAL:
                     </div>
@@ -1518,7 +1518,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 6 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credits subjects for {subbranch.toUpperCase()}ANICAL:
                     </div>
@@ -1558,7 +1558,7 @@ const Page = () => {
               <div key={subbranch}>
 
                 {showinput && selectedBox == 7 && (
-                  <div className='flex flex-col mt-5 ml-4' >
+                  <div className='flex flex-col  ml-4' >
                     <div className="text-lg font-medium text-[#ffffff] w-full">
                       Enter the 3 credits subjects for {subbranch.toUpperCase()}ANICAL:
                     </div>
