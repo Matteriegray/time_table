@@ -1,36 +1,36 @@
 import React, { useEffect, useState } from 'react';
 
-const Timetable = ({ data, selectedSemesters }) => {
+const Timetableeee = ({ data, selectedSemesters }) => {
     let timetable=[];
-    let classes=["AIML","ISE","CSEA","CSEB"]
+    let classes=["EEEA","EEEB"]
   return (
     <div className="timetable-container">
       <h1 className="text-3xl font-bold">{data.result.name} Timetable</h1>
       {selectedSemesters.map((sem, index) => {
         switch (sem) {
             case 1:
-                timetable = data.result[`cseccycle`];
+                timetable = data.result[`eeeccycle`];
                 break;
             case 2:
-                timetable = data.result[`csepcycle`];
+                timetable = data.result[`eeepcycle`];
                 break;
             case 3:
-                timetable = data.result[`cse3rdsem`];
+                timetable = data.result[`eee3rdsem`];
                 break;
             case 4:
-                timetable = data.result[`cse4thsem`];
+                timetable = data.result[`eee4thsem`];
                 break;
             case 5:
-                timetable = data.result[`cse5thsem`];
+                timetable = data.result[`eee5thsem`];
                 break;
             case 6:
-                timetable = data.result[`cse6thsem`];
+                timetable = data.result[`eee6thsem`];
                 break;
             case 7:
-                timetable = data.result[`cse7thsem`];
+                timetable = data.result[`eee7thsem`];
                 break;
             case 8:
-                timetable = data.result[`cse8thsem`];
+                timetable = data.result[`eee8thsem`];
                 break;
             default:
                 break;
@@ -131,4 +131,4 @@ const App = () => {
   );
 };
 
-export default Timetable;
+export default Timetableeee;
