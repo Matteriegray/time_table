@@ -391,7 +391,7 @@ else{
           {selectedButton=="CSE" && ["Whole CSE branch"].map((subbranch) => (
             <div key={selectedBox}>
               {showinput && (selectedBox == 1 || selectedBox == 2) && (
-                <form onSubmit={handleSubmit(onSubmityear1)} action="" className='flex items-center'>
+                <form onSubmit={handleSubmit(onSubmityear1)} action="" className=''>
                 <div className='flex flex-col mt-5 ml-4' >
                   <div className="text-lg font-medium text-[#ffffff] w-full">
                     Select the 3 credit subjects for {subbranch}:
@@ -428,7 +428,7 @@ else{
               )}
          </div>
           ))}
-          <form onSubmit={handleSubmit(onSubmitsem3)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem3)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
                 <div key={subbranch}>
@@ -485,7 +485,7 @@ else{
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem4)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem4)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -541,7 +541,7 @@ else{
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem5)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem5)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -596,7 +596,7 @@ else{
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem6)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem6)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -636,7 +636,7 @@ else{
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem7)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem7)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -680,7 +680,7 @@ else{
           {selectedButton=="EEE" && ["EEE"].map((subbranch) => (
             <div key={selectedBox}>
               {showinput && (selectedBox == 1 || selectedBox == 2) && (
-                <form onSubmit={handleSubmit(onSubmityear1eee)} action="" className='flex items-center'>
+                <form onSubmit={handleSubmit(onSubmityear1eee)} action="" className=''>
                 <div className='flex flex-col mt-5 ml-4' >
                   <div className="text-lg font-medium text-[#ffffff] w-full">
                     Select the 3 credit subjects for {subbranch}:
@@ -717,8 +717,8 @@ else{
               )}
          </div>
           ))}
-          <form onSubmit={handleSubmit(onSubmitsem3)} action="" className='flex items-center'>
-            {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
+          <form onSubmit={handleSubmit(onSubmitsem3)} action="" className=''>
+            {selectedButton=="EEE" && ["EEE"].map((subbranch) => (
 
                 <div key={subbranch}>
 
@@ -759,7 +759,7 @@ else{
                 </div>
 
               ))}
-            {selectedButton=="CSE" && showinput && selectedBox == 3&& (
+            {selectedButton=="EEE" && showinput && selectedBox == 3&& (
               !submit ? (
                 <div className='flex gap-5'>
                   <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
@@ -774,8 +774,297 @@ else{
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem4)} action="" className='flex items-center'>
-            {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
+          <form onSubmit={handleSubmit(onSubmitsem4)} action="" className=''>
+            {selectedButton=="EEE" && ["EEE"].map((subbranch) => (
+
+              <div key={subbranch}>
+
+                {showinput && selectedBox == 4 && (
+                  <div className='flex flex-col mt-5 ml-4' >
+                    <div className="text-lg font-medium text-[#ffffff] w-full">
+                      Select the 3 credit subjects for {subbranch}:
+                    </div>
+                    <div className='flex gap-2 '>
+                      <input {...register(`${subbranch}4sem3credtheory`)}
+                        type="text"
+                        id="input"
+                        placeholder={`Enter the subjects for ${subbranch}`}
+                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      />
+                    </div>
+
+                  </div>
+                )}
+                {showinput && selectedBox == 4 && (
+                  <div className='flex flex-col mt-5 ml-4'>
+                    <div className="text-lg font-medium text-[#ffffff] w-full">
+                      Select the 1 credits theory subjects for {subbranch}:
+                    </div>
+                    <div className='flex gap-2 '>
+                      <input {...register(`${subbranch}4sem1credtheory`)}
+                        type="text"
+                        id="input"
+                        placeholder={`Enter the subjects for ${subbranch}`}
+                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      />
+                    </div>
+
+                  </div>
+                )}
+
+              </div>
+
+            ))}
+            {selectedButton=="EEE" && showinput && selectedBox == 4  && (
+              !submit ? (
+                <div className='flex gap-5'>
+                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                    Generate Timetable
+                  </button>
+
+                </div>
+              ) : (
+                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
+                  Processing
+                </button>
+              )
+            )}
+          </form>
+          <form onSubmit={handleSubmit(onSubmitsem5)} action="" className=''>
+            {selectedButton=="EEE" && ["EEE"].map((subbranch) => (
+
+              <div key={subbranch}>
+
+                {showinput && selectedBox == 5 && (
+                  <div className='flex flex-col mt-5 ml-4' >
+                    <div className="text-lg font-medium text-[#ffffff] w-full">
+                      Select the 3 credits subjects for {subbranch}:
+                    </div>
+                    <div className='flex gap-2 '>
+                      <input {...register(`${subbranch}5sem3credtheory`)}
+                        type="text"
+                        id="input"
+                        placeholder={`Enter the subjects for ${subbranch}`}
+                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      />
+                    </div>
+
+                  </div>
+                )}
+                {showinput && selectedBox == 5 && (
+                  <div className='flex flex-col mt-5 ml-4'>
+                    <div className="text-lg font-medium text-[#ffffff] w-full">
+                      Select the 1 credit theory subjects for {subbranch}:
+                    </div>
+                    <div className='flex gap-2 '>
+                      <input {...register(`${subbranch}5sem1credtheory`)}
+                        type="text"
+                        id="input"
+                        placeholder={`Enter the subjects for ${subbranch}`}
+                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      />
+                    </div>
+
+                  </div>
+                )}
+              </div>
+
+            ))}
+            {showinput && selectedButton=="EEE" && selectedBox == 5 && (
+              !submit ? (
+                <div className='flex gap-5'>
+                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                    Generate Timetable
+                  </button>
+
+                </div>
+              ) : (
+                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
+                  Processing
+                </button>
+              )
+            )}
+          </form>
+          <form onSubmit={handleSubmit(onSubmitsem6)} action="" className=''>
+            {selectedButton=="EEE" && ["EEE"].map((subbranch) => (
+
+              <div key={subbranch}>
+
+                {showinput && selectedBox == 6 && (
+                  <div className='flex flex-col mt-5 ml-4' >
+                    <div className="text-lg font-medium text-[#ffffff] w-full">
+                      Select the 3 credits subjects for {subbranch}:
+                    </div>
+                    <div className='flex gap-2 '>
+                      <input {...register(`${subbranch}6sem3credtheory`)}
+                        type="text"
+                        id="input"
+                        
+                        placeholder={`Enter the subjects for ${subbranch}`}
+                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      />
+                    </div>
+
+                  </div>
+                )}
+              </div>
+
+            ))}
+            {showinput && selectedButton=="EEE" && selectedBox == 6 && (
+              !submit ? (
+                <div className='flex gap-5'>
+                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                    Generate Timetable
+                  </button>
+
+                </div>
+              ) : (
+                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
+                  Processing
+                </button>
+              )
+            )}
+          </form>
+          <form onSubmit={handleSubmit(onSubmitsem7)} action="" className=''>
+            {selectedButton=="EEE" && ["EEE"].map((subbranch) => (
+
+              <div key={subbranch}>
+
+                {showinput && selectedBox == 7 && (
+                  <div className='flex flex-col mt-5 ml-4' >
+                    <div className="text-lg font-medium text-[#ffffff] w-full">
+                      Select the 3 credits subjects for {subbranch}:
+                    </div>
+                    <div className='flex gap-2 '>
+                      <input {...register(`${subbranch}7sem3credtheory`)}
+                        type="text"
+                        id="input"
+                        // value={inputValue}
+                        // onChange={handleChange}
+                        placeholder={`Enter the subjects for ${subbranch}`}
+                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      />
+                    </div>
+
+                  </div>
+                )}
+
+              </div>
+
+            ))}{showinput && selectedButton=="EEE" && selectedBox == 7 && (
+              !submit ? (
+                <div className='flex gap-5'>
+                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                    Generate Timetable
+                  </button>
+
+                </div>
+              ) : (
+                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
+                  Processing
+                </button>
+              )
+            )}
+          </form>
+          {selectedButton=="ECE" && ["ECE"].map((subbranch) => (
+            <div key={selectedBox}>
+              {showinput && (selectedBox == 1 || selectedBox == 2) && (
+                <form onSubmit={handleSubmit(onSubmityear1)} action="" className=''>
+                <div className='flex flex-col mt-5 ml-4' >
+                  <div className="text-lg font-medium text-[#ffffff] w-full">
+                    Select the 3 credit subjects for {subbranch}:
+                  </div>
+                  <div className='flex gap-2 '>
+                    <input {...register("csedept3credsubs")}
+                      type="text"
+                      id="input"
+                      placeholder={`Enter the subjects for ${subbranch}`}
+                      className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+                  <div className="text-lg font-medium text-[#ffffff] w-full">
+                      Select the 1 credit subjects for {subbranch}:
+                    </div>
+                    <div className='flex gap-2 '>
+                      <input {...register("csedept1credsubs")}
+                        type="text"
+                        id="input"
+                        placeholder={`Enter the subjects for ${subbranch}`}
+                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      />
+                    </div>
+
+                </div>
+                
+                <div className='flex gap-5'>
+              <button type='submit' className={` ml-5 bg-${colur}-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold`}>
+                Generate Timetable
+              </button>
+               
+              </div>
+                </form>
+              )}
+         </div>
+          ))}
+          <form onSubmit={handleSubmit(onSubmitsem3)} action="" className=''>
+            {selectedButton=="ECE" && ["ECE"].map((subbranch) => (
+
+                <div key={subbranch}>
+
+                  {showinput && selectedBox == 3 && (
+                    <div className='flex flex-col mt-5 ml-4' >
+                      <div className="text-lg font-medium text-[#ffffff] w-full">
+                        Select the 3 credit subjects for {subbranch}:
+                      </div>
+                      <div className='flex gap-2 '>
+                        <input {...register(`${subbranch}3sem3credtheory`)}
+                          type="text"
+                          id="input"
+                          placeholder={`Enter the subjects for ${subbranch}`}
+                          className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        />
+                      </div>
+
+                    </div>
+                  )}
+
+                  {showinput && selectedBox == 3 && (
+                    <div className='flex flex-col mt-5 ml-4'>
+                      <div className="text-lg font-medium text-[#ffffff] w-full">
+                        Select the 1 credit theory subjects for {subbranch}:
+                      </div>
+                      <div className='flex gap-2 '>
+                        <input {...register(`${subbranch}3sem1credtheory`)}
+                          type="text"
+                          id="input"
+                          placeholder={`Enter the subjects for ${subbranch}`}
+                          className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        />
+                      </div>
+
+                    </div>
+                  )}
+
+                </div>
+
+              ))}
+            {selectedButton=="ECE" && showinput && selectedBox == 3&& (
+              !submit ? (
+                <div className='flex gap-5'>
+                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
+                    Generate Timetable
+                  </button>
+
+                </div>
+              ) : (
+                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
+                  Processing
+                </button>
+              )
+            )}
+          </form>
+          <form onSubmit={handleSubmit(onSubmitsem4)} action="" className=''>
+            {selectedButton=="ECE" && ["ECE"].map((subbranch) => (
 
               <div key={subbranch}>
 
@@ -830,7 +1119,7 @@ else{
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem5)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem5)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -885,7 +1174,7 @@ else{
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem6)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem6)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -925,7 +1214,7 @@ else{
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem7)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem7)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -969,7 +1258,7 @@ else{
           {selectedButton=="CSE" && ["Whole CSE branch"].map((subbranch) => (
             <div key={selectedBox}>
               {showinput && (selectedBox == 1 || selectedBox == 2) && (
-                <form onSubmit={handleSubmit(onSubmityear1)} action="" className='flex items-center'>
+                <form onSubmit={handleSubmit(onSubmityear1)} action="" className=''>
                 <div className='flex flex-col mt-5 ml-4' >
                   <div className="text-lg font-medium text-[#ffffff] w-full">
                     Select the 3 credit subjects for {subbranch}:
@@ -1006,7 +1295,7 @@ else{
               )}
          </div>
           ))}
-          <form onSubmit={handleSubmit(onSubmitsem3)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem3)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
                 <div key={subbranch}>
@@ -1063,7 +1352,7 @@ else{
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem4)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem4)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -1119,7 +1408,7 @@ else{
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem5)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem5)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -1174,7 +1463,7 @@ else{
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem6)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem6)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
@@ -1214,296 +1503,7 @@ else{
               )
             )}
           </form>
-          <form onSubmit={handleSubmit(onSubmitsem7)} action="" className='flex items-center'>
-            {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
-
-              <div key={subbranch}>
-
-                {showinput && selectedBox == 7 && (
-                  <div className='flex flex-col mt-5 ml-4' >
-                    <div className="text-lg font-medium text-[#ffffff] w-full">
-                      Select the 3 credits subjects for {subbranch}:
-                    </div>
-                    <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}7sem3credtheory`)}
-                        type="text"
-                        id="input"
-                        // value={inputValue}
-                        // onChange={handleChange}
-                        placeholder={`Enter the subjects for ${subbranch}`}
-                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                    </div>
-
-                  </div>
-                )}
-
-              </div>
-
-            ))}{showinput && selectedButton=="CSE" && selectedBox == 7 && (
-              !submit ? (
-                <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
-                    Generate Timetable
-                  </button>
-
-                </div>
-              ) : (
-                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
-                  Processing
-                </button>
-              )
-            )}
-          </form>
-          {selectedButton=="CSE" && ["Whole CSE branch"].map((subbranch) => (
-            <div key={selectedBox}>
-              {showinput && (selectedBox == 1 || selectedBox == 2) && (
-                <form onSubmit={handleSubmit(onSubmityear1)} action="" className='flex items-center'>
-                <div className='flex flex-col mt-5 ml-4' >
-                  <div className="text-lg font-medium text-[#ffffff] w-full">
-                    Select the 3 credit subjects for {subbranch}:
-                  </div>
-                  <div className='flex gap-2 '>
-                    <input {...register("csedept3credsubs")}
-                      type="text"
-                      id="input"
-                      placeholder={`Enter the subjects for ${subbranch}`}
-                      className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                  </div>
-                  <div className="text-lg font-medium text-[#ffffff] w-full">
-                      Select the 1 credit subjects for {subbranch}:
-                    </div>
-                    <div className='flex gap-2 '>
-                      <input {...register("csedept1credsubs")}
-                        type="text"
-                        id="input"
-                        placeholder={`Enter the subjects for ${subbranch}`}
-                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                    </div>
-
-                </div>
-                
-                <div className='flex gap-5'>
-              <button type='submit' className={` ml-5 bg-${colur}-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold`}>
-                Generate Timetable
-              </button>
-               
-              </div>
-                </form>
-              )}
-         </div>
-          ))}
-          <form onSubmit={handleSubmit(onSubmitsem3)} action="" className='flex items-center'>
-            {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
-
-                <div key={subbranch}>
-
-                  {showinput && selectedBox == 3 && (
-                    <div className='flex flex-col mt-5 ml-4' >
-                      <div className="text-lg font-medium text-[#ffffff] w-full">
-                        Select the 3 credit subjects for {subbranch}:
-                      </div>
-                      <div className='flex gap-2 '>
-                        <input {...register(`${subbranch}3sem3credtheory`)}
-                          type="text"
-                          id="input"
-                          placeholder={`Enter the subjects for ${subbranch}`}
-                          className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        />
-                      </div>
-
-                    </div>
-                  )}
-
-                  {showinput && selectedBox == 3 && (
-                    <div className='flex flex-col mt-5 ml-4'>
-                      <div className="text-lg font-medium text-[#ffffff] w-full">
-                        Select the 1 credit theory subjects for {subbranch}:
-                      </div>
-                      <div className='flex gap-2 '>
-                        <input {...register(`${subbranch}3sem1credtheory`)}
-                          type="text"
-                          id="input"
-                          placeholder={`Enter the subjects for ${subbranch}`}
-                          className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        />
-                      </div>
-
-                    </div>
-                  )}
-
-                </div>
-
-              ))}
-            {selectedButton=="CSE" && showinput && selectedBox == 3&& (
-              !submit ? (
-                <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
-                    Generate Timetable
-                  </button>
-
-                </div>
-              ) : (
-                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
-                  Processing
-                </button>
-              )
-            )}
-          </form>
-          <form onSubmit={handleSubmit(onSubmitsem4)} action="" className='flex items-center'>
-            {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
-
-              <div key={subbranch}>
-
-                {showinput && selectedBox == 4 && (
-                  <div className='flex flex-col mt-5 ml-4' >
-                    <div className="text-lg font-medium text-[#ffffff] w-full">
-                      Select the 3 credit subjects for {subbranch}:
-                    </div>
-                    <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}4sem3credtheory`)}
-                        type="text"
-                        id="input"
-                        placeholder={`Enter the subjects for ${subbranch}`}
-                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                    </div>
-
-                  </div>
-                )}
-                {showinput && selectedBox == 4 && (
-                  <div className='flex flex-col mt-5 ml-4'>
-                    <div className="text-lg font-medium text-[#ffffff] w-full">
-                      Select the 1 credits theory subjects for {subbranch}:
-                    </div>
-                    <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}4sem1credtheory`)}
-                        type="text"
-                        id="input"
-                        placeholder={`Enter the subjects for ${subbranch}`}
-                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                    </div>
-
-                  </div>
-                )}
-
-              </div>
-
-            ))}
-            {selectedButton=="CSE" && showinput && selectedBox == 4  && (
-              !submit ? (
-                <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
-                    Generate Timetable
-                  </button>
-
-                </div>
-              ) : (
-                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
-                  Processing
-                </button>
-              )
-            )}
-          </form>
-          <form onSubmit={handleSubmit(onSubmitsem5)} action="" className='flex items-center'>
-            {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
-
-              <div key={subbranch}>
-
-                {showinput && selectedBox == 5 && (
-                  <div className='flex flex-col mt-5 ml-4' >
-                    <div className="text-lg font-medium text-[#ffffff] w-full">
-                      Select the 3 credits subjects for {subbranch}:
-                    </div>
-                    <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}5sem3credtheory`)}
-                        type="text"
-                        id="input"
-                        placeholder={`Enter the subjects for ${subbranch}`}
-                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                    </div>
-
-                  </div>
-                )}
-                {showinput && selectedBox == 5 && (
-                  <div className='flex flex-col mt-5 ml-4'>
-                    <div className="text-lg font-medium text-[#ffffff] w-full">
-                      Select the 1 credit theory subjects for {subbranch}:
-                    </div>
-                    <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}5sem1credtheory`)}
-                        type="text"
-                        id="input"
-                        placeholder={`Enter the subjects for ${subbranch}`}
-                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                    </div>
-
-                  </div>
-                )}
-              </div>
-
-            ))}
-            {showinput && selectedButton=="CSE" && selectedBox == 5 && (
-              !submit ? (
-                <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
-                    Generate Timetable
-                  </button>
-
-                </div>
-              ) : (
-                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
-                  Processing
-                </button>
-              )
-            )}
-          </form>
-          <form onSubmit={handleSubmit(onSubmitsem6)} action="" className='flex items-center'>
-            {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
-
-              <div key={subbranch}>
-
-                {showinput && selectedBox == 6 && (
-                  <div className='flex flex-col mt-5 ml-4' >
-                    <div className="text-lg font-medium text-[#ffffff] w-full">
-                      Select the 3 credits subjects for {subbranch}:
-                    </div>
-                    <div className='flex gap-2 '>
-                      <input {...register(`${subbranch}6sem3credtheory`)}
-                        type="text"
-                        id="input"
-                        
-                        placeholder={`Enter the subjects for ${subbranch}`}
-                        className="px-4 py-2 border w-full text-[#000] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      />
-                    </div>
-
-                  </div>
-                )}
-              </div>
-
-            ))}
-            {showinput && selectedButton=="CSE" && selectedBox == 6 && (
-              !submit ? (
-                <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold">
-                    Generate Timetable
-                  </button>
-
-                </div>
-              ) : (
-                <button className="bg-red-500 text-center w-40 mt-2 h-10 rounded-md text-sm font-semibold ml-5" disabled>
-                  Processing
-                </button>
-              )
-            )}
-          </form>
-          <form onSubmit={handleSubmit(onSubmitsem7)} action="" className='flex items-center'>
+          <form onSubmit={handleSubmit(onSubmitsem7)} action="" className=''>
             {selectedButton=="CSE" && ["CSE", "ISE", "AIML"].map((subbranch) => (
 
               <div key={subbranch}>
