@@ -17,7 +17,19 @@ const Page = () => {
 
 
   const handledisplay = () => {
+    if (selectedButton == "CSE") {  
     window.location.replace("/csetimetable");
+    }
+    else if (selectedButton == "EEE"){
+      window.location.replace("/eeetimetable");
+    }
+    else if (selectedButton == "ECE"){
+      window.location.replace("/ecetimetable");
+    }
+    else if (selectedButton == "MECH"){
+      window.location.replace("/mechtimetable");
+    }
+
   };
 
   const handlesubmit = async (updateddata) => {

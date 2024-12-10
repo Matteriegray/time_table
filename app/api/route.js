@@ -324,7 +324,7 @@ export async function POST(req){
             { new: true, upsert: true } 
         );
         await eee.findOneAndUpdate(
-            { name:"CSE" }, 
+            { name:"EEE" }, 
             { eee3rdsem:""}, 
             { new: true, upsert: true } 
         );
