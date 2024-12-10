@@ -152,8 +152,8 @@ else{
 
   const onSubmitsem3eee = (data) => {
     if (data.eee3sem3credtheory.split(',').length==4 && data.eee3sem1credtheory.split(',').length==3  ) {
-    let eeefour=data.AIML3sem3credtheory.split(',')
-    let eeeone=data.CSE3sem1credtheory.split(',')
+    let eeefour=data.eee3sem3credtheory.split(',')
+    let eeeone=data.eee3sem1credtheory.split(',')
     let updateddata={ eeefour, eeeone }
     handlesubmit(updateddata);
     }
@@ -187,11 +187,9 @@ else{
   }
 
   const onSubmitsem6eee = (data) => {
-    if (data.AIML6sem3credtheory.split(',').length==5 && (data.ISE6sem3credtheory.split(',')).length==5 && (data.CSE6sem3credtheory.split(',')).length==5 ) {
-      let aimlfour=(data.AIML6sem3credtheory.split(','))
-      let isefour=(data.ISE6sem3credtheory.split(','))
-      let csefour=(data.CSE6sem3credtheory.split(','))
-      let updateddata={ aimlfour, isefour, csefour}
+    if (data.eee6sem3credtheory.split(',').length==5  ) {
+      let eeefour=(data.eee6sem3credtheory.split(','))
+      let updateddata={ eeefour,}
       handlesubmit(updateddata);
     }
   
@@ -201,11 +199,9 @@ else{
   }
 
   const onSubmitsem7eee = (data) => {
-    if (data.AIML7sem3credtheory.split(',').length==5 && (data.ISE7sem3credtheory.split(',')).length==5 && (data.CSE7sem3credtheory.split(',')).length==5 ) {
-    let aimlfour=(data.AIML7sem3credtheory.split(','))
-    let isefour=(data.ISE7sem3credtheory.split(','))
-    let csefour=(data.CSE7sem3credtheory.split(','))
-    let updateddata={ aimlfour, isefour, csefour}
+    if (data.eee7sem3credtheory.split(',').length==5  ) {
+    let eeefour=(data.eee7sem3credtheory.split(','))
+    let updateddata={ eeefour}
     handlesubmit(updateddata);
   }
 else{
@@ -213,9 +209,9 @@ else{
     }
   }
   const onSubmityear1ece = (data1) => {
-    if ((data1.csedept3credsubs.split(',')).length==5 && data1.csedept1credsubs.split(',').length==2 ) {
-      let fourHour=(data1.csedept3credsubs.split(','))
-    let oneHour=(data1.csedept1credsubs.split(','))
+    if ((data1.ecedept3credsubs.split(',')).length==5 && data1.ecedept1credsubs.split(',').length==2 ) {
+      let fourHour=(data1.ecedept3credsubs.split(','))
+    let oneHour=(data1.ecedept1credsubs.split(','))
     let updateddata = { fourHourSubject:fourHour, oneHourSubject:oneHour };
     handlesubmit(updateddata);
     }
@@ -226,14 +222,10 @@ else{
   }
 
   const onSubmitsem3ece = (data) => {
-    if (data.AIML3sem3credtheory.split(',').length==4 && data.ISE3sem3credtheory.split(',').length==4 && data.CSE3sem3credtheory.split(',').length==4 && data.AIML3sem1credtheory.split(',').length==3 && data.ISE3sem1credtheory.split(',').length==3 && data.CSE3sem1credtheory.split(',').length==3  ) {
-    let aimlfour=data.AIML3sem3credtheory.split(',')
-    let isefour=data.ISE3sem3credtheory.split(',')
-    let csefour=data.CSE3sem3credtheory.split(',')
-    let aimlone=data.AIML3sem1credtheory.split(',')
-    let iseone=data.ISE3sem1credtheory.split(',')
-    let cseone=data.CSE3sem1credtheory.split(',')
-    let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
+    if (data.ece3sem3credtheory.split(',').length==4 && data.ece3sem1credtheory.split(',').length==3  ) {
+    let ecefour=data.AIML3sem3credtheory.split(',')
+    let eceone=data.CSE3sem1credtheory.split(',')
+    let updateddata={ ecefour, eceone }
     handlesubmit(updateddata);
     }
     else{
@@ -242,14 +234,10 @@ else{
   }
 
   const onSubmitsem4ece = (data) => {
-    if (data.AIML4sem3credtheory.split(',').length==4 && data.ISE4sem3credtheory.split(',').length==4 && data.CSE4sem3credtheory.split(',').length==4 && data.AIML4sem1credtheory.split(',').length==3 && data.ISE4sem1credtheory.split(',').length==3 && data.CSE4sem1credtheory.split(',').length==3  ) {
-    let aimlfour =(data.AIML4sem3credtheory.split(','))
-    let isefour=(data.ISE4sem3credtheory.split(','))
-    let csefour=(data.CSE4sem3credtheory.split(','))
-    let aimlone=(data.AIML4sem1credtheory.split(','))
-    let iseone=(data.ISE4sem1credtheory.split(','))
-    let cseone=(data.CSE4sem1credtheory.split(','))
-    let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
+    if (data.ece4sem3credtheory.split(',').length==4 && data.ece4sem1credtheory.split(',').length==3  ) {
+    let ecefour =(data.ece4sem3credtheory.split(','))
+    let eceone=(data.ece4sem1credtheory.split(','))
+    let updateddata={ ecefour, eceone }
     handlesubmit(updateddata);
       }
       else{
@@ -258,14 +246,10 @@ else{
   }
 
   const onSubmitsem5ece = (data) => {
-    if (data.AIML5sem3credtheory.split(',').length==4 && data.ISE5sem3credtheory.split(',').length==4 && data.CSE5sem3credtheory.split(',').length==4 && data.AIML5sem1credtheory.split(',').length==2 && data.ISE5sem1credtheory.split(',').length==2 && data.CSE5sem1credtheory.split(',').length==2  ) {
-    let aimlfour=(data.AIML5sem3credtheory.split(','))
-    let isefour=(data.ISE5sem3credtheory.split(','))
-    let csefour=(data.CSE5sem3credtheory.split(','))
-    let aimlone=(data.AIML5sem1credtheory.split(','))
-    let iseone=(data.ISE5sem1credtheory.split(','))
-    let cseone=(data.CSE5sem1credtheory.split(','))
-    let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
+    if (data.ece5sem3credtheory.split(',').length==4 && data.ece5sem1credtheory.split(',').length==2  ) {
+    let ecefour=(data.AIML5sem3credtheory.split(','))
+    let eceone=(data.CSE5sem1credtheory.split(','))
+    let updateddata={ ecefour,  eceone }
     handlesubmit(updateddata);
         }
         else{
@@ -274,11 +258,9 @@ else{
   }
 
   const onSubmitsem6ece = (data) => {
-    if (data.AIML6sem3credtheory.split(',').length==5 && (data.ISE6sem3credtheory.split(',')).length==5 && (data.CSE6sem3credtheory.split(',')).length==5 ) {
-      let aimlfour=(data.AIML6sem3credtheory.split(','))
-      let isefour=(data.ISE6sem3credtheory.split(','))
-      let csefour=(data.CSE6sem3credtheory.split(','))
-      let updateddata={ aimlfour, isefour, csefour}
+    if (data.ece6sem3credtheory.split(',').length==5 && (data.ece6sem3credtheory.split(',')).length==5 ) {
+      let ecefour=(data.AIML6sem3credtheory.split(','))
+      let updateddata={ ecefour}
       handlesubmit(updateddata);
     }
   
@@ -288,11 +270,9 @@ else{
   }
 
   const onSubmitsem7ece = (data) => {
-    if (data.AIML7sem3credtheory.split(',').length==5 && (data.ISE7sem3credtheory.split(',')).length==5 && (data.CSE7sem3credtheory.split(',')).length==5 ) {
-    let aimlfour=(data.AIML7sem3credtheory.split(','))
-    let isefour=(data.ISE7sem3credtheory.split(','))
-    let csefour=(data.CSE7sem3credtheory.split(','))
-    let updateddata={ aimlfour, isefour, csefour}
+    if (data.ece7sem3credtheory.split(',').length==5  ) {
+    let ecefour=(data.ece7sem3credtheory.split(','))
+    let updateddata={ ecefour}
     handlesubmit(updateddata);
   }
 else{
@@ -300,9 +280,9 @@ else{
     }
   }
   const onSubmityear1mech = (data1) => {
-    if ((data1.csedept3credsubs.split(',')).length==5 && data1.csedept1credsubs.split(',').length==2 ) {
-      let fourHour=(data1.csedept3credsubs.split(','))
-    let oneHour=(data1.csedept1credsubs.split(','))
+    if ((data1.mechdept3credsubs.split(',')).length==5 && data1.mechdept1credsubs.split(',').length==2 ) {
+      let fourHour=(data1.mechdept3credsubs.split(','))
+    let oneHour=(data1.mechdept1credsubs.split(','))
     let updateddata = { fourHourSubject:fourHour, oneHourSubject:oneHour };
     handlesubmit(updateddata);
     }
@@ -313,14 +293,10 @@ else{
   }
 
   const onSubmitsem3mech = (data) => {
-    if (data.AIML3sem3credtheory.split(',').length==4 && data.ISE3sem3credtheory.split(',').length==4 && data.CSE3sem3credtheory.split(',').length==4 && data.AIML3sem1credtheory.split(',').length==3 && data.ISE3sem1credtheory.split(',').length==3 && data.CSE3sem1credtheory.split(',').length==3  ) {
-    let aimlfour=data.AIML3sem3credtheory.split(',')
-    let isefour=data.ISE3sem3credtheory.split(',')
-    let csefour=data.CSE3sem3credtheory.split(',')
-    let aimlone=data.AIML3sem1credtheory.split(',')
-    let iseone=data.ISE3sem1credtheory.split(',')
-    let cseone=data.CSE3sem1credtheory.split(',')
-    let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
+    if (data.mech3sem3credtheory.split(',').length==4 && data.mech3sem1credtheory.split(',').length==3  ) {
+    let mechfour=data.mech3sem3credtheory.split(',')
+    let mechone=data.mech3sem1credtheory.split(',')
+    let updateddata={ mechfour, mechone }
     handlesubmit(updateddata);
     }
     else{
@@ -329,14 +305,10 @@ else{
   }
 
   const onSubmitsem4mech = (data) => {
-    if (data.AIML4sem3credtheory.split(',').length==4 && data.ISE4sem3credtheory.split(',').length==4 && data.CSE4sem3credtheory.split(',').length==4 && data.AIML4sem1credtheory.split(',').length==3 && data.ISE4sem1credtheory.split(',').length==3 && data.CSE4sem1credtheory.split(',').length==3  ) {
-    let aimlfour =(data.AIML4sem3credtheory.split(','))
-    let isefour=(data.ISE4sem3credtheory.split(','))
-    let csefour=(data.CSE4sem3credtheory.split(','))
-    let aimlone=(data.AIML4sem1credtheory.split(','))
-    let iseone=(data.ISE4sem1credtheory.split(','))
-    let cseone=(data.CSE4sem1credtheory.split(','))
-    let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
+    if (data.mech4sem3credtheory.split(',').length==4 &&  data.mech4sem1credtheory.split(',').length==3  ) {
+    let mechfour =(data.mech4sem3credtheory.split(','))
+    let mechone=(data.mech4sem1credtheory.split(','))
+    let updateddata={ mechfour,mechone }
     handlesubmit(updateddata);
       }
       else{
@@ -345,14 +317,10 @@ else{
   }
 
   const onSubmitsem5mech = (data) => {
-    if (data.AIML5sem3credtheory.split(',').length==4 && data.ISE5sem3credtheory.split(',').length==4 && data.CSE5sem3credtheory.split(',').length==4 && data.AIML5sem1credtheory.split(',').length==2 && data.ISE5sem1credtheory.split(',').length==2 && data.CSE5sem1credtheory.split(',').length==2  ) {
-    let aimlfour=(data.AIML5sem3credtheory.split(','))
-    let isefour=(data.ISE5sem3credtheory.split(','))
-    let csefour=(data.CSE5sem3credtheory.split(','))
-    let aimlone=(data.AIML5sem1credtheory.split(','))
-    let iseone=(data.ISE5sem1credtheory.split(','))
-    let cseone=(data.CSE5sem1credtheory.split(','))
-    let updateddata={ aimlfour, isefour, csefour, aimlone, iseone, cseone }
+    if (data.mech5sem3credtheory.split(',').length==4 &&  data.mech5sem1credtheory.split(',').length==2  ) {
+    let mechfour=(data.mech5sem3credtheory.split(','))
+    let mechone=(data.mech5sem1credtheory.split(','))
+    let updateddata={ mechfour, mechone }
     handlesubmit(updateddata);
         }
         else{
@@ -361,11 +329,9 @@ else{
   }
 
   const onSubmitsem6mech = (data) => {
-    if (data.AIML6sem3credtheory.split(',').length==5 && (data.ISE6sem3credtheory.split(',')).length==5 && (data.CSE6sem3credtheory.split(',')).length==5 ) {
-      let aimlfour=(data.AIML6sem3credtheory.split(','))
-      let isefour=(data.ISE6sem3credtheory.split(','))
-      let csefour=(data.CSE6sem3credtheory.split(','))
-      let updateddata={ aimlfour, isefour, csefour}
+    if (data.mech6sem3credtheory.split(',').length==5  ) {
+      let mechfour=(data.AIML6sem3credtheory.split(','))
+      let updateddata={mechfour}
       handlesubmit(updateddata);
     }
   
@@ -375,11 +341,9 @@ else{
   }
 
   const onSubmitsem7mech = (data) => {
-    if (data.AIML7sem3credtheory.split(',').length==5 && (data.ISE7sem3credtheory.split(',')).length==5 && (data.CSE7sem3credtheory.split(',')).length==5 ) {
-    let aimlfour=(data.AIML7sem3credtheory.split(','))
-    let isefour=(data.ISE7sem3credtheory.split(','))
-    let csefour=(data.CSE7sem3credtheory.split(','))
-    let updateddata={ aimlfour, isefour, csefour}
+    if (data.mech7sem3credtheory.split(',').length==5 ) {
+    let mechfour=(data.mech7sem3credtheory.split(','))
+    let updateddata={mechfour}
     handlesubmit(updateddata);
   }
 else{
