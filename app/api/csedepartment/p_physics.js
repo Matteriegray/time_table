@@ -8,7 +8,7 @@ const oneHourSubjects = oneHourSubject;
 let timetableStructure = [
     ["Monday(101)", "", "", "", "Lab"],
     ["Tuesday(101)", "", "", "", "Lab"],
-    ["Wednesday(101)", "", "Lab", "Lab", ""],
+    ["Wednesday(101)", "", "Free", "Lab", ""],
     ["Thursday (101)", "Free", "", "", "Free"],
     ["Friday (101)", "Free", "", "", "Free"]
 ];
@@ -47,7 +47,7 @@ let timetableStructureOfISE = [
     ["Friday(201)", "", "", "", "Free"]
 ];
 
-// Shuffle subjects for ISE
+// Shuffle subjects again for ISE
 shuffle(fourHourSubjects);
 shuffle(oneHourSubjects);
 
@@ -67,8 +67,8 @@ timetableStructureOfISE[4][1] = oneHourSubjects[1];
 
 // For CSE A
 let timetableStructureOfCSEA = [
-    ["Monday(201)", "", "Lab", "lab", ""],
-    ["Tuesday(201)", "", "Lab", "lab", ""],
+    ["Monday(201)", "", "Lab", "Free", ""],
+    ["Tuesday(201)", "", "Lab", "Free", ""],
     ["Wednesday(201)", "Free", "", "", "Lab"],
     ["Thursday (202)", "", "", "", "Free"],
     ["Friday(202)", "", "", "", "Free"]
@@ -95,10 +95,10 @@ timetableStructureOfCSEA[4][3] = oneHourSubjects[1];
 // For CSE B
 let timetableStructureOfCSEB = [
     ["Monday (202)", "", "", "", "Free"],
-    ["Tuesday (202)", "", "", "", "Free"],
-    ["Wednesday(202)", "", "", "", "Free"],
-    ["Thursday (202)", "lab", "", "Free", "lab"],
-    ["Friday (101)", "", "lab", "lab", ""]
+    ["Tuesday (202)", "", "", "lab", "Free"],
+    ["Wednesday(202)", "", "lab", "Free", "Free"],
+    ["Thursday (202)", "", "", "Free", "lab"],
+    ["Friday (101)", "", "", "lab", ""]
 ];
 
 // Shuffle subjects for CSE B
@@ -110,14 +110,15 @@ timetableStructureOfCSEB[3][2] = fourHourSubjects[0];
 timetableStructureOfCSEB[4][4] = fourHourSubjects[1];
 timetableStructureOfCSEB[4][1] = fourHourSubjects[2];
 timetableStructureOfCSEB[2][1] = fourHourSubjects[3];
-timetableStructureOfCSEB[2][2] = fourHourSubjects[4];
+timetableStructureOfCSEB[3][1] = fourHourSubjects[4];
 timetableStructureOfCSEB[2][3] = fourHourSubjects[0];
 timetableStructureOfCSEB[0][3] = fourHourSubjects[1];
 timetableStructureOfCSEB[0][2] = fourHourSubjects[2];
 timetableStructureOfCSEB[0][1] = oneHourSubjects[0];
-timetableStructureOfCSEB[1][3] = fourHourSubjects[3];
+timetableStructureOfCSEB[4][2] = fourHourSubjects[3];
 timetableStructureOfCSEB[1][2] = fourHourSubjects[4];
 timetableStructureOfCSEB[1][1] = oneHourSubjects[1];
+
 let totalcsedepartmentpcycle=[];
 totalcsedepartmentpcycle.push(timetableStructure)
 totalcsedepartmentpcycle.push(timetableStructureOfISE)
