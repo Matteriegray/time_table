@@ -164,8 +164,8 @@ const Page = () => {
 
   const onSubmitsem3eee = (data) => {
     if (data.eee3sem3credtheory.split(',').length == 4 && data.eee3sem1credtheory.split(',').length == 3) {
-      let eeefour = data.AIML3sem3credtheory.split(',')
-      let eeeone = data.CSE3sem1credtheory.split(',')
+      let eeefour = data.eee3sem3credtheory.split(',')
+      let eeeone = data.eeesem1credtheory.split(',')
       let updateddata = { eeefour, eeeone }
       handlesubmit(updateddata);
     }
@@ -199,25 +199,21 @@ const Page = () => {
   }
 
   const onSubmitsem6eee = (data) => {
-    if (data.AIML6sem3credtheory.split(',').length == 5 && (data.ISE6sem3credtheory.split(',')).length == 5 && (data.CSE6sem3credtheory.split(',')).length == 5) {
-      let aimlfour = (data.AIML6sem3credtheory.split(','))
-      let isefour = (data.ISE6sem3credtheory.split(','))
-      let csefour = (data.CSE6sem3credtheory.split(','))
-      let updateddata = { aimlfour, isefour, csefour }
+    if (data.eee6sem3credtheory.split(',').length == 5 ) {
+      let eeefour = (data.eee6sem3credtheory.split(','))
+      let updateddata = { eeefour }
       handlesubmit(updateddata);
     }
 
     else {
-      alert("You did't entered required subjects or You had entered more number of subjects :)")
+      alert("You did't entered 5 3 credit subjects :)")
     }
   }
 
   const onSubmitsem7eee = (data) => {
-    if (data.AIML7sem3credtheory.split(',').length == 5 && (data.ISE7sem3credtheory.split(',')).length == 5 && (data.CSE7sem3credtheory.split(',')).length == 5) {
-      let aimlfour = (data.AIML7sem3credtheory.split(','))
-      let isefour = (data.ISE7sem3credtheory.split(','))
-      let csefour = (data.CSE7sem3credtheory.split(','))
-      let updateddata = { aimlfour, isefour, csefour }
+    if (data.eee7sem3credtheory.split(',').length == 5) {
+      let eeefour = (data.eee7sem3credtheory.split(','))
+      let updateddata = { eeefour }
       handlesubmit(updateddata);
     }
     else {
@@ -225,9 +221,9 @@ const Page = () => {
     }
   }
   const onSubmityear1ece = (data1) => {
-    if ((data1.csedept3credsubs.split(',')).length == 5 && data1.csedept1credsubs.split(',').length == 2) {
-      let fourHour = (data1.csedept3credsubs.split(','))
-      let oneHour = (data1.csedept1credsubs.split(','))
+    if ((data1.ecedept3credsubs.split(',')).length == 5 && data1.ecedept1credsubs.split(',').length == 2) {
+      let fourHour = (data1.ecedept3credsubs.split(','))
+      let oneHour = (data1.ecedept1credsubs.split(','))
       let updateddata = { fourHourSubject: fourHour, oneHourSubject: oneHour };
       handlesubmit(updateddata);
     }
