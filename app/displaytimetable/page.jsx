@@ -44,26 +44,26 @@ const Timetable = ({ data, selectedSemesters }) => {
           <div key={index} className="timetable-section">
             <h2 className="text-2xl font-semibold">{sem} Semester Timetable</h2>
             {timetable.map((week, weekIndex) => (
-              <div key={weekIndex} className="week">
+              <div key={weekIndex} className="week flex flex-col">
                 <h3 className="font-bold">{classes[weekIndex]}</h3>
-                <table className="timetable-table">
-                  <thead>
-                    <tr>
-                      <th className='ml-5'>Day</th>
-                      <th className='ml-5'>8-10:30</th>
-                      <th className='ml-5'>11-12:40</th>
-                      <th className='ml-5'>12:40-2:20</th>
-                      <th className='ml-5'>2:40-5:15</th>
+                <table className="timetable-table w-[100%] flex flex-col justify-center items-center">
+                  <thead className='w-[90%] mb-2'>
+                    <tr className='flex justify-evenly gap-2'>
+                      <th className='w-1/5 text-center border-[#000000] border-2 rounded-md py-1'>Day</th>
+                      <th className='w-1/5 text-center border-[#000000] border-2 rounded-md py-1'>8-10:30</th>
+                      <th className='w-1/5 text-center border-[#000000] border-2 rounded-md py-1'>11-12:40</th>
+                      <th className='w-1/5 text-center border-[#000000] border-2 rounded-md py-1'>12:40-2:20</th>
+                      <th className='w-1/5 text-center border-[#000000] border-2 rounded-md py-1'>2:40-5:15</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className='w-[90%] flex flex-col gap-1'>
                     {week.map((day, dayIndex) => (
-                      <tr key={dayIndex}>
-                        <td className='ml-5 text-center px-5'>{day[0]}</td>
-                        <td className='ml-5 text-center px-5'>{day[1]}</td>
-                        <td className='ml-5 text-center px-5'>{day[2]}</td>
-                        <td className='ml-5 text-center px-5'>{day[3]}</td>
-                        <td className='ml-5 text-center px-5'>{day[4]}</td>
+                      <tr key={dayIndex} className='flex justify-evenly gap-2'>
+                        <td className='w-1/5 text-center border-[#000000] border-2 rounded-md py-1'>{day[0]}</td>
+                        <td className='w-1/5 text-center border-[#000000] border-2 rounded-md py-1'>{day[1]}</td>
+                        <td className='w-1/5 text-center border-[#000000] border-2 rounded-md py-1'>{day[2]}</td>
+                        <td className='w-1/5 text-center border-[#000000] border-2 rounded-md py-1'>{day[3]}</td>
+                        <td className='w-1/5 text-center border-[#000000] border-2 rounded-md py-1'>{day[4]}</td>
                       </tr>
                     ))}
                   </tbody>
