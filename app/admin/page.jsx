@@ -212,7 +212,7 @@ const Page = () => {
 
   const onSubmitsem7eee = (data) => {
     if (data.eee7sem3credtheory.split(',').length == 5) {
-      let eeefour = (data.AIML7sem3credtheory.split(','))
+      let eeefour = (data.eee7sem3credtheory.split(','))
       let updateddata = { eeefour }
       handlesubmit(updateddata);
     }
