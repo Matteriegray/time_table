@@ -41,35 +41,39 @@ const Timetableece = ({ data, selectedSemesters }) => {
         }
 
         return (
-          <div key={index} className="timetable-section">
-            <h2 className="text-2xl font-semibold">{sem} Semester Timetable</h2>
-            {timetable.map((week, weekIndex) => (
-              <div key={weekIndex} className="week">
-                <h3 className="font-bold">{classes[weekIndex]}</h3>
-                <table className="timetable-table">
-                  <thead>
-                    <tr>
-                      <th className='ml-5'>Day</th>
-                      <th className='ml-5'>8-10:30</th>
-                      <th className='ml-5'>11-12:40</th>
-                      <th className='ml-5'>12:40-2:20</th>
-                      <th className='ml-5'>2:40-5:15</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {week.map((day, dayIndex) => (
-                      <tr key={dayIndex}>
-                        <td className='ml-5 text-center px-5'>{day[0]}</td>
-                        <td className='ml-5 text-center px-5'>{day[1]}</td>
-                        <td className='ml-5 text-center px-5'>{day[2]}</td>
-                        <td className='ml-5 text-center px-5'>{day[3]}</td>
-                        <td className='ml-5 text-center px-5'>{day[4]}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            ))}
+          <div className="timetable-container w-full h-[100vh] bg-[#000000a6] text-[#ffffff] absolute top-0 left-0 z-50 overflow-hidden flex flex-col justify-center items-center">
+      
+              {(timetable.map(({ semester, timetable }, index) => (
+                  <div key={index} className="w-full flex justify-center items-center flex-col gap-4 p-10 timetable-section">
+                    <h2 className="text-3xl font-bold">Timetable of AI&ML year {semester}</h2>
+                    <div className="week border-2 bg-[#00000099] border-[#ffffff] w-full flex flex-col justify-center items-center gap-2 p-4 rounded-md">
+                      <h3 className="font-bold text-xl pb-4">AI&ML</h3>
+                      <table className="timetable-table w-[90%]">
+                        <thead className=''>
+                        <tr className='flex justify-evenly gap-1 mb-2'>
+                            <th className="w-1/5 text-center rounded-md py-3 bg-[#ffffff] text-[#000]">Day</th>
+                            <th className="w-1/5 text-center rounded-md py-3 bg-[#ffffff] text-[#000]">8-10:30</th>
+                            <th className="w-1/5 text-center rounded-md py-3 bg-[#ffffff] text-[#000]">11-12:40</th>
+                            <th className="w-1/5 text-center rounded-md py-3 bg-[#ffffff] text-[#000]">12:40-2:20</th>
+                            <th className="w-1/5 text-center rounded-md py-3 bg-[#ffffff] text-[#000]">2:40-5:15</th>
+                          </tr>
+                        </thead>
+                        <tbody className='flex flex-col gap-1'>
+                          {week.map((day, dayIndex) => (
+                            <tr key={dayIndex} className='flex justify-evenly gap-1'>
+                              <td className="w-1/5 text-center rounded-md py-2 bg-[#ffffffef] text-[#000]">{day[0]}</td>
+                              <td className="w-1/5 text-center rounded-md py-2 bg-[#ffffffef] text-[#000]">{day[1]}</td>
+                              <td className="w-1/5 text-center rounded-md py-2 bg-[#ffffffef] text-[#000]">{day[2]}</td>
+                              <td className="w-1/5 text-center rounded-md py-2 bg-[#ffffffef] text-[#000]">{day[3]}</td>
+                              <td className="w-1/5 text-center rounded-md py-2 bg-[#ffffffef] text-[#000]">{day[4]}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                ))
+              )}
           </div>
         );
       })}
