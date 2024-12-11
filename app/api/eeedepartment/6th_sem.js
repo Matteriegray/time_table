@@ -1,12 +1,12 @@
 export const sixthSemeee=(eeeafour,eeebfour)=> {
     
-    // Timetable structure for EEEA
+    // Timetable structure for EEE A
     const timetable_structure = [
-        ["Monday(LH6)", "", "", "", "Lab"],
-        ["Tuesday(LH6)", "", "", "", "Lab"],
-        ["Wednesday(LH6)", "", "", "", "Lab"],
-        ["Thursday(LH6)", "", "", "", "Lab"],
-        ["Friday(LH6)", "", "", "", ""]
+        ["Monday(324)", "Lab", "", "", "Lab"],
+        ["Tuesday(324)", "", "", "Free", "Free"],
+        ["Wednesday(324)", "Lab", "", "", "Lab"],
+        ["Thursday (324)", "Lab", "", "", "Lab"],
+        ["Friday (324)", "Free", "Free", "Free", "Free"]
     ];
     
     function shuffle(array) {
@@ -17,7 +17,7 @@ export const sixthSemeee=(eeeafour,eeebfour)=> {
         return array;
     }
 
-    // Shuffle EEEA subjects
+    // Shuffle EEE A subjects
     shuffle(eeeafour);
 
     // Assign subjects to EEEA timetable
@@ -32,13 +32,13 @@ export const sixthSemeee=(eeeafour,eeebfour)=> {
     timetable_structure[4][2] = eeeafour[4];
     timetable_structure[4][3] = eeeafour[0];
 
-    // For EEEB
+    // For EEE B
     const timetable_structure_of_eeeb = [
-        ["Monday(LH4)", "", "", "", ""],
-        ["Tuesday(LH6)", "", "", "Lab", ""],
-        ["Wednesday(LH6)", "", "", "Lab", ""],
-        ["Thursday(LH4)", "", "", "Lab", ""],
-        ["Friday(LH6)", "", "", "Lab", ""]
+        ["Monday(325)", "Free", "", "", ""],
+        ["Tuesday(325)", "Lab", "", "", "Lab"],
+        ["Wednesday(325)", "", "Lab", "Lab", "Free"],
+        ["Thursday (325)", "Lab", "", "", "Lab"],
+        ["Friday(325)", "Free", "Lab", "Lab", "Free"]
     ];
 
     // Shuffle EEEB subjects

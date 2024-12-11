@@ -6,11 +6,11 @@ export const chemistrycycleeee= (fourHourSubject,oneHourSubject) => {
     
     // Timetable structure for eeeA
     let timetableStructureOfeeeA = [
-        ["Monday(101)", "", "", "", "Lab"],
-        ["Tuesday(101)", "", "", "", "Lab"],
-        ["Wednesday(101)", "", "Lab", "Lab", ""],
-        ["Thursday (101)", "Free", "", "", "Free"],
-        ["Friday (101)", "Free", "", "", "Free"]
+        ["Monday(326)", "", "", "", "Lab"],
+        ["Tuesday(326)", "", "", "", "Lab"],
+        ["Wednesday(326)", "", "Lab", "Lab", ""],
+        ["Thursday (326)", "Free", "", "", "Free"],
+        ["Friday (326)", "Free", "", "", "Free"]
     ];
     
     // Shuffle function
@@ -38,13 +38,14 @@ export const chemistrycycleeee= (fourHourSubject,oneHourSubject) => {
     timetableStructureOfeeeA[4][2] = fourHourSubjects[3];
     timetableStructureOfeeeA[4][3] = fourHourSubjects[4];
     timetableStructureOfeeeA[1][3] = oneHourSubjects[1];
+    
     // For eeeB
     let timetableStructureOfeeeB = [
-        ["Monday(201)", "Lab", "", "", "Free"],
-        ["Tuesday(201)", "Lab", "", "", "Free"],
-        ["Wednesday(101)", "Lab", "", "", "Free"],
-        ["Thursday (201)", "", "", "", "Free"],
-        ["Friday(201)", "", "", "", "Free"]
+        ["Monday(327)", "", "", "", "Free"],
+        ["Tuesday(327)", "Lab", "", "", "Free"],
+        ["Wednesday(326)", "", "Lab", "Lab", "Free"],
+        ["Thursday (326)", "", "", "", "Lab"],
+        ["Friday(327)", "", "", "", "Free"]
     ];
     
     // Shuffle subjects for eeeB

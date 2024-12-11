@@ -1,12 +1,12 @@
 export const fourthsemeee= (eeeafour,eeeaone,eeebfour,eeebone) => {
 
-    // Timetable structure for EEEA
+    // Timetable structure for EEE A
     let timetableStructure = [
-        ["Monday(LH2)", "", "", "", "Lab"],
-        ["Tuesday(LH2)", "", "", "", "Lab"],
-        ["Wednesday(LH2)", "", "Lab", "Lab", ""],
-        ["Thursday (LH2)", "Free", "", "", "Free"],
-        ["Friday (LH2)", "Brige maths", "", "", "B kannada"]
+        ["Monday(330)", "", "Lab", "Lab", "Free"],
+        ["Tuesday(330)", "", "", "", "Lab"],
+        ["Wednesday(330)", "Free", "", "", ""],
+        ["Thursday (330)", "Lab", "", "", "Free"],
+        ["Friday (330)", "", "", "Free", "Free"]
     ];
     
     // Shuffle subjects randomly
@@ -23,26 +23,25 @@ export const fourthsemeee= (eeeafour,eeeaone,eeebfour,eeebone) => {
     
     // Assign subjects to timetable
     timetableStructure[0][1] = eeeafour[0];
-    timetableStructure[0][2] = eeeafour[1];
+    timetableStructure[1][3] = eeeafour[1];
     timetableStructure[1][1] = eeeafour[2];
     timetableStructure[1][2] = eeeafour[3];
-    timetableStructure[2][1] = eeeafour[4];
-    timetableStructure[2][4] = eeeafour[0];
+    timetableStructure[2][2] = eeeafour[4];
+    timetableStructure[4][1] = eeeafour[0];
     timetableStructure[3][2] = eeeafour[1];
     timetableStructure[3][3] = eeeafour[2];
-    timetableStructure[0][3] = eeeaone[0];
-    timetableStructure[4][2] = eeeafour[3];
-    timetableStructure[4][3] = eeeafour[4];
-    timetableStructure[1][3] = eeeaone[1];
+    timetableStructure[2][4] = eeeaone[0];
+    timetableStructure[4][2] = eeeaone[4];
+    timetableStructure[2][3] = eeeaone[1];
     
     
-    // For EEEB
+    // For EEE B
     let timetableStructureOfeeeb = [
-        ["Monday(LH1)", "Lab", "", "", "Free"],
-        ["Tuesday(LH1)", "Lab", "", "", "Free"],
-        ["Wednesday(LH2)", "Lab", "", "", "Free"],
-        ["Thursday (LH1)", "", "", "", ""],
-        ["Friday(LH1)", "Brige maths", "", "", "B kannada"]
+        ["Monday(330)", "Lab", "", "", "Free"],
+        ["Tuesday(330)", "Free", "Lab", "Lab", ""],
+        ["Wednesday(327)", "", "", "", "Lab"],
+        ["Thursday (327)", "", "", "", "Free"],
+        ["Friday(330)", "Free", "Free", "", ""]
     ];
     
     // Shuffle subjects randomly
@@ -52,15 +51,14 @@ export const fourthsemeee= (eeeafour,eeeaone,eeebfour,eeebone) => {
     // Assign subjects to timetable
     timetableStructureOfeeeb[0][2] = eeebfour[0];
     timetableStructureOfeeeb[0][3] = eeebfour[1];
-    timetableStructureOfeeeb[1][2] = eeebfour[2];
-    timetableStructureOfeeeb[1][3] = eeebfour[3];
-    timetableStructureOfeeeb[2][2] = eeebfour[4];
-    timetableStructureOfeeeb[2][3] = eeebfour[0];
+    timetableStructureOfeeeb[1][4] = eeebfour[2];
+    timetableStructureOfeeeb[2][2] = eeebfour[3];
+    timetableStructureOfeeeb[2][3] = eeebfour[4];
+    timetableStructureOfeeeb[3][1] = eeebfour[0];
     timetableStructureOfeeeb[3][3] = eeebfour[1];
     timetableStructureOfeeeb[3][2] = eeebfour[2];
-    timetableStructureOfeeeb[3][1] = eeebone[0];
-    timetableStructureOfeeeb[4][3] = eeebfour[3];
-    timetableStructureOfeeeb[4][2] = eeebfour[4];
+    timetableStructureOfeeeb[2][1] = eeebone[0];
+    timetableStructureOfeeeb[4][3] = eeebone[4];
     timetableStructureOfeeeb[3][4] = eeebone[1];
     
     
