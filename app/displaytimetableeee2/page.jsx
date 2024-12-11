@@ -1,134 +1,129 @@
 import React, { useEffect, useState } from 'react';
 
-const Timetableeee = ({ data, selectedSemesters }) => {
-    let timetable=[];
-    let classes=["EEEA","EEEB"]
-  return (
-    <div className="timetable-container">
-      <h1 className="text-3xl font-bold">{data.result.name} Timetable</h1>
-      {selectedSemesters.map((sem, index) => {
-        switch (sem) {
-            case 1:
-                timetable = data.result[`eeeccycle`];
-                break;
-            case 2:
-                timetable = data.result[`eeepcycle`];
-                break;
-            case 3:
-                timetable = data.result[`eee3rdsem`];
-                break;
-            case 4:
-                timetable = data.result[`eee4thsem`];
-                break;
-            case 5:
-                timetable = data.result[`eee5thsem`];
-                break;
-            case 6:
-                timetable = data.result[`eee6thsem`];
-                break;
-            case 7:
-                timetable = data.result[`eee7thsem`];
-                break;
-            case 8:
-                timetable = data.result[`eee8thsem`];
-                break;
-            default:
-                break;
-        }
-
-        if (!timetable || timetable.length <2) {
-          return <p key={index}>No timetable available for {sem} semester.</p>;
-        }
-
-        return (
-          <div key={index} className="timetable-section">
-            <h2 className="text-2xl font-semibold">{sem} Semester Timetable</h2>
-            {timetable.map((week, weekIndex) => (
-              <div key={weekIndex} className="week">
-                <h3 className="font-bold">{classes[weekIndex]}</h3>
-                <table className="timetable-table">
-                  <thead>
-                    <tr>
-                      <th className='ml-5'>Day</th>
-                      <th className='ml-5'>8-10:30</th>
-                      <th className='ml-5'>11-12:40</th>
-                      <th className='ml-5'>12:40-2:20</th>
-                      <th className='ml-5'>2:40-5:15</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {week.map((day, dayIndex) => (
-                      <tr key={dayIndex}>
-                        <td className='ml-5 text-center px-5'>{day[0]}</td>
-                        <td className='ml-5 text-center px-5'>{day[1]}</td>
-                        <td className='ml-5 text-center px-5'>{day[2]}</td>
-                        <td className='ml-5 text-center px-5'>{day[3]}</td>
-                        <td className='ml-5 text-center px-5'>{day[4]}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            ))}
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-
-const App = () => {
-  const [data, setData] = useState(null);
-  const [selectedSemesters, setSelectedSemesters] = useState([]);
+const Timetableeeeuser = ({ data, selectedSemester }) => {
+  const [timetable, setTimetable] = useState([]);
+console.log(data);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('/api'); // Adjust the API endpoint
-      const result = await response.json();
-      setData(result);
-    };
+    if (!selectedSemester || !data) {
+      return; // Exit early if selectedSemester or data is missing
+    }
 
-    fetchData();
-  }, []);
+    // Log selectedSemester and its type to debug
+    console.log("selectedSemester:", selectedSemester, typeof selectedSemester);
 
-  const handleSemesterSelection = (sem) => {
-    setSelectedSemesters((prev) => {
-      if (prev.includes(sem)) {
-        return prev.filter((s) => s !== sem); // Deselect if already selected
-      } else if (prev.length < 4) {
-        return [...prev, sem]; // Select if less than 4
-      }
-      return prev; // Don't allow more than 4 selections
-    });
-  };
+    // Convert selectedSemester to a number, if it's not already
+    const semester = Number(selectedSemester); // Convert to number if neeessary
+
+    // Log after conversion to see the final value
+    console.log("Converted semester:", semester);
+
+    let semData = [];
+
+    // Check the selected semester and get the timetable data
+    switch (semester) {
+      case 1:
+        console.log("Selected Semester is 1");
+        semData = data.result[`eeeccycle`][0] !== "" ? data.result[`eeeccycle`] : data.result[`eeepcycle`];
+        console.log(semData);
+        
+        break;
+      case 2:
+        console.log("Selected Semester is 2");
+        semData = data.result[`eee3rdsem`][0] !== "" ? data.result[`eee3rdsem`] : data.result[`eee4thsem`];
+        break;
+      case 3:
+        console.log("Selected Semester is 3");
+        semData = data.result[`eee5thsem`][0] !== "" ? data.result[`eee5thsem`] : data.result[`eee6thsem`];
+        break;
+      case 4:
+        console.log("Selected Semester is 4");
+        semData = data.result[`eee7thsem`][0] !== "" ? data.result[`eee7thsem`] : data.result[`eee8thsem`];
+        break;
+      default:
+        console.log("Default case hit, invalid semester:", selectedSemester);
+        break;
+    }
+
+    // If valid timetable data is found, update state
+    if (semData && semData.length > 0) {
+      setTimetable([{ semester, timetable: semData }]);
+    } else {
+      setTimetable([]); // No timetable available for the selected semester
+    }
+
+    console.log('Final selected semester:', semester); // Debugging statement
+
+  }, [selectedSemester, data]); // This hook runs when either `selectedSemester` or `data` changes
+
+  if (!data) {
+    return <p>Loading timetable...</p>; // Show loading state if `data` is not available
+  }
 
   return (
-    <div className="app-container">
-      <div>
-        <h2>Select Semesters:</h2>
-        {[3, 4, 5, 6, 7, 8].map((sem) => (
-          <button
-            key={sem}
-            onClick={() => handleSemesterSelection(sem)}
-            style={{
-              backgroundColor: selectedSemesters.includes(sem) ? '#3b82f6e0' : 'white',
-              color: selectedSemesters.includes(sem) ? 'white' : 'black',
-              margin: '5px',
-              padding: '10px',
-              cursor: 'pointer',
-            }}
-          >
-            {sem} Semester
-          </button>
-        ))}
-      </div>
-      {data ? (
-        <Timetable data={data} selectedSemesters={selectedSemesters} />
+    <div className="timetable-container">
+      <h1 className="text-3xl font-bold">{data?.result?.name} Timetable</h1>
+      {timetable.length === 0 ? (
+        <p>No timetable available for the selected semester.</p>
       ) : (
-        <p>Loading timetable...</p>
+        timetable.map(({ semester, timetable }, index) => (
+          <div key={index} className="timetable-section">
+            <h2 className="text-2xl font-semibold">{semester}nd year Timetable</h2>
+            <div className="week">
+              <h3 className="font-bold">eee A</h3>
+              <table className="timetable-table">
+                <thead>
+                  <tr>
+                    <th className="ml-5">Day</th>
+                    <th className="ml-5">8-10:30</th>
+                    <th className="ml-5">11-12:40</th>
+                    <th className="ml-5">12:40-2:20</th>
+                    <th className="ml-5">2:40-5:15</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {timetable[0].map((day, dayIndex) => (
+                    <tr key={dayIndex}>
+                      <td className="ml-5 text-center px-5">{day[0]}</td>
+                      <td className="ml-5 text-center px-5">{day[1]}</td>
+                      <td className="ml-5 text-center px-5">{day[2]}</td>
+                      <td className="ml-5 text-center px-5">{day[3]}</td>
+                      <td className="ml-5 text-center px-5">{day[4]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {timetable[1] && <div className="week">
+              <h3 className="font-bold">eee B</h3>
+              <table className="timetable-table">
+                <thead>
+                  <tr>
+                    <th className="ml-5">Day</th>
+                    <th className="ml-5">8-10:30</th>
+                    <th className="ml-5">11-12:40</th>
+                    <th className="ml-5">12:40-2:20</th>
+                    <th className="ml-5">2:40-5:15</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {timetable[1].map((day, dayIndex) => (
+                    <tr key={dayIndex}>
+                      <td className="ml-5 text-center px-5">{day[0]}</td>
+                      <td className="ml-5 text-center px-5">{day[1]}</td>
+                      <td className="ml-5 text-center px-5">{day[2]}</td>
+                      <td className="ml-5 text-center px-5">{day[3]}</td>
+                      <td className="ml-5 text-center px-5">{day[4]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>}
+          </div>
+        ))
       )}
     </div>
   );
 };
 
-export default Timetableeee;
+export default Timetableeeeuser;
