@@ -9,7 +9,7 @@ const Timetable = ({ data, selectedSemesters }) => {
       {selectedSemesters.map((sem, index) => {
         switch (sem) {
             case 1:
-                timetable = data.result[`cseccycle`];
+                timetable = data.result[`cseccycle`]; 
                 break;
             case 2:
                 timetable = data.result[`csepcycle`];

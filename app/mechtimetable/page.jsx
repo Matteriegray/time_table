@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import Timetable from '../displaytimetable/page'; 
+import Timetablemech from '../displaytimetablemech/page';
 import CustomLayout from '../customlayout';
 
 const App = () => {
@@ -49,7 +49,7 @@ const App = () => {
         ))}
       </div>
       {data ? (
-        <Timetable data={data} selectedSemesters={selectedSemesters} />
+        <Timetablemech data={data} selectedSemesters={selectedSemesters} />
       ) : (
         <p>Loading timetable...</p>
       )}
