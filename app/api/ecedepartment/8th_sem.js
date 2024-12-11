@@ -1,60 +1,62 @@
 export const eigthSemece=(eceafour,ecebfour)=> {
     
-    // Timetable structure for ECE
-    const timetable_structure = [
-        ["Monday(LH6)", "", "", "", "Lab"],
-        ["Tuesday(LH6)", "", "", "", "Lab"],
-        ["Wednesday(LH6)", "", "", "", "Lab"],
-        ["Thursday(LH6)", "", "", "", "Lab"],
-        ["Friday(LH6)", "", "", "", ""]
+     // Timetable structure for ECEA
+     let timetableStructure = [
+        ["Monday(328)", "", "Free", "Free", "Free"],
+        ["Tuesday(328)", "", "Free", "Free", "Free"],
+        ["Wednesday(328)", "Free", "Free", "Free", "Free"],
+        ["Thursday (328)", "Free", "Free", "Free", "Free"],
+        ["Friday (328)", "Free", "Free", "Free", "Free"]
     ];
     
+    // Shuffle subjects randomly
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];  // Swap elements
+            [array[i], array[j]] = [array[j], array[i]];
         }
         return array;
     }
-
-    // Shuffle ECE A subjects
+    
     shuffle(eceafour);
+    shuffle(eceaone);
+    
+    // Assign subjects to timetable
+    timetableStructure[0][1] = eceafour[0];
+    timetableStructure[1][1] = eceafour[0];
+    // timetableStructure[2][3] = eceafour[2];
+    // timetableStructure[0][4] = eceafour[3];
+    // timetableStructure[1][1] = eceafour[0];
+    // timetableStructure[1][3] = eceafour[1];
+    // timetableStructure[1][2] = eceaone[0];
+    // timetableStructure[0][3] = eceafour[2];
+    // timetableStructure[2][4] = eceafour[3];
 
-    // Assign subjects to ECE A timetable
-    timetable_structure[0][2] = eceafour[0];
-    timetable_structure[0][3] = eceafour[1];
-    timetable_structure[1][2] = eceafour[2];
-    timetable_structure[1][3] = eceafour[3];
-    timetable_structure[2][2] = eceafour[4];
-    timetable_structure[2][3] = eceafour[1];
-    timetable_structure[3][2] = eceafour[2];
-    timetable_structure[3][3] = eceafour[3];
-    timetable_structure[4][2] = eceafour[4];
-    timetable_structure[4][3] = eceafour[0];
-
-    // For ECE B
-    const timetable_structure_of_eceb = [
-        ["Monday(LH4)", "", "", "", ""],
-        ["Tuesday(LH6)", "", "", "Lab", ""],
-        ["Wednesday(LH6)", "", "", "Lab", ""],
-        ["Thursday(LH4)", "", "", "Lab", ""],
-        ["Friday(LH6)", "", "", "Lab", ""]
+    
+    
+    // For ECEB
+    let timetableStructureOfeceb = [
+        ["Monday(328)", "Free", "", "Free", "Free"],
+        ["Tuesday(328)", "Free", "", "Free", "Free"],
+        ["Wednesday(328)", "Free", "Free", "Free", "Free"],
+        ["Thursday (328)", "Free", "Free", "Free", "Free"],
+        ["Friday (328)", "Free", "Free", "Free", "Free"]
     ];
-
-    // Shuffle ECE B subjects
+    
+    // Shuffle subjects randomly
     shuffle(ecebfour);
-
-    // Assign subjects to ECE B timetable
-    timetable_structure_of_eceb[0][1] = ecebfour[0];
-    timetable_structure_of_eceb[0][2] = ecebfour[1];
-    timetable_structure_of_eceb[0][3] = ecebfour[2];
-    timetable_structure_of_eceb[1][4] = ecebfour[3];
-    timetable_structure_of_eceb[1][2] = ecebfour[4];
-    timetable_structure_of_eceb[3][4] = ecebfour[0];
-    timetable_structure_of_eceb[2][4] = ecebfour[1];
-    timetable_structure_of_eceb[4][1] = ecebfour[4];
-    timetable_structure_of_eceb[3][2] = ecebfour[2];
-    timetable_structure_of_eceb[0][4] = ecebfour[3];
+    shuffle(ecebone);
+    
+    // Assign subjects to timetable
+    timetableStructureOfeceb[0][2] = ecebfour[0];
+    timetableStructureOfeceb[1][2] = ecebfour[0];
+    // timetableStructureOfeceb[2][3] = ecebfour[2];
+    // timetableStructureOfeceb[0][4] = ecebfour[3];
+    // timetableStructureOfeceb[1][1] = ecebfour[0];
+    // timetableStructureOfeceb[1][3] = ecebfour[1];
+    // timetableStructureOfeceb[1][2] = ecebfour[2];
+    // timetableStructureOfeceb[0][3] = ecebone[0];
+    // timetableStructureOfeceb[2][4] = ecebfour[3];
 
 
     
