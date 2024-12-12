@@ -365,7 +365,7 @@ const Page = () => {
   return (
     <div className="flex flex-col items-center w-full text-white pt-[5%] justify-center absolute top-0 left-0 gap-4">
       <h1 className="text-3xl font-bold ">Welcome Admin</h1>
-      <div className='flex flex-col items-center w-full '>
+      <div className='flex flex-col items-center w-full max-h-[100vh] relative'>
         <h1 className="font-semibold text-2xl">Select Department</h1>
         <div className='flex gap-5 mt-2'>
           {["CSE", "EEE", "ECE", "MECH"].map((button) => (
@@ -431,7 +431,7 @@ const Page = () => {
                   </div>
 
                   <div className='flex gap-5'>
-                    <button type='submit' className={` ml-5 bg-${colur}-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold `}>
+                    <button type='submit' className={` bg-${colur}-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold `}>
                       Generate Timetable
                     </button>
 
@@ -488,7 +488,7 @@ const Page = () => {
             {selectedButton == "CSE" && showinput && selectedBox == 3 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -546,7 +546,7 @@ const Page = () => {
             {selectedButton == "CSE" && showinput && selectedBox == 4 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -603,7 +603,7 @@ const Page = () => {
             {showinput && selectedButton == "CSE" && selectedBox == 5 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -645,7 +645,7 @@ const Page = () => {
             {showinput && selectedButton == "CSE" && selectedBox == 6 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -689,7 +689,7 @@ const Page = () => {
             {showinput && selectedButton == "CSE" && selectedBox == 7 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -731,7 +731,7 @@ const Page = () => {
                   </div>
 
                   <div className='flex gap-5'>
-                    <button type='submit' className={` ml-5 bg-${colur}-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold `}>
+                    <button type='submit' className={` bg-${colur}-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold `}>
                       Generate Timetable
                     </button>
 
@@ -785,7 +785,7 @@ const Page = () => {
             {selectedButton == "EEE" && showinput && selectedBox == 3 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -841,7 +841,7 @@ const Page = () => {
             {selectedButton == "EEE" && showinput && selectedBox == 4 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -896,7 +896,7 @@ const Page = () => {
             {showinput && selectedButton == "EEE" && selectedBox == 5 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -936,7 +936,7 @@ const Page = () => {
             {showinput && selectedButton == "EEE" && selectedBox == 6 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -977,7 +977,7 @@ const Page = () => {
             ))}{showinput && selectedButton == "EEE" && selectedBox == 7 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -1020,7 +1020,7 @@ const Page = () => {
                   </div>
 
                   <div className='flex gap-5'>
-                    <button type='submit' className={` ml-5 bg-${colur}-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold `}>
+                    <button type='submit' className={` bg-${colur}-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold `}>
                       Generate Timetable
                     </button>
 
@@ -1074,7 +1074,7 @@ const Page = () => {
             {selectedButton == "ECE" && showinput && selectedBox == 3 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -1130,7 +1130,7 @@ const Page = () => {
             {selectedButton == "ECE" && showinput && selectedBox == 4 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -1185,7 +1185,7 @@ const Page = () => {
             {showinput && selectedButton == "ECE" && selectedBox == 5 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -1225,7 +1225,7 @@ const Page = () => {
             {showinput && selectedButton == "ECE" && selectedBox == 6 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -1266,7 +1266,7 @@ const Page = () => {
             ))}{showinput && selectedButton == "ECE" && selectedBox == 7 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -1309,7 +1309,7 @@ const Page = () => {
                   </div>
 
                   <div className='flex gap-5'>
-                    <button type='submit' className={` ml-5 bg-${colur}-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold `}>
+                    <button type='submit' className={` bg-${colur}-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold `}>
                       Generate Timetable
                     </button>
 
@@ -1363,7 +1363,7 @@ const Page = () => {
             {selectedButton == "MECH" && showinput && selectedBox == 3 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -1419,7 +1419,7 @@ const Page = () => {
             {selectedButton == "MECH" && showinput && selectedBox == 4 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -1474,7 +1474,7 @@ const Page = () => {
             {showinput && selectedButton == "MECH" && selectedBox == 5 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -1514,7 +1514,7 @@ const Page = () => {
             {showinput && selectedButton == "MECH" && selectedBox == 6 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -1555,7 +1555,7 @@ const Page = () => {
             ))}{showinput && selectedButton == "MECH" && selectedBox == 7 && (
               !submit ? (
                 <div className='flex gap-5'>
-                  <button type='submit' className=" ml-5 bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
+                  <button type='submit' className=" bg-green-500 text-center w-40 mt-5 h-10 rounded-md text-sm font-semibold ">
                     Generate Timetable
                   </button>
 
@@ -1571,7 +1571,7 @@ const Page = () => {
         {view && (
           <button
             onClick={handledisplay}
-            className="bg-yellow-500 text-center w-40 ml-4 h-10 rounded-md text-sm font-semibold mt-5"
+            className="bg-[#82cb05] text-[#ffffff] smooth btnshdw absolute translate-x-[50%] bottom-0 text-center w-40 h-10 rounded-md text-sm font-bold mt-5"
           >
             View Timetable
           </button>

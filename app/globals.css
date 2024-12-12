@@ -17,8 +17,13 @@
 .crdshdw{
   box-shadow: 0px 0px 7px 2px #000;
 }
+
 .crdshdw:hover{
   box-shadow: 0px 0px 7px 2px #ffffff;
+}
+
+.btnshdw{
+  box-shadow: 0px 0px 7px 2px #00000077;
 }
 
 .befaft::after{
