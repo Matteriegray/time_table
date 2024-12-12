@@ -246,8 +246,8 @@ const Page = () => {
 
   const onSubmitsem4ece = (data) => {
     if (data.ece4sem3credtheory.split(',').length == 4 &&  data.ece4sem1credtheory.split(',').length == 3) {
-      let ecefour = (data.AIML4sem3credtheory.split(','))
-      let eceone = (data.CSE4sem1credtheory.split(','))
+      let ecefour = (data.ece4sem3credtheory.split(','))
+      let eceone = (data.ece4sem1credtheory.split(','))
       let updateddata = { ecefour,  eceone }
       handlesubmit(updateddata);
     }
