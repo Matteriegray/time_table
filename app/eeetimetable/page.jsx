@@ -10,14 +10,14 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/get/eee'); 
+        const response = await fetch('/api/get/eee');
         const result = await response.json();
         setData(result);
       } catch (error) {
         console.log((error));
-        
+
       }
-      
+
     };
 
     fetchData();
@@ -28,32 +28,30 @@ const App = () => {
   };
 
   return (
-    <CustomLayout>
-    <div className="app-container">
-      <div>
-        <h2>Select Semesters:</h2>
-        {[1,2,3, 4, 5, 6, 7, 8].map((sem) => (
-          <button
-            key={sem}
-            onClick={() => handleSemesterSelection(sem)}
-            style={{
-              backgroundColor: selectedSemesters==sem ? '#3b82f6e0' : 'white',
-              color: selectedSemesters==sem  ? 'white' : 'black',
-              margin: '5px',
-              padding: '10px',
-              cursor: 'pointer',
-            }}
-          >
-            {sem} Semester
-          </button>
-        ))}
+    <div className="app-container absolute top-0 left-0 w-full h-full z-50 overflow-x-hidden overflow-y-scroll">
+      <div className=' p-5 bg-[#ffffff]'>
+        <h2 className='text-2xl text-center font-semibold text-[#000000]'>Select Semesters:</h2>
+        <div className='flex flex-wrap justify-center'>
+          <div className=' border-2 border-[#0000004f] rounded-md smooth p-2'>
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((sem) => (
+              <button
+                key={sem}
+                onClick={() => handleSemesterSelection(sem)}
+                className={`${selectedSemesters.includes(sem) ? 'bg-[#000000] border-2 border-[#000000] font-semibold text-[#ffffff]' : 'bg-[#00000018]'
+                  } m-1.5 p-2.5 cursor-pointer smooth border-2 border-[#00000000] text-[#000000] rounded-md hover:border-[#000000] hover:border-2`}
+              >
+                {sem} Semester
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
       {data ? (
         <Timetableeee data={data} selectedSemesters={selectedSemesters} />
       ) : (
         <p>Loading timetable...</p>
       )}
-    </div></CustomLayout>
+    </div>
   );
 };
 
