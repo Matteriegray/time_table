@@ -315,7 +315,7 @@ const Page = () => {
   }
 
   const onSubmitsem4mech = (data) => {
-    if (data.mech4sem3credtheory.split(',').length == 4 &&  data.mwch4sem1credtheory.split(',').length == 3) {
+    if (data.mech4sem3credtheory.split(',').length == 4 &&  data.mech4sem1credtheory.split(',').length == 3) {
       let mechfour = (data.mech4sem3credtheory.split(','))
       let mechone = (data.mech4sem1credtheory.split(','))
       let updateddata = { mechfour, mechone }
