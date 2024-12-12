@@ -127,7 +127,7 @@ const App = () => {
         ))}
       </div>
       {data ? (
-        <Timetable data={data} selectedSemesters={selectedSemesters} />
+        <Timetableece data={data} selectedSemesters={selectedSemesters} />
       ) : (
         <p>Loading timetable...</p>
       )}
