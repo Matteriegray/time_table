@@ -720,7 +720,7 @@ const Page = () => {
                       Enter the 1 credit subjects for {subbranch.toUpperCase()}:
                     </div>
                     <div className='flex gap-2 '>
-                      <input {...register("csedept1credsubs")}
+                      <input {...register("eeedept1credsubs")}
                         type="text"
                         id="input"
                         placeholder={`Enter the subjects for ${subbranch}`}
@@ -998,7 +998,7 @@ const Page = () => {
                       Enter the 3 credit subjects for {subbranch.toUpperCase()}:
                     </div>
                     <div className='flex gap-2 '>
-                      <input {...register("csedept3credsubs")}
+                      <input {...register("ecedept3credsubs")}
                         type="text"
                         id="input"
                         placeholder={`Enter the subjects for ${subbranch}`}
@@ -1009,7 +1009,7 @@ const Page = () => {
                       Enter the 1 credit subjects for {subbranch.toUpperCase()}:
                     </div>
                     <div className='flex gap-2 '>
-                      <input {...register("csedept1credsubs")}
+                      <input {...register("ecedept1credsubs")}
                         type="text"
                         id="input"
                         placeholder={`Enter the subjects for ${subbranch}`}
@@ -1278,7 +1278,7 @@ const Page = () => {
               )
             )}
           </form>
-          {selectedButton == "MECH" && ["Whole CSE branch"].map((subbranch) => (
+          {selectedButton == "MECH" && ["Whole MECH branch"].map((subbranch) => (
             <div key={selectedBox}>
               {showinput && (selectedBox == 1 || selectedBox == 2) && (
                 <form onSubmit={handleSubmit(onSubmityear1mech)} action="" className=''>
@@ -1287,7 +1287,7 @@ const Page = () => {
                       Enter the 3 credit subjects for {subbranch.toUpperCase()}ANICAL:
                     </div>
                     <div className='flex gap-2 '>
-                      <input {...register("csedept3credsubs")}
+                      <input {...register("mechdept3credsubs")}
                         type="text"
                         id="input"
                         placeholder={`Enter the subjects for ${subbranch}`}
@@ -1298,7 +1298,7 @@ const Page = () => {
                       Enter the 1 credit subjects for {subbranch.toUpperCase()}ANICAL:
                     </div>
                     <div className='flex gap-2 '>
-                      <input {...register("csedept1credsubs")}
+                      <input {...register("mechdept1credsubs")}
                         type="text"
                         id="input"
                         placeholder={`Enter the subjects for ${subbranch}`}
