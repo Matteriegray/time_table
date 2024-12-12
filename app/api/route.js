@@ -187,7 +187,9 @@ export async function POST(req){
         return NextResponse.json({success:true});
        }
        else if(sem==3){
-        const third=thirdsemmech(data.mechfour,data.mechone,data.mechfour,data.mechone)
+        
+        
+        const third=thirdsemmech(data.mechfour,data.mechone,data.mechfour,data.mechone,data.mechfour,data.mechone)
         await mech.findOneAndUpdate(
             { name:"MECH" }, 
             { mech3rdsem:third }, 
@@ -201,7 +203,7 @@ export async function POST(req){
         return NextResponse.json({success:true});
        }
        else if(sem==4){
-        const forth=fourthsemmech(data.mechfour,data.mechone,data.mechfour,data.mechone)
+        const forth=fourthsemmech(data.mechfour,data.mechone,data.mechfour,data.mechone,data.mechfour,data.mechone)
         await mech.findOneAndUpdate(
             { name:"MECH" }, 
             { mech4thsem:forth }, 
@@ -215,7 +217,8 @@ export async function POST(req){
         return NextResponse.json({success:true});
        }
        else if(sem==5){
-        const fifth=fifthsemmech(data.eeefour,data.eeeone,data.eeefour,data.eeeone)
+        console.log(data.mechone);
+        const fifth=fifthsemmech(data.mechfour,data.mechone,data.mechfour,data.mechone,data.mechfour,data.mechone)
         await mech.findOneAndUpdate(
             { name:"MECH" }, 
             { mech5thsem:fifth }, 
@@ -229,7 +232,7 @@ export async function POST(req){
         return NextResponse.json({success:true});
     }
     else if(sem==6){
-        const sixth=sixthSemmech(data.eeefour,data.eeefour)
+        const sixth=sixthSemmech(data.mechfour,data.mechfour)
         await mech.findOneAndUpdate(
             { name:"MECH" }, 
             { mech6thsem:sixth}, 
@@ -244,7 +247,7 @@ export async function POST(req){
         
         }
         else if(sem==7){
-            const forth=seventhSemmech(data.eeefour,data.eeefour)
+            const forth=seventhSemmech(data.mechfour,data.mechfour,data.mechfour)
             await mech.findOneAndUpdate(
                 { name:"MECH" }, 
                 { mech7thsem:forth }, 
@@ -258,7 +261,7 @@ export async function POST(req){
             return NextResponse.json({success:true});
         }
         else if(sem==8){
-            const forth=eigthSemmech(data.eeefour,data.eeefour)
+            const forth=eigthSemmech(data.mechfour,data.mechfour,data.mechfour)
             await mech.findOneAndUpdate(
                 { name:"MECH" }, 
                 { mech8thsem:forth }, 

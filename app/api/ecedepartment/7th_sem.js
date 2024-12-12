@@ -19,7 +19,7 @@ export const seventhSemece=(eceafour,ecebfour)=> {
     }
     
     shuffle(eceafour);
-    shuffle(eceaone);
+    
     
     // Assign subjects to timetable
     timetableStructure[0][2] = eceafour[0];
@@ -28,7 +28,6 @@ export const seventhSemece=(eceafour,ecebfour)=> {
     timetableStructure[0][4] = eceafour[3];
     timetableStructure[1][1] = eceafour[0];
     timetableStructure[1][3] = eceafour[1];
-    timetableStructure[1][2] = eceaone[0];
     timetableStructure[0][3] = eceafour[2];
     timetableStructure[2][4] = eceafour[3];
 
@@ -45,7 +44,6 @@ export const seventhSemece=(eceafour,ecebfour)=> {
     
     // Shuffle subjects randomly
     shuffle(ecebfour);
-    shuffle(ecebone);
     
     // Assign subjects to timetable
     timetableStructureOfeceb[0][2] = ecebfour[0];
@@ -55,13 +53,12 @@ export const seventhSemece=(eceafour,ecebfour)=> {
     timetableStructureOfeceb[1][1] = ecebfour[0];
     timetableStructureOfeceb[1][3] = ecebfour[1];
     timetableStructureOfeceb[1][2] = ecebfour[2];
-    timetableStructureOfeceb[0][3] = ecebone[0];
     timetableStructureOfeceb[2][4] = ecebfour[3];
 
 
     
 let totalecedepartmentseventhsem=[];
-totalecedepartmentseventhsem.push(timetable_structure)
-totalecedepartmentseventhsem.push(timetable_structure_of_eceb)
+totalecedepartmentseventhsem.push(timetableStructure)
+totalecedepartmentseventhsem.push(timetableStructureOfeceb)
 return totalecedepartmentseventhsem;
 }
