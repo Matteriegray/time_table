@@ -72,7 +72,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 5 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 5 three credit and 2 one credit subject")
     }
 
   }
@@ -89,7 +89,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -105,7 +105,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -121,7 +121,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 4 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 4 three credit and 2 one credit subjects")
     }
   }
 
@@ -157,7 +157,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 5 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 5 three credit and 2 one credit subject")
     }
 
   }
@@ -170,7 +170,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -182,7 +182,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -194,7 +194,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 4 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 4 three credit and 2 one credit subjects")
     }
   }
 
@@ -228,7 +228,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 5 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 5 three credit and 2 one credit subject")
     }
 
   }
@@ -241,7 +241,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -253,7 +253,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -265,7 +265,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 4 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 4 three credit and 2 one credit subjects")
     }
   }
 
@@ -277,7 +277,7 @@ const Page = () => {
     }
 
     else {
-      toast("You did't entered 5 subjects  :)")
+      toast("Enter 5 three credit subject :")
     }
   }
 
@@ -288,7 +288,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 5 subjects  :)")
+      toast("Enter 5 three credit subject :")
     }
   }
   const onSubmityear1mech = (data1) => {
@@ -299,7 +299,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 5 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 5 three credit and 2 one credit subject")
     }
 
   }
@@ -312,7 +312,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -324,7 +324,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -336,7 +336,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      toast("You did't entered 4 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 4 three credit and 2 one credit subjects")
     }
   }
 
