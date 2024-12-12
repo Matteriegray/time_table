@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import { useForm, useFormState } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Page = () => {
 
   const {
@@ -70,7 +72,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 5 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 5 three credit and 2 one credit subject")
     }
 
   }
@@ -87,7 +89,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -103,7 +105,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -119,7 +121,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 4 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 4 three credit and 2 one credit subjects")
     }
   }
 
@@ -132,7 +134,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
 
-    else {alert("You did't entered 5 3 credit subjects :)")
+    else {toast("You did't entered 5 3 credit subjects :)")
     }
   }
 
@@ -144,7 +146,7 @@ const Page = () => {
       let updateddata = { aimlfour, isefour, csefour }
       handlesubmit(updateddata);
     }
-    else {alert("You did't entered 5 3 credit subjects :)")
+    else {toast("You did't entered 5 3 credit subjects :)")
     }
   }
   const onSubmityear1eee = (data1) => {
@@ -155,7 +157,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 5 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 5 three credit and 2 one credit subject")
     }
 
   }
@@ -168,7 +170,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -180,7 +182,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -192,7 +194,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 4 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 4 three credit and 2 one credit subjects")
     }
   }
 
@@ -204,7 +206,7 @@ const Page = () => {
     }
 
     else {
-      alert("You did't entered 5 3 credit subjects :)")
+      toast("You did't entered 5 3 credit subjects :)")
     }
   }
 
@@ -215,7 +217,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 5 3 credit subjects :)")
+      toast("You did't entered 5 3 credit subjects :)")
     }
   }
   const onSubmityear1ece = (data1) => {
@@ -226,7 +228,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 5 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 5 three credit and 2 one credit subject")
     }
 
   }
@@ -239,7 +241,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -251,7 +253,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -263,7 +265,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 4 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 4 three credit and 2 one credit subjects")
     }
   }
 
@@ -275,7 +277,7 @@ const Page = () => {
     }
 
     else {
-      alert("You did't entered 5 subjects  :)")
+      toast("Enter 5 three credit subject :")
     }
   }
 
@@ -286,7 +288,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 5 subjects  :)")
+      toast("Enter 5 three credit subject :")
     }
   }
   const onSubmityear1mech = (data1) => {
@@ -297,7 +299,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 5 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 5 three credit and 2 one credit subject")
     }
 
   }
@@ -310,7 +312,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -322,7 +324,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 4 3 credit subjects and 3 1 credit subjects :)")
+      toast("Enter 4 three credit and 3 one credit subjects")
     }
   }
 
@@ -334,7 +336,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 4 3 credit subjects and 2 1 credit subjects :)")
+      toast("Enter 4 three credit and 2 one credit subjects")
     }
   }
 
@@ -346,7 +348,7 @@ const Page = () => {
     }
 
     else {
-      alert("You did't entered 5 3 credit subjects :)")
+      toast("You did't entered 5 3 credit subjects :)")
     }
   }
 
@@ -357,7 +359,7 @@ const Page = () => {
       handlesubmit(updateddata);
     }
     else {
-      alert("You did't entered 5 3 credit subjects :)")
+      toast("You did't entered 5 3 credit subjects :)")
     }
   }
 
@@ -365,7 +367,7 @@ const Page = () => {
   return (
     <div className="flex flex-col items-center w-full text-white pt-[5%] justify-center absolute top-0 left-0 gap-4">
       <h1 className="text-3xl font-bold ">Welcome Admin</h1>
-      <div className='flex flex-col items-center w-full max-h-[100vh] relative'>
+      <div className='flex flex-col items-center w-full '>
         <h1 className="font-semibold text-2xl">Select Department</h1>
         <div className='flex gap-5 mt-2'>
           {["CSE", "EEE", "ECE", "MECH"].map((button) => (
