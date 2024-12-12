@@ -331,7 +331,7 @@ export async function POST(req){
         return NextResponse.json({success:true});
        }
        else if(sem==5){
-        const fifth=fifthsemeee(data.eeefour,data.eeeone,data.eeefour,data.eeeone)
+        const fifth=fifthsemeee(data.eeefour,data.eeefour)
         await eee.findOneAndUpdate(
             { name:"EEE" }, 
             { eee5thsem:fifth }, 

@@ -165,7 +165,7 @@ const Page = () => {
   const onSubmitsem3eee = (data) => {
     if (data.eee3sem3credtheory.split(',').length == 4 && data.eee3sem1credtheory.split(',').length == 3) {
       let eeefour = data.eee3sem3credtheory.split(',')
-      let eeeone = data.eeesem1credtheory.split(',')
+      let eeeone = data.eee3sem1credtheory.split(',')
       let updateddata = { eeefour, eeeone }
       handlesubmit(updateddata);
     }
@@ -187,10 +187,9 @@ const Page = () => {
   }
 
   const onSubmitsem5eee = (data) => {
-    if (data.eee5sem3credtheory.split(',').length == 4 && data.eee5sem1credtheory.split(',').length == 2) {
+    if (data.eee5sem3credtheory.split(',').length == 4 ) {
       let eeefour = (data.eee5sem3credtheory.split(','))
-      let eeeone = (data.eee5sem1credtheory.split(','))
-      let updateddata = { eeefour, eeeone }
+      let updateddata = { eeefour }
       handlesubmit(updateddata);
     }
     else {
@@ -211,7 +210,7 @@ const Page = () => {
   }
 
   const onSubmitsem7eee = (data) => {
-    if (data.eee7sem3credtheory.split(',').length == 5) {
+    if (data.eee7sem3credtheory.split(',').length == 4) {
       let eeefour = (data.eee7sem3credtheory.split(','))
       let updateddata = { eeefour }
       handlesubmit(updateddata);

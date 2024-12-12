@@ -1,4 +1,4 @@
-export const fifthsemeee= (eeeafour,eeebfour,) => {
+export const fifthsemeee= (eeeafour,eeebfour) => {
 
     // Timetable structure for EEE A
     let timetableStructure = [
